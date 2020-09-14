@@ -1,0 +1,3 @@
+recursive-include fish2eod/tests *.txt
+recursive-include fish2eod/geometry/fish_data *.csv
+recursive-include fish2eod/geometry/fish_data *.tsv

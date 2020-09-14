@@ -1,0 +1,28 @@
+{% set data = load_setup_py_data() %}
+
+package:
+  name: fish2eod
+  version: {{ data.get('version') }}
+
+build:
+  noarch: python
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - pyyaml
+
+source:
+  path: .
+
+test:
+  imports:
+    - fish2eod
+
+about:
+  summary: asdf

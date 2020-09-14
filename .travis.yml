@@ -1,0 +1,34 @@
+language: python
+env:
+  global:
+  - secure: VwZlYIcNwhJ+rXq1Fc8UoZGjD1DhRxjBe2tzzx3wSjRc3xGHCR/Z16UI0W3a/l4SgJe7Q6F2R7LNrsGMbBim6noj0w/PYuEtHnR95cgEu4P9VcJlT9gTc6LjQPrK+dgJTBVNJZctYHh/KrDiL2jJqyognR6TXUW5uhwY89RCudbrMJEIlBNjPfF87RWE0JSm+7AeE1QsXxNwPqIf0eX7d/jZ27o7wfb0d/c55/AezrGt3YYj7JjnHGQZszBDxAwSXIkqlu0hBpe/jhGMKQQyT+8aPjII7T/vkzGTwbvCv0cCcFVAoELIz06noMxPIShsKWRs8DBiGhcoZkNPFW5yc30V6D70vTt1trG6KjX+4BpSot7UlYFeUjHykz6sz9T80F922e/VjrJScl6pp2969WAxuuveGkTmp4z1wVCkzJQYxdCRfD7fUKWhuLc2wkwI1VBWpSZ+D25YUzkVmvq6ixkCNQqtBTWgfjdQgovMkiSv3to19PhNFUKTIBc04B8mBNOIzknwnuqCNg1q0BR7CSSc/nk1nyH9tAO2sCALk/h5fkLFZ8zlpA1rz5Y0V8/lNyWrmtcxpcFVCYGlFXvLfGaN6BX7zof2lOJ4OXwSkgc1ZpcnA5YNt3amwnAN1LOxqyx/u2Zy1aPJcJ2MurZCmkMsMnUkP53k3KpjKpDjpAU=
+  - secure: ka+HDibbRwqBBv6/+CzJxAwEI2oPdKLPULy0XZFLnCp5Vv6PNCvEMNoEz6bdchR3coqipGq4zG31149gKcBL6Jev3YNdrtj7/tR0NIPPtA6IS1ZKdYzhYgwEaOY358nU7ksZfoplK2zwCPIdFzMpo4gasy0pWxD1IWqU4s00jRyYc7eHDLXukEbeGAB8k2vj78uZhPODffEwrasO/q3OCAsZKmnD7+yOoxu67YoG2WduVTIRI2I2d9Q9ijohb0205qszTRPshk4JPXYvKtkcAiHQvZUxGAexr+c0MtnnWhmfQNi4siunioxSq1On/aTCK0RupaWidsJHev1dZ2/TagKquX0WMr/rLsnSD3tRivJs1lsWHkm/LRebTH+Fycn/rFpY8zlJhqUQvE4rIYz1HfJmReuQk+UDFTs6TWh/93cmpmNWEtnwXMKbhtpgD8BbFDcfuHf/+48fhASn7tc1IJStDPlbhX9OiqFeBQ80o7eC3H+A9oIqKQZKDK1LP3G4pDDhIqDyShZfjmuXFUVSyo+vwnzke9rkWBqnPCQ5TMfeou9mA7LQdkJW0jBk2oO9vY+0JHPgDG/kjFosWsl76ZbBI36qjXsLpsNeAlVqpUYuWtrz6Rb4XEUUmX0w0wXucaSCrq7p0cyPOzZ6oGgqhlJiEv/szmCgZptiORZ44d8=
+jobs:
+  include:
+  - os: linux
+    dist: bionic
+    python: 3.6
+  - os: linux
+    dist: bionic
+    python: 3.7
+  - os: linux
+    dist: bionic
+    python: 3.8
+  - os: osx
+    language: generic
+    env: TRAVIS_PYTHON_VERSION=3.6
+  - os: osx
+    language: generic
+    env: TRAVIS_PYTHON_VERSION=3.7
+  - os: osx
+    language: generic
+    env: TRAVIS_PYTHON_VERSION=3.8
+install:
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then bash -i install_macos.sh; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then bash -i install_linux.sh; fi
+- source "$HOME/miniconda/etc/profile.d/conda.sh"
+- conda activate fish2eod
+script:
+- pytest
+after_success:
+- bash create_deploy.sh
