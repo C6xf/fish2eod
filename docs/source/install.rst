@@ -10,6 +10,11 @@ Formally fish2eod has only been tested with Ubuntu 18.04. This is because there 
 previous versions of Ubuntu have an out of date version on apt. If you can install gmsh separately any version should
 work
 
+You're going to want to download the :download:`conda specification <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml>`
+and the install scripts :download:`conda <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh>`
+and :download:`install <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_linux.sh>`
+
+
 Setup
 *****
 
