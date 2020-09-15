@@ -1,3 +1,11 @@
+.. note::
+   If you have already installed fish2eod and its dependencies and would like to update it you can run
+   .. code-block:: bash
+
+      pip install git+https://github.com/aaronshifman/fish2eod.git --upgrade
+
+   Please remember that you must be in the correct conda environment
+
 Installation
 ============
 
@@ -61,13 +69,13 @@ path to the files you downloaded earlier. In my case its under ``/mnt/f/Document
    cd LOCATION-OF-SOURCE
    export TRAVIS_PYTHON_VERSION=3.6
    bash -i install_linux.sh
-   pip install git+https://github.com/aaronshifman/fish2eod.git
    source ~/.bashrc
    conda activate fish2eod
-
-Now if you'd like to use this software you can use the conda environment ``fish2eod``
+   pip install git+https://github.com/aaronshifman/fish2eod.git
 
 Again once or twice you may be prompted to enter ``Y`` to continue
+
+Now if you'd like to use this software you can use the conda environment ``fish2eod``
 
 (Note there are currently plans to add this to pypi but that's for a later date)
 
@@ -100,13 +108,13 @@ path to the files you downloaded earlier. In my case its under ``/mnt/f/Document
    cd LOCATION-OF-SOURCE
    export TRAVIS_PYTHON_VERSION=3.6
    bash -i install_macos.sh
-   pip install git+https://github.com/aaronshifman/fish2eod.git
    source ~/.bashrc
    conda activate fish2eod
-
-Now if you'd like to use this software you can use the conda environment ``fish2eod``
+   pip install git+https://github.com/aaronshifman/fish2eod.git
 
 Again once or twice you may be prompted to enter ``Y`` to continue
+
+Now if you'd like to use this software you can use the conda environment ``fish2eod``
 
 (Note there are currently plans to add this to pypi but that's for a later date)
 
