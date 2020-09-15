@@ -1,0 +1,1292 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fish2eod package &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fish2eod.analysis package" href="fish2eod.analysis.html" />
+    <link rel="prev" title="Running Parameter Sweeps" href="../examples/basic/parameter_sweep.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">fish2eod package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.analysis.html">fish2eod.analysis package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.geometry.html">fish2eod.geometry package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.helpers.html">fish2eod.helpers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.mesh.html">fish2eod.mesh package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.xdmf.html">fish2eod.xdmf package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fish2eod.models">fish2eod.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fish2eod.properties">fish2eod.properties module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fish2eod.sweep">fish2eod.sweep module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>fish2eod package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/fish2eod.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fish2eod">
+<span id="fish2eod-package"></span><h1>fish2eod package<a class="headerlink" href="#module-fish2eod" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fish2eod.analysis.html">fish2eod.analysis package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.analysis.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.analysis.html#module-fish2eod.analysis.plotting">fish2eod.analysis.plotting module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.analysis.html#module-fish2eod.analysis.transdermal">fish2eod.analysis.transdermal module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fish2eod.geometry.html">fish2eod.geometry package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.geometry.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.geometry.html#module-fish2eod.geometry.fish">fish2eod.geometry.fish module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.geometry.html#module-fish2eod.geometry.operations">fish2eod.geometry.operations module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.geometry.html#module-fish2eod.geometry.primitives">fish2eod.geometry.primitives module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fish2eod.helpers.html">fish2eod.helpers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.helpers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.helpers.html#module-fish2eod.helpers.dolfin_tools">fish2eod.helpers.dolfin_tools module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.helpers.html#module-fish2eod.helpers.type_helpers">fish2eod.helpers.type_helpers module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fish2eod.mesh.html">fish2eod.mesh package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.mesh.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.mesh.html#module-fish2eod.mesh.boundary">fish2eod.mesh.boundary module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.mesh.html#module-fish2eod.mesh.domain">fish2eod.mesh.domain module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.mesh.html#module-fish2eod.mesh.mesh">fish2eod.mesh.mesh module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.mesh.html#module-fish2eod.mesh.model_geometry">fish2eod.mesh.model_geometry module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fish2eod.xdmf.html">fish2eod.xdmf package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.xdmf.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.xdmf.html#module-fish2eod.xdmf.load">fish2eod.xdmf.load module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.xdmf.html#module-fish2eod.xdmf.save">fish2eod.xdmf.save module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.xdmf.html#module-fish2eod.xdmf.xml_tools">fish2eod.xdmf.xml_tools module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-fish2eod.models">
+<span id="fish2eod-models-module"></span><h2>fish2eod.models module<a class="headerlink" href="#module-fish2eod.models" title="Permalink to this headline">¶</a></h2>
+<p>Templates for solving finite element problems.</p>
+<p>Model is the base class which defines an interface for creating geometry, meshing, labeling and solving without
+a full implementation</p>
+<p>QESModel adds quasi-electrostatic physics to the Model class</p>
+<p>BaseFishModel is the template class for electric fish simulations by specifying convenience api calls for adding
+geometry, and voltage/current sources while also defining and handling the fish objects</p>
+<dl class="py class">
+<dt id="fish2eod.models.BaseFishModel">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">BaseFishModel</code><a class="headerlink" href="#fish2eod.models.BaseFishModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fish2eod.models.QESModel" title="fish2eod.models.QESModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.models.QESModel</span></code></a></p>
+<p>Main class that should be used for all fish simulations.</p>
+<p>Defines fish, tank, and ground electrode) along with properties need to solve them. This should be subclassed to
+implement custom geometries or sources.</p>
+<dl class="py attribute">
+<dt id="fish2eod.models.BaseFishModel.BODY_CONDUCTIVITY">
+<code class="sig-name descname">BODY_CONDUCTIVITY</code><em class="property"> = 0.00356</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.BODY_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fish2eod.models.BaseFishModel.GROUND_CONDUCTIVITY">
+<code class="sig-name descname">GROUND_CONDUCTIVITY</code><em class="property"> = 727.0</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.GROUND_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fish2eod.models.BaseFishModel.ORGAN_CONDUCTIVITY">
+<code class="sig-name descname">ORGAN_CONDUCTIVITY</code><em class="property"> = 0.0092717</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.ORGAN_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fish2eod.models.BaseFishModel.WATER_CONDUCTIVITY">
+<code class="sig-name descname">WATER_CONDUCTIVITY</code><em class="property"> = 0.00023</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.WATER_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.add_boundary_assignement_rules">
+<code class="sig-name descname">add_boundary_assignement_rules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_boundary_assignement_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add rules for assigning boundaries</p>
+<p>If defining new boundaries with custom labels this method should be overwritten</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of BoundaryBarkers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.add_current_sources">
+<code class="sig-name descname">add_current_sources</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_current_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>User extendable function to add a current source (constant current).</p>
+<p>Overwrite this method and implement something of the form</p>
+<dl class="simple">
+<dt>return [BoundaryCondition(value=0, label=’some_domain’),</dt><dd><p>BoundaryCondition(value=3, label=’some_other_domain’),
+…]</p>
+</dd>
+</dl>
+<p>You can add additional arguments to represent model parameters which you can use in the condition definition</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Catchall for remaining parameters</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.BoundaryCondition" title="fish2eod.helpers.type_helpers.BoundaryCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryCondition</span></code></a>, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.add_geometry">
+<code class="sig-name descname">add_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>User extendable function to add to the geometry.</p>
+<p>Overwrite this method and implement something of the form</p>
+<p>self.model_geometry.add_domain(“Domain name”, obj1, obj2, …)</p>
+<p>You can add additional arguments to represent model parameters which you can use in the object definition</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Catchall for remaining parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.add_voltage_sources">
+<code class="sig-name descname">add_voltage_sources</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_voltage_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>User extendable function to add a voltage source (constant voltage).</p>
+<p>Overwrite this method and implement something of the form</p>
+<dl class="simple">
+<dt>return [BoundaryCondition(value=0, label=self.model_geometry[‘some domain’]),</dt><dd><p>BoundaryCondition(value=3, label=self.model_geometry[‘some other domain’]),
+…]</p>
+</dd>
+</dl>
+<p>You can add additional arguments to represent model parameters which you can use in the condition definition</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Catchall for remaining parameters</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.BoundaryCondition" title="fish2eod.helpers.type_helpers.BoundaryCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryCondition</span></code></a>, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.create_geometry">
+<code class="sig-name descname">create_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish_x</span></em>, <em class="sig-param"><span class="n">fish_y</span></em>, <em class="sig-param"><span class="n">species</span><span class="o">=</span><span class="default_value">'APTERONOTUS'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.create_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the model geometry by making a fish, tank and ground and adding any additional user geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fish_x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – x coordinates (head-&gt;tail) for the fish</p></li>
+<li><p><strong>fish_y</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – y coordinates (head-&gt;tail) for the fish</p></li>
+<li><p><strong>species</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the species</p></li>
+<li><p><strong>kwargs</strong> – Catchall for the remaining parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.generate_save_data">
+<code class="sig-name descname">generate_save_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.generate_save_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add model solution and fish geometry to save data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Fish specific data: skin geometry, transdermal potential (optional image data) and all parent data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.get_boundary_markers">
+<code class="sig-name descname">get_boundary_markers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_boundary_markers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the boundary markers for a model.</p>
+<p>A marker is a list of two function with the same signature b1,b2,x,y where b1 is the domain id of the first
+domain, and b2 is the domain id of the second domain. x, and y are the coordinates of the midpoint of the
+boundary. Using whatever criteria you wish, a true or false is returned if that boundary follows the criteria.
+The second function with the same signature b1,b2,x,y returns the boundary ID you want to assign the target
+boundary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], …]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of the boundary markers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.get_dirichlet_conditions">
+<code class="sig-name descname">get_dirichlet_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_dirichlet_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the dirichlet conditions on the ground electrode and get user conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Model parameters to feed into add_voltage_sources</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.BoundaryCondition" title="fish2eod.helpers.type_helpers.BoundaryCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryCondition</span></code></a>, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.get_eod_functions">
+<code class="sig-name descname">get_eod_functions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eod_phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_eod_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the EOD phase into a set of EOD functions to evaluate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>eod_phase</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – The EOD phase for the fish(es)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">CubicSpline</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of evaluable EOD functions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.get_neumann_conditions">
+<code class="sig-name descname">get_neumann_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eod_phase</span><span class="o">=</span><span class="default_value">0.24</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_neumann_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the Neumann conditions for the model.</p>
+<p>By default this is the EOD from the organ but can be extended with BCs from add_current_sourced</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eod_phase</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – EOD phase (0&lt;=phase&lt;=1)</p></li>
+<li><p><strong>model_parameters</strong> – Catchall for the remaining parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.inner_skin_rule">
+<code class="sig-name descname">inner_skin_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b1</span></em>, <em class="sig-param"><span class="n">b2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.inner_skin_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mark the boundary for inner skin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b1</strong> – Name of lower domain</p></li>
+<li><p><strong>b2</strong> – Name of upper domain</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>If the boundary should be marked and the label</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.organ_rule">
+<code class="sig-name descname">organ_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b1</span></em>, <em class="sig-param"><span class="n">b2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.organ_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mark the boundary for organ.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b1</strong> – Name of lower domain</p></li>
+<li><p><strong>b2</strong> – Name of upper domain</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>If the boundary should be marked and the label</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.setup_fish">
+<code class="sig-name descname">setup_fish</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish_x</span></em>, <em class="sig-param"><span class="n">fish_y</span></em>, <em class="sig-param"><span class="n">species</span><span class="o">=</span><span class="default_value">'Apteronotus'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.setup_fish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the fish given coordinates and species.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fish_x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – X coordinates of the fish(es) spine</p></li>
+<li><p><strong>fish_y</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – Y coordinates of the fish(es) spine</p></li>
+<li><p><strong>species</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Species of fish to use</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve the fish model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_parameters</strong> – all model parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.BaseFishModel.update_for_image">
+<code class="sig-name descname">update_for_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">null_properties</span></em>, <em class="sig-param"><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.update_for_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.models.Model">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">Model</code><a class="headerlink" href="#fish2eod.models.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Model interface for meshing, properties and plotting.</p>
+<p>Models are physics and geometry agnostic and knows nothing about these things - this is an internal class and
+would only be subclassed to develop new physics modules.</p>
+<dl class="py method">
+<dt id="fish2eod.models.Model.bc_to_dirichlet_bc">
+<code class="sig-name descname">bc_to_dirichlet_bc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.bc_to_dirichlet_bc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert fish2eod boundary conditions to their fenics counterpart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DirichletBC</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boundary condition in fenics df.DirichletBC form</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.build_equations">
+<em class="property">abstract </em><code class="sig-name descname">build_equations</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.build_equations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the equations to solve.</p>
+<p>Must be overwritten in subclasses to define physics
+:param model_parameters: kwargs catch all for model parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.compile">
+<code class="sig-name descname">compile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recompute_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.compile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model mesh, label domains/boundaries and build model equations.</p>
+<p>Needs to be called before solving the models</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_parameters</strong> – Model parameter dictionary.</p></li>
+<li><p><strong>recompute_mesh</strong> – kwargs catch all for model parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.create_geometry">
+<em class="property">abstract </em><code class="sig-name descname">create_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.create_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the model geometry</p>
+<p>Must be overwritten in subclasses to define geometry</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.domain_map">
+<em class="property">property </em><code class="sig-name descname">domain_map</code><a class="headerlink" href="#fish2eod.models.Model.domain_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.eval" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.generate_save_data">
+<em class="property">abstract </em><code class="sig-name descname">generate_save_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.generate_save_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate save data for the base model.</p>
+<p>Subsequent physics specialization should super() and concat their data to save so all relevant is saved</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>solution, domains, boundaries, and outline</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.get_boundary_markers">
+<code class="sig-name descname">get_boundary_markers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.get_boundary_markers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the boundary markers for a model.</p>
+<p>A marker is a list of two function with the same signature b1,b2,x,y where b1 is the domain id of the first
+domain, and b2 is the domain id of the second domain. x, and y are the coordinates of the midpoint of the
+boundary. Using whatever criteria you wish, a true or false is returned if that boundary follows the criteria.
+The second function with the same signature b1,b2,x,y returns the boundary ID you want to assign the target
+boundary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], …]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of the boundary markers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.get_property">
+<code class="sig-name descname">get_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">property_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.get_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the property object of a named property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>property_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the property (typically sigma)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#fish2eod.properties.Property" title="fish2eod.properties.Property"><code class="xref py py-class docutils literal notranslate"><span class="pre">Property</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The property object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.plot_domains">
+<code class="sig-name descname">plot_domains</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_domains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot labeled domains with color corresponding to their label.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.plot_geometry">
+<code class="sig-name descname">plot_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Color of edges, None will cycle colors</p></li>
+<li><p><strong>legend</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to label edges in legend</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.plot_mesh">
+<code class="sig-name descname">plot_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'grey'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> – Color of edges, defaults to ‘grey’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.plot_solution">
+<code class="sig-name descname">plot_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_solution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.solution">
+<em class="property">property </em><code class="sig-name descname">solution</code><a class="headerlink" href="#fish2eod.models.Model.solution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.solve">
+<em class="property">abstract </em><code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve the system.</p>
+<p>Must be overwritten in subclasses to define how to solve
+:param model_parameters: kwargs catch all for model parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.structure_to_dataset">
+<code class="sig-name descname">structure_to_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.structure_to_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.topology_1d">
+<em class="property">property </em><code class="sig-name descname">topology_1d</code><a class="headerlink" href="#fish2eod.models.Model.topology_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get mesh edge topology (lines)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>1D topology</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.topology_2d">
+<em class="property">property </em><code class="sig-name descname">topology_2d</code><a class="headerlink" href="#fish2eod.models.Model.topology_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get mesh cell topology (triangles)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D topology</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.topology_coordinates">
+<em class="property">property </em><code class="sig-name descname">topology_coordinates</code><a class="headerlink" href="#fish2eod.models.Model.topology_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get mesh node coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mesh nodes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.update_parameter">
+<code class="sig-name descname">update_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_label</span></em>, <em class="sig-param"><span class="n">parameter_name</span></em>, <em class="sig-param"><span class="n">parameter_value</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.update_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update non-geometric parameters such as conductivity without recomputing mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domain_label</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Label of domain to update parameter on</p></li>
+<li><p><strong>parameter_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of parameter: for example: sigma</p></li>
+<li><p><strong>parameter_value</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – New value of parameter</p></li>
+<li><p><strong>model_parameters</strong> – Catchall for model parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.Model.verboseness">
+<em class="property">property </em><code class="sig-name descname">verboseness</code><a class="headerlink" href="#fish2eod.models.Model.verboseness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the verboseness level of the model.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.models.QESModel">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">QESModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">allow_overlaps</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fish2eod.models.Model" title="fish2eod.models.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.models.Model</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>FEM framework for solving quasi electrostatic models.</p>
+<p>Extends model QES physics work and the ability to add Neumann and Dirichelet conditions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>allow_overlaps</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Should the geometry fail if two objects overlap (not including background)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.models.QESModel.build_equations">
+<code class="sig-name descname">build_equations</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.build_equations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create equations in weak form to solve with included sources (neumann conditions).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_parameters</strong> – Catchall kwarg for model parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.QESModel.generate_save_data">
+<code class="sig-name descname">generate_save_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.generate_save_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get save data for the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.QESModel.get_dirichlet_conditions">
+<code class="sig-name descname">get_dirichlet_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.get_dirichlet_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Dirichlet conditions (voltage sources).</p>
+<p>By default the external boundaries are grounded. This should be overridden in your model subclass to implement
+if wanted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_parameters</strong> – Catchall kwarg for model parameters</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.BoundaryCondition" title="fish2eod.helpers.type_helpers.BoundaryCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryCondition</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.QESModel.get_neumann_conditions">
+<code class="sig-name descname">get_neumann_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.get_neumann_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Neumann conditions (current sources).</p>
+<p>By default there are none. This should be overridden in your model subclass to implement if wanted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_parameters</strong> – Catchall kwarg for model parameters</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.BoundaryCondition" title="fish2eod.helpers.type_helpers.BoundaryCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryCondition</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.models.QESModel.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_parameters</strong> – kwargs of the model parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.models.bc_to_rhs_term">
+<code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">bc_to_rhs_term</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bc</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">ds</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.bc_to_rhs_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a boundary condition (Neumann) into a source term on a trial function space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Form</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.models.fenics_representation">
+<code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">fenics_representation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mixed_representation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.fenics_representation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a uniform representation of a boundary condition in a df.Expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mixed_representation</strong> (<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.BoundaryCondition" title="fish2eod.helpers.type_helpers.BoundaryCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryCondition</span></code></a>) – A generic BoundaryCondition which is defined as a number, string, or df.Expression</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A unified df.Expression for the boundary condition</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.properties">
+<span id="fish2eod-properties-module"></span><h2>fish2eod.properties module<a class="headerlink" href="#module-fish2eod.properties" title="Permalink to this headline">¶</a></h2>
+<p>Helpers for defining complex properties on a fenics domain.</p>
+<p>Properties are UserExpressions for performing specific tasks</p>
+<p>SplineExpression defines a function on a boundary mapped [start,stop] -&gt; [0, 1]
+Property defines a scalar on a set of domains by domain_id (e.g. conductivity)</p>
+<dl class="py class">
+<dt id="fish2eod.properties.Property">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.properties.</code><code class="sig-name descname">Property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">index_map</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dolfin.function.expression.UserExpression</span></code></p>
+<p>Class to handle assigning a property across domains.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domains</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunctionSizet</span></code>) – Labeled domains</p></li>
+<li><p><strong>index_map</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – Dictionary with keys being a domain and value being either a value or a function taking x,y</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.properties.Property.eval_cell">
+<code class="sig-name descname">eval_cell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">cell</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property.eval_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the property at a coordinate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – Implicit return: set values[0]=some_number to return</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – x, y coordinates of the cell</p></li>
+<li><p><strong>cell</strong> – Geometry cell (element) the function is being accessed on</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.properties.Property.value_shape">
+<em class="property">static </em><code class="sig-name descname">value_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property.value_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inform dolfin this expression is a scalar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.properties.SplineExpression">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.properties.</code><code class="sig-name descname">SplineExpression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">boundary</span></em>, <em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dolfin.function.expression.UserExpression</span></code></p>
+<p>Assign a spline across a boundary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>boundary</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">LineString</span></code>) – Linestring representing the boundary</p></li>
+<li><p><strong>f</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – A 1D spline function</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.properties.SplineExpression.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate expression at a coordinate.</p>
+<p>This function doesn’t return but mutates the array argument as per dolfin requirements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – Implicit return: set values[0]=some_number to return</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – x, y coordinates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.properties.SplineExpression.value_shape">
+<em class="property">static </em><code class="sig-name descname">value_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression.value_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inform dolfin this expression is a scalar.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.sweep">
+<span id="fish2eod-sweep-module"></span><h2>fish2eod.sweep module<a class="headerlink" href="#module-fish2eod.sweep" title="Permalink to this headline">¶</a></h2>
+<p>Solve a model repeatedly for multiple versions of parameters (parametric sweeps).</p>
+<p>ParameterSet is a generic set of parameters for multiple parameters swept in serial (i.e. (x0, y0), (x1, y1), …)
+EODPhase is a parameterSet for sweeping the eod phase (0&lt;=p&lt;=1). No other parameters can be added to this
+FishPosition is a ParameterSet for sweeping the position of the fish</p>
+<p>ParameterSweep takes one or more parameter sets and generates the model parameters for all combinations of the sets
+IterativeSolver iterates over parameter sweep and generates, solves and saves the model</p>
+<dl class="py class">
+<dt id="fish2eod.sweep.EODPhase">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">EODPhase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phases</span></em>, <em class="sig-param"><span class="n">set_name</span><span class="o">=</span><span class="default_value">'EODPhase'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.sweep.ParameterSet</span></code></a></p>
+<p>Convenience class for sweeping EOD Phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phases</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>) – Set of phases to use</p></li>
+<li><p><strong>set_name</strong> – Name of the parameter set (Default is EODPhase)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.sweep.EODPhase.add_parameter_set">
+<code class="sig-name descname">add_parameter_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_parameter_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase.add_parameter_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite add_parameter_set to disable it.</p>
+<p>At the “time-scale” of EOD phase it doesn’t make sense to sweep any other parameters so disable functionality</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.sweep.EODPhase.validate">
+<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate shape of parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameters</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – Dictionary (name: value) of parameters to sweep</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>Assertion error if parameters are invalid shape</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.sweep.FishPosition">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">FishPosition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish_x</span></em>, <em class="sig-param"><span class="n">fish_y</span></em>, <em class="sig-param"><span class="n">set_name</span><span class="o">=</span><span class="default_value">'FishPosition'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.FishPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.sweep.ParameterSet</span></code></a></p>
+<p>Convenience class for sweeping fish positions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fish_x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – Set of x positions to use</p></li>
+<li><p><strong>fish_y</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – Set of y positions to use</p></li>
+<li><p><strong>set_name</strong> – Name of the parameter set (Default is FishPosition)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.sweep.FishPosition.validate">
+<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.FishPosition.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate shape of parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameters</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – Dictionary (name: value) of parameters to sweep</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>Assertion error if parameters are invalid shape</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.sweep.IterativeSolver">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">IterativeSolver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">save_path</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">parameter_sweep</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">fixed_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper to take a model and run it for multiple versions parameter.</p>
+<p>Given a parameter sweep (set unique parameters to run through) the IterativeSolver will reset and re-run the model
+for each parameter set only remeshing when geometric features are changed for optimal performance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<a class="reference internal" href="#fish2eod.models.Model" title="fish2eod.models.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>]) – Class of model to create: NOT AN INSTANCE</p></li>
+<li><p><strong>parameter_sweep</strong> (<a class="reference internal" href="#fish2eod.sweep.ParameterSweep" title="fish2eod.sweep.ParameterSweep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterSweep</span></code></a>) – parametric sweep to run</p></li>
+<li><p><strong>fixed_parameters</strong> – kwarg parameters that are fixed (fish_x / fish_y for example if not sweeping)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.sweep.IterativeSolver.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over parameter sweep and solve model with the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.sweep.IterativeSolver.run_step">
+<code class="sig-name descname">run_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">do_mesh</span></em>, <em class="sig-param"><span class="n">parameter_level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver.run_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve model for a particular parameter step(set).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – Parameter set to solve the model for</p></li>
+<li><p><strong>do_mesh</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Should the model have its mesh computed</p></li>
+<li><p><strong>parameter_level</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Map of parameter and which version (1,2,3,…) it is</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.sweep.ParameterSet">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">ParameterSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rebuild_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Set of parameters to be swept together. For example an x/y coordinate pair need to be kept together.</p>
+<p>Validates parameters and will fail if invalid shapes. A given parameter may be of any type as long as internal
+methods can handle. Exceptions are</p>
+<p>Fish coordinates must be numeric arrays [x1, x2, …] for example
+EODPhase must be a number s.t. 0 &lt;= p &lt;= 1 [p1, p2, …] for example</p>
+<p>For a generic parameter or parameter shared across all fish the format is</p>
+<dl class="simple">
+<dt>[</dt><dd><p>p1, p2, p3, …</p>
+</dd>
+</dl>
+<p>]</p>
+<p>For a parameter given individually for each fish the format is</p>
+<p>[</p>
+<blockquote>
+<div><dl class="simple">
+<dt>[       #p1</dt><dd><p>p1_fish1, p1_fish2, …</p>
+</dd>
+</dl>
+<p>] ,</p>
+<dl class="simple">
+<dt>[       #p2</dt><dd><p>p2_fish1, p2_fish2, …</p>
+</dd>
+</dl>
+<p>] , …</p>
+</div></blockquote>
+<p>]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameters</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>) – dictionary of parameter name and list of its parameters</p></li>
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the parameter set</p></li>
+<li><p><strong>rebuild_mesh</strong> – Does the geometry change when parameters do? Yes for geometry parameters no if conductivity</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.sweep.ParameterSet.add_parameter_set">
+<code class="sig-name descname">add_parameter_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_parameter_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.add_parameter_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Join two existing parameter sets. Only the parent’s name is kept.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>new_parameter_set</strong> (<a class="reference internal" href="#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterSet</span></code></a>) – The parameter set to join</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.sweep.ParameterSet.parameters">
+<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#fish2eod.sweep.ParameterSet.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the names of the parameters inside the ParameterSet.</p>
+<p>return: Tuple of the names (order is irrelevant)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.sweep.ParameterSet.to_sweep">
+<code class="sig-name descname">to_sweep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.to_sweep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert parameter set to a sweep if only parameter set.</p>
+<p>Convenience method to convert this parameter set into a sweep to avoid an extra boilerplate line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fish2eod.sweep.ParameterSweep" title="fish2eod.sweep.ParameterSweep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterSweep</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The parameter sweep</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.sweep.ParameterSet.validate">
+<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate shape of parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameters</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – Dictionary (name: value) of parameters to sweep</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>Assertion error if parameters are invalid shape</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.sweep.ParameterSweep">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">ParameterSweep</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">parameter_sets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSweep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generate all combinations of parameter sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter_set</strong> – An arbitrary (&gt;0) number of parameter sets</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.sweep.ParameterSweep.remesh_index">
+<em class="property">property </em><code class="sig-name descname">remesh_index</code><a class="headerlink" href="#fish2eod.sweep.ParameterSweep.remesh_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the “canary” index for remeshing.</p>
+<p>Considering the ordered ParameterSets’ remesh flags i.e. [True, True, True, False]. When the sets are run
+through sequentially the right-most remesh_flag containing parameter set will change indicating that the mesh
+needs to be recomputed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The index of the canary or -1 if there is no remesh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.sweep.ParameterSweep.should_remesh">
+<code class="sig-name descname">should_remesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canary_value</span></em>, <em class="sig-param"><span class="n">new_value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSweep.should_remesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if the next simulation should be remeshed</p>
+<p>Check the canary value against the new value. If it’s changed then remesh the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>canary_value</strong> – The value of the remesh index the last time the simulation was remeshed</p></li>
+<li><p><strong>new_value</strong> – The value of the remesh index for the next simulation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>If the simulation should be remeshed</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.sweep.sort_parameter_sets">
+<code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">sort_parameter_sets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_sets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.sort_parameter_sets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the parameter sets in their efficient order.</p>
+<p>Ideally all of the non-remesh parameters would be run sequentially only re-meshing when needed the order should
+be</p>
+<p>Order is remeshable, non-remeshable</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<a class="reference internal" href="#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterSet</span></code></a>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Parameter sets in their efficient order</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fish2eod.analysis.html" class="btn btn-neutral float-right" title="fish2eod.analysis package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../examples/basic/parameter_sweep.html" class="btn btn-neutral float-left" title="Running Parameter Sweeps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

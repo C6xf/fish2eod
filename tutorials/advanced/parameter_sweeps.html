@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parameter Sweeps &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiple Fish" href="multiple_fish.html" />
+    <link rel="prev" title="Advanced Tutorials" href="advanced_tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic_tutorials.html">Basic Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting/plotting_tutorials.html">Plotting Tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="advanced_tutorials.html">Advanced Tutorials</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Parameter Sweeps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameter-sets">Parameter Sets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Parameter Sweeps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-parameter-sweeps">Running Parameter Sweeps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#special-parameter-sets">Special Parameter Sets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="multiple_fish.html">Multiple Fish</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/fish2eod.html">fish2eod package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+          <li><a href="advanced_tutorials.html">Advanced Tutorials</a> &raquo;</li>
+        
+      <li>Parameter Sweeps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/advanced/parameter_sweeps.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="parameter-sweeps">
+<h1>Parameter Sweeps<a class="headerlink" href="#parameter-sweeps" title="Permalink to this headline">¶</a></h1>
+<p>If you’ve used <em>Comsol</em> before you’ll be familiar with the notion of a parameter sweep: specify one model and then run
+it several times for many combinations of parameters.</p>
+<p>We start the parameter sweep by defining a <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterSet</span></code></a></p>
+<div class="section" id="parameter-sets">
+<h2>Parameter Sets<a class="headerlink" href="#parameter-sets" title="Permalink to this headline">¶</a></h2>
+<p>Parameter sets define a set of parameters which are swept together. For example if you wanted to move the fish it’s
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> cooridinates would have to sweep together. When parameters are swept together we refer this is a serial
+sweep.</p>
+<p>In this example we’ll create a <code class="docutils literal notranslate"><span class="pre">ParameterSet</span></code> named <code class="docutils literal notranslate"><span class="pre">example_set</span></code> which which will have 2 parameters
+(<code class="docutils literal notranslate"><span class="pre">parameter_1</span></code> and <code class="docutils literal notranslate"><span class="pre">parameter_2</span></code>), parameter names don’t need to follow any pattern and could have been named
+<code class="docutils literal notranslate"><span class="pre">alice</span></code> and <code class="docutils literal notranslate"><span class="pre">bob</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">rebuild_mesh</span></code> flag specifies whether or not these parameters require the mesh to be recomputed. If these
+parameters affect something structural (e.g. coordinates of an object) then the mesh must be rebuilt for the model to
+update. However if something “physics-esque” is being changed (e.g. conductivity) then the mesh does not need to be
+rebuilt. Since meshing is an expensive operation minimizing re-meshing is in your best interest.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are almost no restrictions on parameters. We can see here that p2 is heterogenous and incoherent. As long as
+your downstream code can handle the parameter value then fish2eod will accept it. The only requirement is that all
+parameters in a <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterSet</span></code></a> have the same number of steps (same length)</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example creating a ParameterSet&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">ParameterSet</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># some sequence of parameters for first paramer</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;q&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">]</span>  <span class="c1"># some sequence of parameters for second parameter</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Define a ParameterSet named example_set with two parameters named</span>
+
+<span class="sd">parameter_1 and parameter_2</span>
+
+<span class="sd">Additionally instruct fish2eod to rebuild the mesh for each new parameter</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">ParameterSet</span><span class="p">(</span><span class="s2">&quot;example_set&quot;</span><span class="p">,</span> <span class="n">parameter_1</span><span class="o">=</span><span class="n">p1</span><span class="p">,</span> <span class="n">parameter_2</span><span class="o">=</span><span class="n">p2</span><span class="p">,</span> <span class="n">rebuild_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/advanced/code/parameter_set.py">Source code</a>)</p>
+<p>This example creates 4 steps of parameters</p>
+<ul class="simple">
+<li><p>(0, 100)</p></li>
+<li><p>(1, 200)</p></li>
+<li><p>(2, “q”)</p></li>
+<li><p>(3, -3.14)</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Parameter Sweeps<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.ParameterSweep" title="fish2eod.sweep.ParameterSweep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterSweep</span></code></a> takes one or more <code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterSets</span></code> and arranges them optimally. When specifying multiple sets they
+are swept combinatorially (i.e. the cartesian product of the sets, or every combination of the 2 or more). The
+<a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.ParameterSweep" title="fish2eod.sweep.ParameterSweep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterSweep</span></code></a> additionally sorts the parameters to minimize remeshing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example creating a ParameterSweep&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">ParameterSet</span><span class="p">,</span> <span class="n">ParameterSweep</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># some sequence of parameters for first paramer</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;q&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">]</span>  <span class="c1"># some sequence of parameters for second parameter</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Define a ParameterSet named example_set with two parameters named</span>
+
+<span class="sd">parameter_1 and parameter_2</span>
+
+<span class="sd">Additionally instruct fish2eod to not rebuild the mesh for each new parameter</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">set_1</span> <span class="o">=</span> <span class="n">ParameterSet</span><span class="p">(</span><span class="s2">&quot;example_set&quot;</span><span class="p">,</span> <span class="n">parameter_1</span><span class="o">=</span><span class="n">p1</span><span class="p">,</span> <span class="n">parameter_2</span><span class="o">=</span><span class="n">p2</span><span class="p">,</span> <span class="n">rebuild_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Define a ParameterSet named example_set_2 with one parameters named parameter_3</span>
+
+<span class="sd">Additionally instruct fish2eod to rebuild the mesh for each new parameter</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">set_2</span> <span class="o">=</span> <span class="n">ParameterSet</span><span class="p">(</span><span class="s2">&quot;example_set_2&quot;</span><span class="p">,</span> <span class="n">parameter_3</span><span class="o">=</span><span class="n">p3</span><span class="p">,</span> <span class="n">rebuild_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Crate the parameter sweep</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">ParameterSweep</span><span class="p">(</span><span class="n">set_1</span><span class="p">,</span> <span class="n">set_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/advanced/code/parameter_sweep.py">Source code</a>)</p>
+<p>This example creates 8 steps of parameters</p>
+<ul class="simple">
+<li><p>(0, 100, “a”)</p></li>
+<li><p>(1, 200, “a”)</p></li>
+<li><p>(2, “q”, “a”)</p></li>
+<li><p>(3, -3.14, “a”)</p></li>
+<li><p>(0, 100, “b”)</p></li>
+<li><p>(1, 200, “b”)</p></li>
+<li><p>(2, “q”, “b”)</p></li>
+<li><p>(3, -3.14, “b”)</p></li>
+</ul>
+<p>You’ll notice that set_1 is iterated before set_2 meaning that only 2 remeshes need to occur instead of 8</p>
+</div>
+<div class="section" id="running-parameter-sweeps">
+<h2>Running Parameter Sweeps<a class="headerlink" href="#running-parameter-sweeps" title="Permalink to this headline">¶</a></h2>
+<p>Creating a <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.ParameterSweep" title="fish2eod.sweep.ParameterSweep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterSweep</span></code></a> is the precursor to running the sweep.</p>
+<p>Sweeps are run using an <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.IterativeSolver" title="fish2eod.sweep.IterativeSolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IterativeSolver</span></code></a>. In this example we will move an object around beside the fish</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ParameterSet</span><span class="p">,</span>
+    <span class="n">ParameterSweep</span><span class="p">,</span>
+    <span class="n">BaseFishModel</span><span class="p">,</span>
+    <span class="n">IterativeSolver</span><span class="p">,</span>
+    <span class="n">Circle</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">PreyClass</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class to show parameter sweeps of a prey&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">prey</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">([</span><span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;prey_domain&quot;</span><span class="p">,</span> <span class="n">prey</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Define ParameterSets for the prey_x and prey_y</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">prey_x</span> <span class="o">=</span> <span class="n">ParameterSet</span><span class="p">(</span><span class="s2">&quot;px&quot;</span><span class="p">,</span> <span class="n">prey_x</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">rebuild_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">prey_y</span> <span class="o">=</span> <span class="n">ParameterSet</span><span class="p">(</span><span class="s2">&quot;py&quot;</span><span class="p">,</span> <span class="n">prey_y</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">rebuild_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">ParameterSweep</span><span class="p">(</span><span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="p">)</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;prey_example&quot;</span>
+<span class="n">save_path</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>  <span class="c1"># give a real path when doing this</span>
+
+<span class="n">solver</span> <span class="o">=</span> <span class="n">IterativeSolver</span><span class="p">(</span>
+    <span class="n">model_name</span><span class="p">,</span> <span class="n">save_path</span><span class="p">,</span> <span class="n">PreyClass</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="c1"># solver.run()</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/advanced/code/iterative_solver.py">Source code</a>)</p>
+<p>Importantly with an <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.IterativeSolver" title="fish2eod.sweep.IterativeSolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IterativeSolver</span></code></a> some parameters may need to be specified but not part of the sweep
+(fish coordinates in this example). Any fixed parameters may be specified in the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.IterativeSolver" title="fish2eod.sweep.IterativeSolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IterativeSolver</span></code></a> by adding them
+as parameters as you would for a <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model" title="fish2eod.models.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Model</span></code></a> constructor</p>
+</div>
+<div class="section" id="special-parameter-sets">
+<h2>Special Parameter Sets<a class="headerlink" href="#special-parameter-sets" title="Permalink to this headline">¶</a></h2>
+<p>To make life easy for basic parameter sets we provied classes for specifing sweeps over eod phase (<a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.EODPhase" title="fish2eod.sweep.EODPhase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EODPhase</span></code></a>) and
+fish coordinates (<a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.FishPosition" title="fish2eod.sweep.FishPosition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FishPosition</span></code></a>). Please read their documentations for use case.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="multiple_fish.html" class="btn btn-neutral float-right" title="Multiple Fish" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="advanced_tutorials.html" class="btn btn-neutral float-left" title="Advanced Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

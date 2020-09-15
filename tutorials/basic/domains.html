@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Domains &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Paramaterizing Models" href="parametric.html" />
+    <link rel="prev" title="Geometry" href="geometry.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="basic_tutorials.html">Basic Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="theory.html">Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Domains</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simple-domain-assignment">Simple Domain Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#overlapping-domains">Overlapping Domains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="parametric.html">Paramaterizing Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solving.html">Solving</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting/plotting_tutorials.html">Plotting Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/advanced_tutorials.html">Advanced Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/fish2eod.html">fish2eod package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+          <li><a href="basic_tutorials.html">Basic Tutorials</a> &raquo;</li>
+        
+      <li>Domains</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/basic/domains.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="domains">
+<h1>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial assumes that you’ve already read the <a class="reference internal" href="geometry.html"><span class="doc">geometry tutorial</span></a>.</p>
+<div class="section" id="simple-domain-assignment">
+<h2>Simple Domain Assignment<a class="headerlink" href="#simple-domain-assignment" title="Permalink to this headline">¶</a></h2>
+<p>As before we will create a model BaseFishModel and highlight the domains</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example model where we show domains.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BaseFishModel</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Create and compile the model.</span>
+
+<span class="sd">Additionally plot the domains at different scales do see the detail</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">BaseFishModel</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># ignore this for now</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot_domains</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot_domains</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">30.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">29.6</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot_domains</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">22</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/fish_domains.py">Source code</a>)</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/fish_domains_00.png" src="../../_images/fish_domains_00.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/basic/code/fish_domains_00.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/fish_domains_00.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/fish_domains_00.pdf">pdf</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/fish_domains_01.png" src="../../_images/fish_domains_01.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/basic/code/fish_domains_01.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/fish_domains_01.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/fish_domains_01.pdf">pdf</a>)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/fish_domains_02.png" src="../../_images/fish_domains_02.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/basic/code/fish_domains_02.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/fish_domains_02.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/fish_domains_02.pdf">pdf</a>)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Here we can see 5 domains</p>
+<ol class="arabic simple">
+<li><p>Background water/tank (purple)</p></li>
+<li><p>Electrode in the top left of figure 1 (blue)</p></li>
+<li><p>Fish Body (green)</p></li>
+<li><p>Fish skin in figure 2 (greenish-bluish)</p></li>
+<li><p>Electric organ in figure 3 (yellow)</p></li>
+</ol>
+<p>The <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model.plot_domains" title="fish2eod.models.Model.plot_domains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model.plot_subdomains</span></code></a> code is what generates the figures.</p>
+</div>
+<div class="section" id="overlapping-domains">
+<h2>Overlapping Domains<a class="headerlink" href="#overlapping-domains" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you can get away without overlapping geometries and domains - do that. When domains overlap you must be careful
+about the order geometries are added. As the domains will be assigned in that order.</p>
+</div>
+<p>For this example we will have a circle overlap a square with a lower conductance</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example model where we show overlapping domains.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BaseFishModel</span><span class="p">,</span> <span class="n">Circle</span><span class="p">,</span> <span class="n">Rectangle</span>
+
+
+<span class="k">class</span> <span class="nc">StackingClass</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Example class highlighting domain order.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+        <span class="c1"># the circle is added before the square meaning the square will obscure the circle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">square</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Returning to default behaviour.</span>
+
+<span class="sd">Since the square was added second it overwrites any domain that it touches. Such as the quarter circle it overlaps.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">StackingClass</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot_domains</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/overlap_domain.py">Source code</a>, <a class="reference external" href="../../tutorials/basic/code/overlap_domain.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/overlap_domain.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/overlap_domain.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/overlap_domain.png" src="../../_images/overlap_domain.png" />
+</div>
+<p>Since the square was added after the circle the square overlaps the circle. However had this been the other way around
+the circle will have covered the square.</p>
+</div>
+<div class="section" id="boundary-conditions">
+<span id="bc-intro"></span><h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Boundaries are the edges of a domain, for example a square would have 4 boundaries (edges). On boundaries the voltage or
+current can be perscribed to create what’s known as a source.</p>
+<p>Boundary conditions apply sources to the model, for example the fish’s electric organ is one such source. If you added
+a stimulation electrode that would be another boundary condition.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note to the user: unless you are adding stimulation electrodes you <em>do not</em> need to understand creating boundary
+conditions</p>
+</div>
+<p>Most boundaries can be automatically labeled. When two domains intersect they form an edge (boundary) since
+most boundaries will be with the water then that edge can be unambiguously named with the same id of the custom domain.</p>
+<p>If there are no overlapping domains (except the obvious object/water overlap) then all boundaries can be automatically
+labeled. If you need to do custom boundary labeling it’s likely you’re either doing something very custom or making an
+error - in either case please contact us or raise an issue on Github for support.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we will solve the model to highlight the changes. Details of this code will be explained in
+<a class="reference internal" href="solving.html"><span class="doc">later sections</span></a>. Additionally the plotting tutorials can be found <a class="reference internal" href="../plotting/plotting_basics.html"><span class="doc">here</span></a></p>
+</div>
+<div class="section" id="boundary-condition-objects">
+<h3>Boundary Condition Objects<a class="headerlink" href="#boundary-condition-objects" title="Permalink to this headline">¶</a></h3>
+<p>To keep things simple defining boundary conditions takes a <a class="reference internal" href="../../api/fish2eod.helpers.html#fish2eod.helpers.type_helpers.BoundaryCondition" title="fish2eod.helpers.type_helpers.BoundaryCondition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundaryCondition</span></code></a> object. Where we specify a label and a
+value. The label specifies which boundary is having the condition applied and the value is the value of the source. For
+example 15 could be 15V for a voltage source.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BoundaryCondition</span>
+<span class="n">bc</span> <span class="o">=</span> <span class="n">BoundaryCondition</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example we’ll pretend we have a 15 volt voltage source applied to label 7 (whatever that may be refering to). In
+practice you’d want to get the label from fish2eod. We can then use this <code class="docutils literal notranslate"><span class="pre">bc</span></code> object to set the boundary condition
+appropriately.</p>
+<p>Generally speaking boundaries will have the same label as the domain owning it. If the boundary is between any domain
+and the background. For example an electrode circle may be domain 8, in which case if its only touching the water it is
+also boundary 8.</p>
+</div>
+<div class="section" id="dirichelet-condition-constant-voltage">
+<h3>Dirichelet Condition (Constant Voltage)<a class="headerlink" href="#dirichelet-condition-constant-voltage" title="Permalink to this headline">¶</a></h3>
+<p>Dirichelet boundary conditions apply a constant voltage to an edge. For example the ground is a dirichelet boundary as
+it has a defined voltage of 0. For example a small point source would represent an electrode with a fixed voltage
+(hooked up to a battery for example).</p>
+<p>In order to define a dirichelet condition we override the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel.add_voltage_sources" title="fish2eod.models.BaseFishModel.add_voltage_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_voltage_sources</span></code></a> method, which returns a tuple of
+boundary conditions.</p>
+<p>Here we will set a 100mV source on a circular stimulus</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example with Dirichelet conditions (voltage sources).&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BaseFishModel</span><span class="p">,</span> <span class="n">Circle</span><span class="p">,</span> <span class="n">BoundaryCondition</span><span class="p">,</span> <span class="n">plotting</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleVoltageSource</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Example model with an additional voltage source.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a circular object to carry the voltage.&quot;&quot;&quot;</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_voltage_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a voltage source to the circle&quot;&quot;&quot;</span>
+        <span class="c1"># We can pull the domain id of the &quot;fg&quot; domain from the model geometry</span>
+        <span class="c1"># value=0.1 means that the dirichelet condition is 0.1V. i.e. a 100mV source</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">BoundaryCondition</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="p">[</span><span class="s2">&quot;fg&quot;</span><span class="p">]),)</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Compile and solve the model</span>
+
+<span class="sd">Plot the result with a color bar</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ExampleVoltageSource</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/base_fish_model_dirichelet.py">Source code</a>, <a class="reference external" href="../../tutorials/basic/code/base_fish_model_dirichelet.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/base_fish_model_dirichelet.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/base_fish_model_dirichelet.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/base_fish_model_dirichelet.png" src="../../_images/base_fish_model_dirichelet.png" />
+</div>
+</div>
+<div class="section" id="neumann-condition-constant-current">
+<h3>Neumann Condition (Constant Current)<a class="headerlink" href="#neumann-condition-constant-current" title="Permalink to this headline">¶</a></h3>
+<p>Neumann boundary conditions apply a constant current to an edge. For example the organ is a Neumann boundary with a
+complicated condition. Other examples would include an isolated current stimulator often used in experimental setups.</p>
+<p>In order to define a Neumann condition we override the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel.add_current_sources" title="fish2eod.models.BaseFishModel.add_current_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_current_sources</span></code></a> method, which returns a tuple of
+boundary conditions.</p>
+<p>Here we will set the same circular object to -3uA/cm^2</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example with Neumann conditions (current sources).&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BaseFishModel</span><span class="p">,</span> <span class="n">Circle</span><span class="p">,</span> <span class="n">BoundaryCondition</span><span class="p">,</span> <span class="n">plotting</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleCurrentSource</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Example model with an additional voltage source.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a circular object to carry the current.&quot;&quot;&quot;</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_current_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a voltage source to the circle&quot;&quot;&quot;</span>
+        <span class="c1"># We can pull the domain id of the &quot;fg&quot; domain from the model geometry</span>
+        <span class="c1"># value=-3e-6 means that the Neurmann condition is as -3uA/cm^2 source</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">BoundaryCondition</span><span class="p">(</span><span class="n">value</span><span class="o">=-</span><span class="mf">3e-6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="p">[</span><span class="s2">&quot;fg&quot;</span><span class="p">]),)</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Compile and solve the model</span>
+
+<span class="sd">Plot the result with a color bar</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ExampleCurrentSource</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/base_fish_model_neumann.py">Source code</a>, <a class="reference external" href="../../tutorials/basic/code/base_fish_model_neumann.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/base_fish_model_neumann.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/base_fish_model_neumann.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/base_fish_model_neumann.png" src="../../_images/base_fish_model_neumann.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="parametric.html" class="btn btn-neutral float-right" title="Paramaterizing Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="geometry.html" class="btn btn-neutral float-left" title="Geometry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fish2eod.analysis package &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fish2eod.geometry package" href="fish2eod.geometry.html" />
+    <link rel="prev" title="fish2eod package" href="fish2eod.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fish2eod.html">fish2eod package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fish2eod.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fish2eod.analysis package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.analysis.plotting">fish2eod.analysis.plotting module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.analysis.transdermal">fish2eod.analysis.transdermal module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.geometry.html">fish2eod.geometry package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.helpers.html">fish2eod.helpers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.mesh.html">fish2eod.mesh package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.xdmf.html">fish2eod.xdmf package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.models">fish2eod.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.properties">fish2eod.properties module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.sweep">fish2eod.sweep module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fish2eod.html">fish2eod package</a> &raquo;</li>
+        
+      <li>fish2eod.analysis package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/fish2eod.analysis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fish2eod.analysis">
+<span id="fish2eod-analysis-package"></span><h1>fish2eod.analysis package<a class="headerlink" href="#module-fish2eod.analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-fish2eod.analysis.plotting">
+<span id="fish2eod-analysis-plotting-module"></span><h2>fish2eod.analysis.plotting module<a class="headerlink" href="#module-fish2eod.analysis.plotting" title="Permalink to this headline">¶</a></h2>
+<p>Plotting module for wrapping matplotlib with fish2eod data.</p>
+<p>2D plots are “domain-like”
+1D plots are “boundary-like”</p>
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.extract">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">extract</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.extract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract data from a solution given variable and parameter values.</p>
+<p>Variable and parameters are set in the solution and the data is extracted from the h5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> – fish2eod solution so load</p></li>
+<li><p><strong>variable</strong> – Name of the variable to load</p></li>
+<li><p><strong>kwargs</strong> – Optional parameters to extract from solution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Extracted data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.extract_edges">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">extract_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.extract_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract edges (boundaries) from the dataset.</p>
+<p>Convenience to select plottable boundaries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> (<a class="reference internal" href="fish2eod.xdmf.html#fish2eod.xdmf.load.H5Solution" title="fish2eod.xdmf.load.H5Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">H5Solution</span></code></a>) – fish2eod solution to use</p></li>
+<li><p><strong>variable</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the variable to use</p></li>
+<li><p><strong>mask</strong> – Valid mask</p></li>
+<li><p><strong>kwargs</strong> – Optional parameters from solution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Triangles and data for the selected data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.field_norm">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">field_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">e_x</span></em>, <em class="sig-param"><span class="n">e_y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.field_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute norm of a vector field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>e_x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – x component of the field</p></li>
+<li><p><strong>e_y</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – y compoennt of the field</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Norm of the field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.generate_mask">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">generate_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">include_domains</span><span class="o">=</span><span class="default_value">'water', 'body'</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.generate_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a Mask For the Domain name.</p>
+<p>Masked nodes are removed from plot/analysis. When requesting include the masked nodes are flipped</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> (<a class="reference internal" href="fish2eod.xdmf.html#fish2eod.xdmf.load.H5Solution" title="fish2eod.xdmf.load.H5Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">H5Solution</span></code></a>) – Loaded solution object</p></li>
+<li><p><strong>include_domains</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]) – Tuple of domains to mask</p></li>
+<li><p><strong>include</strong> – Whether or not the domains included or excluded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, …]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Valid matplotlib mask</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.generate_triangles">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">generate_triangles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">topology</span></em>, <em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.generate_triangles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert topology and geometry to triangles - optionally set mask as well.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topology</strong> – Topology of the triangles (connectivity)</p></li>
+<li><p><strong>geometry</strong> – Geometry of the triangles (location of the nodes)</p></li>
+<li><p><strong>mask</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]]) – Valid matplotlib mask</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Triangulation</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Triangulation object for plotting</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.generate_triangles_for_1d">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">generate_triangles_for_1d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.generate_triangles_for_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the triangle and data structure for 1d data (boundary-like).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> (<a class="reference internal" href="fish2eod.xdmf.html#fish2eod.xdmf.load.H5Solution" title="fish2eod.xdmf.load.H5Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">H5Solution</span></code></a>) – Loaded solution object</p></li>
+<li><p><strong>variable</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Variable to extract</p></li>
+<li><p><strong>mask</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]]) – Valid mask</p></li>
+<li><p><strong>kwargs</strong> – Parameter selection for the solution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Triangulation</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Triangles and data for plotting</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.generate_triangles_for_2d">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">generate_triangles_for_2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.generate_triangles_for_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the triangle and data structure for 2d data (domain-like).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> (<a class="reference internal" href="fish2eod.xdmf.html#fish2eod.xdmf.load.H5Solution" title="fish2eod.xdmf.load.H5Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">H5Solution</span></code></a>) – Loaded solution object</p></li>
+<li><p><strong>variable</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Variable to extract</p></li>
+<li><p><strong>mask</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]]) – Valid mask</p></li>
+<li><p><strong>kwargs</strong> – Parameter selection for the solution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Triangulation</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Triangles and data for plotting</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.get_valid_nodes">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">get_valid_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">triangles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.get_valid_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get nodes in the mesh wish are valid (not masked).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>triangles</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Triangulation</span></code>) – The triangulated mesh</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of node ids outside of mask</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.gradient">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="n">gradient_norm</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">plot</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">'equal'</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute and plot the gradient of a scalar field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> – The solution structure</p></li>
+<li><p><strong>variable</strong> – Name of the variable</p></li>
+<li><p><strong>gradient_norm</strong> – Should the norm be computed</p></li>
+<li><p><strong>plot</strong> – Should the data be plotted</p></li>
+<li><p><strong>color_style</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – How to symmetrize the colormap (False/None, ‘full’, ‘equal’)</p></li>
+<li><p><strong>mask</strong> – Valid matplotlib mask see generate_mask</p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Computed field as a scalar or vector field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.mesh_plot_1d">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">mesh_plot_1d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.mesh_plot_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a 1D mesh plot.</p>
+<p>1D plots represent boundary functions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> – fish2eod solution to plot</p></li>
+<li><p><strong>variable</strong> – Name of the variable to plot</p></li>
+<li><p><strong>cmap</strong> – Name of the colormap</p></li>
+<li><p><strong>color_style</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – Which type of symmetry see <code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_norm</span></code></p></li>
+<li><p><strong>color</strong> – Color to use (if not data i.e. outline)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.mesh_plot_2d">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">mesh_plot_2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">'equal'</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.mesh_plot_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot surface functions i.e. functions defined on the surface of the mesh or on the nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> – The solution structure</p></li>
+<li><p><strong>variable</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the variable</p></li>
+<li><p><strong>cmap</strong> – Valid matplotlib colormap (string or object representation)</p></li>
+<li><p><strong>color_style</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – How to symmetrize the colormap (False/None, ‘full’, ‘equal’)</p></li>
+<li><p><strong>colorbar</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Should the colorbar be plotted</p></li>
+<li><p><strong>mask</strong> – Valid matplotlib mask see generate_mask</p></li>
+<li><p><strong>alpha</strong> – Number between 0-1 representing transparency</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.normalize_color">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">normalize_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">triangles</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">color_style</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.normalize_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute a colormap for data based on color style.</p>
+<p>color_style options:</p>
+<p>Falsy (None, false, …): Standard color map from min(data) – max(data)
+“full”: Centers at 0 with the bounds being min(data), max(data). This does not have even positive and negative
+scales. I.e. for a red-blue map with range -1 to +10 then 0-10 will be white to red and -1 to 0 will be blue to
+white
+“equal” Symmetric color ranges with 0 at center. I.e. scale is from pm max(abs(data))
+array-like [min, max] sets the colorbar to a preset range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triangles</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Triangulation</span></code>]) – Triangulated mesh</p></li>
+<li><p><strong>data</strong> – Data to normalized</p></li>
+<li><p><strong>color_style</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – What type of colormap</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Normalize</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Normalized map</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.plot_edges">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">plot_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">norm</span></em>, <em class="sig-param"><span class="n">colors</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.plot_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot solution edges as lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> – Coordinates of the edges</p></li>
+<li><p><strong>norm</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Normalize</span></code>) – Color normalization</p></li>
+<li><p><strong>colors</strong> – Which colors to use</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.plot_outline">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">plot_outline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'k'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.plot_outline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot solution outline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solution</strong> – fish2eod solution to plot</p></li>
+<li><p><strong>mask</strong> – valid mask</p></li>
+<li><p><strong>color</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Color for the edges</p></li>
+<li><p><strong>kwargs</strong> – Optional parameters from the solution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.analysis.transdermal">
+<span id="fish2eod-analysis-transdermal-module"></span><h2>fish2eod.analysis.transdermal module<a class="headerlink" href="#module-fish2eod.analysis.transdermal" title="Permalink to this headline">¶</a></h2>
+<p>Compute transdermal potential (tdp).</p>
+<p>Compute the tdp for the left and right sides. Images are computed when the input has already been subtracted.</p>
+<dl class="py function">
+<dt id="fish2eod.analysis.transdermal.compute_transdermal_potential">
+<code class="sig-prename descclassname">fish2eod.analysis.transdermal.</code><code class="sig-name descname">compute_transdermal_potential</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.transdermal.compute_transdermal_potential" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the electric image.</p>
+<p>TODO refactor this</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> (<a class="reference internal" href="fish2eod.html#fish2eod.models.BaseFishModel" title="fish2eod.models.BaseFishModel"><em>BaseFishModel</em></a>) – Saved model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.SkinStructure" title="fish2eod.helpers.type_helpers.SkinStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">SkinStructure</span></code></a>, <a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.TDP" title="fish2eod.helpers.type_helpers.TDP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TDP</span></code></a>]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Iterator over skin and electric image as structs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.transdermal.get_side_information">
+<code class="sig-prename descclassname">fish2eod.analysis.transdermal.</code><code class="sig-name descname">get_side_information</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.transdermal.get_side_information" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.ComputatableSideInformation" title="fish2eod.helpers.type_helpers.ComputatableSideInformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComputatableSideInformation</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.transdermal.get_skin_arc_length">
+<code class="sig-prename descclassname">fish2eod.analysis.transdermal.</code><code class="sig-name descname">get_skin_arc_length</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coordinates</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.transdermal.get_skin_arc_length" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.transdermal.get_skin_coordinates">
+<code class="sig-prename descclassname">fish2eod.analysis.transdermal.</code><code class="sig-name descname">get_skin_coordinates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish</span></em>, <em class="sig-param"><span class="n">skin_type</span></em>, <em class="sig-param"><span class="n">side</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.transdermal.get_skin_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.transdermal.skin_potential">
+<code class="sig-prename descclassname">fish2eod.analysis.transdermal.</code><code class="sig-name descname">skin_potential</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">side_information</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.transdermal.skin_potential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fish2eod.geometry.html" class="btn btn-neutral float-right" title="fish2eod.geometry package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fish2eod.html" class="btn btn-neutral float-left" title="fish2eod package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

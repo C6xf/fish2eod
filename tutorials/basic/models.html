@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Models &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Geometry" href="geometry.html" />
+    <link rel="prev" title="Theory" href="theory.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="basic_tutorials.html">Basic Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="theory.html">Theory</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#an-aside-on-classes">An aside on classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subclassing-models">Subclassing Models</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parametric.html">Paramaterizing Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solving.html">Solving</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting/plotting_tutorials.html">Plotting Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/advanced_tutorials.html">Advanced Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/fish2eod.html">fish2eod package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+          <li><a href="basic_tutorials.html">Basic Tutorials</a> &raquo;</li>
+        
+      <li>Models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/basic/models.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="models">
+<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<p>In fish2eod a model is the physical description of the scientific setup. It defines what the objects are and where they
+are located. This could be a tank of water or a fish or an electrode. Additionally it defines their physical properties.</p>
+<p>For users familiar with <em>Comsol</em>, a model is analagous to a <em>mph</em> file where the geometry and physics are defined.</p>
+<div class="section" id="an-aside-on-classes">
+<h2>An aside on classes<a class="headerlink" href="#an-aside-on-classes" title="Permalink to this headline">¶</a></h2>
+<p>In programming a <em>class</em> is a collection of methods (functions) and data. In fish2eod a model is created as a class. The
+reason for this is something called inheritance. A sub-class i.e. a child class <em>inherits</em> all its data and behaviour
+for its parent class. In doing so if we only want to tweak a small part of its behaviour we only need to update the new
+behaviour and everything else will behave like the parent.</p>
+<p>Consider the following example where we define a class for a <code class="docutils literal notranslate"><span class="pre">Cat</span></code>. It knows how to walk, drink and meow.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+ <span class="k">def</span> <span class="nf">walk</span><span class="p">():</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m walking&quot;</span><span class="p">)</span>
+ <span class="k">def</span> <span class="nf">drink</span><span class="p">():</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m drinking&quot;</span><span class="p">)</span>
+ <span class="k">def</span> <span class="nf">meow</span><span class="p">():</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m meowing&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now if we were to use the cat and ask it to walk, drink, or run we’d get a readout of what it’s doing.</p>
+<p>Now suppose that we also wanted to define a dainty cat (as they often are). It doesn’t meow but complains about the
+service that it’s getting. However it still walks and drinks the same. We could define our <code class="docutils literal notranslate"><span class="pre">DaintyCat</span></code> in much the same
+way but we’d have to re-implement everything from walking and drinking. Instead of this we can subclass our <code class="docutils literal notranslate"><span class="pre">Cat</span></code> and
+only update the meowing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DaintyCat</span><span class="p">(</span><span class="n">Cat</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">meow</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This water isn&#39;t cold enough for me&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we have a <code class="docutils literal notranslate"><span class="pre">DaintyCat</span></code> that behaves in exactly the same way as a normal <code class="docutils literal notranslate"><span class="pre">Cat</span></code> - it just complains when it meows. It
+still knows how to walk and drink.</p>
+<p>What does this have to do finite element modeling, and has Aaron lost his mind? Well when you define a model you want
+the freedom to inject whatever code you want wherever. On the other hand you don’t want to implement your own backend
+for computing domains, or boundaries, or meshes, or the electric field physics. Subclassing a model allows you to
+inherit all of that behaviour - while being able to overwrite some behaviour like <a class="reference internal" href="geometry.html"><span class="doc">defining geometry</span></a>
+or <a class="reference internal" href="domains.html#bc-intro"><span class="std std-ref">boundary conditions</span></a>.</p>
+</div>
+<div class="section" id="subclassing-models">
+<h2>Subclassing Models<a class="headerlink" href="#subclassing-models" title="Permalink to this headline">¶</a></h2>
+<p>fish2eod comes with several classes of models. However for most users only one will be of interest.</p>
+<div class="section" id="basefishmodel">
+<h3>BaseFishModel<a class="headerlink" href="#basefishmodel" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel" title="fish2eod.models.BaseFishModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseFishModel</span></code></a> is the base model for any fish based model. It provides a fish, a ground electrode and a tank of
+water - all with editable properties. Additionally it pre-populates the physics with the details of all of the objects
+including the EOD.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BaseFishModel</span>
+
+<span class="k">class</span> <span class="nc">OurSubClass</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>This above block of code creates a model that does absolutely nothing except defines a fish, a ground and a tank as in
+<a class="reference external" href="https://www.nature.com/articles/srep15780">Shifman, Longtin, and Lewis (2015)</a></p>
+<p>Additionally there are other three other methods that may be overwritten to define the geometry, voltage and current
+sources. These are the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel.add_geometry" title="fish2eod.models.BaseFishModel.add_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_geometry</span></code></a>,
+<a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel.add_voltage_sources" title="fish2eod.models.BaseFishModel.add_voltage_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_voltage_sources</span></code></a>, and the
+<a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel.add_current_sources" title="fish2eod.models.BaseFishModel.add_current_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_current_sources</span></code></a> methods For a full explanation on how this works see
+<a class="reference internal" href="geometry.html"><span class="doc">next section</span></a> and <a class="reference internal" href="domains.html#bc-intro"><span class="std std-ref">here</span></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BaseFishModel</span>
+
+<span class="k">class</span> <span class="nc">OurSubClass</span><span class="p">(</span><span class="n">QESModel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">GEOMETRY</span><span class="o">-</span><span class="n">IMPLEMENTATION</span><span class="o">-</span><span class="n">HERE</span>
+
+    <span class="k">def</span> <span class="nf">add_current_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">CURRENT</span><span class="o">-</span><span class="n">SOURCE</span><span class="o">-</span><span class="n">IMPLEMENTATION</span><span class="o">-</span><span class="n">HERE</span>
+
+    <span class="k">def</span> <span class="nf">add_voltage_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">VOLTAGE</span><span class="o">-</span><span class="n">SOURCE</span><span class="o">-</span><span class="n">IMPLEMENTATION</span><span class="o">-</span><span class="n">HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="geometry.html" class="btn btn-neutral float-right" title="Geometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="theory.html" class="btn btn-neutral float-left" title="Theory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
