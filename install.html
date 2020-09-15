@@ -88,12 +88,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#maxos">MaxOS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a><ul>
@@ -180,8 +178,14 @@
 previous versions of Ubuntu have an out of date version on apt. If you can install gmsh separately any version should
 work</p>
 <p>You’re going to want to download the <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml"><code class="xref download docutils literal notranslate"><span class="pre">conda</span> <span class="pre">specification</span></code></a>
-and the install scripts <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh"><code class="xref download docutils literal notranslate"><span class="pre">conda</span></code></a>
-and <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_linux.sh"><code class="xref download docutils literal notranslate"><span class="pre">install</span></code></a></p>
+and the install scripts for <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh"><code class="xref download docutils literal notranslate"><span class="pre">conda</span></code></a>
+and <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_linux.sh"><code class="xref download docutils literal notranslate"><span class="pre">dependancies</span></code></a></p>
+<p>If you’re using a browser you can “right-click”-“save as” to download the file or if using the command line</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml -L --output conda_environment.yml
+curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh -L --output install_conda.sh
+curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_linux.sh -L --output install_linux.sh
+</pre></div>
+</div>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
 <p>Make sure your package manager is up to date: Open your terminal and type</p>
@@ -203,57 +207,47 @@ and <a class="reference download external" download="" href="https://raw.githubu
 <div class="section" id="id1">
 <h3>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>To install fish2eod simply run (replace <code class="docutils literal notranslate"><span class="pre">3.6</span></code> with <code class="docutils literal notranslate"><span class="pre">3.7</span></code> if you’d prefer python3.7. <code class="docutils literal notranslate"><span class="pre">LOCATION-OF-SOURCE</span></code> is the
-path to the library. In my case its under <code class="docutils literal notranslate"><span class="pre">/mnt/f/Documents/tempFishFEM</span></code>.</p>
+path to the files you downloaded earlier. In my case its under <code class="docutils literal notranslate"><span class="pre">/mnt/f/Documents/example</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> LOCATION-OF-SOURCE
-sudo dos2unix install_*
 <span class="nb">export</span> <span class="nv">TRAVIS_PYTHON_VERSION</span><span class="o">=</span><span class="m">3</span>.6
 bash -i install_linux.sh
-</pre></div>
-</div>
-<img alt="_images/install_setup.png" src="_images/install_setup.png" />
-<img alt="_images/install_run1.png" src="_images/install_run1.png" />
-<img alt="_images/install_run2.png" src="_images/install_run2.png" />
-<img alt="_images/install_run3.png" src="_images/install_run3.png" />
-<p>Again once or twice you may be prompted to enter <code class="docutils literal notranslate"><span class="pre">Y</span></code> to continue</p>
-</div>
-<div class="section" id="testing">
-<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
-<p>Once installed we’ll check everything is installed correctly</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
+pip install git+https://github.com/aaronshifman/fish2eod.git
+<span class="nb">source</span> ~/.bashrc
 conda activate fish2eod
-pytest
 </pre></div>
 </div>
-<img alt="_images/test1.png" src="_images/test1.png" />
-<img alt="_images/test2.png" src="_images/test2.png" />
-<p>This has installed (or using your own if it exists) gmsh and conda (with the environment fish2eod)</p>
+<p>Now if you’d like to use this software you can use the conda environment <code class="docutils literal notranslate"><span class="pre">fish2eod</span></code></p>
+<p>Again once or twice you may be prompted to enter <code class="docutils literal notranslate"><span class="pre">Y</span></code> to continue</p>
+<p>(Note there are currently plans to add this to pypi but that’s for a later date)</p>
 </div>
 </div>
 <div class="section" id="maxos">
 <h2>MaxOS<a class="headerlink" href="#maxos" title="Permalink to this headline">¶</a></h2>
 <p>fish2eod has only been tested on OSX but  most versions should work.</p>
+<p>You’re going to want to download the <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml"><code class="xref download docutils literal notranslate"><span class="pre">conda</span> <span class="pre">specification</span></code></a>
+and the install scripts for <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh"><code class="xref download docutils literal notranslate"><span class="pre">conda</span></code></a>
+and <a class="reference download external" download="" href="https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_macos.sh"><code class="xref download docutils literal notranslate"><span class="pre">dependancies</span></code></a></p>
+<p>If you’re using a browser you can “right-click”-“save as” to download the file or if using the command line</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml -L --output conda_environment.yml
+curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh -L --output install_conda.sh
+curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_macos.sh -L --output install_macos.sh
+</pre></div>
+</div>
 <div class="section" id="id2">
 <h3>Installation<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>To install fish2eod simply run (replace <code class="docutils literal notranslate"><span class="pre">3.6</span></code> with <code class="docutils literal notranslate"><span class="pre">3.7</span></code> if you’d prefer python3.7. <code class="docutils literal notranslate"><span class="pre">LOCATION-OF-SOURCE</span></code> is the
-path to the library. In my case its under <code class="docutils literal notranslate"><span class="pre">/mnt/f/Documents/tempFishFEM</span></code>.</p>
+path to the files you downloaded earlier. In my case its under <code class="docutils literal notranslate"><span class="pre">/mnt/f/Documents/example</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> LOCATION-OF-SOURCE
-perl -pi -e <span class="s1">&#39;s/\r\n|\n|\r/\n/g&#39;</span>   install_conda.sh
-perl -pi -e <span class="s1">&#39;s/\r\n|\n|\r/\n/g&#39;</span>   install_macos.sh
 <span class="nb">export</span> <span class="nv">TRAVIS_PYTHON_VERSION</span><span class="o">=</span><span class="m">3</span>.6
 bash -i install_macos.sh
-</pre></div>
-</div>
-<p>Once or twice you may be prompted to enter <code class="docutils literal notranslate"><span class="pre">Y</span></code> to continue</p>
-</div>
-<div class="section" id="id3">
-<h3>Testing<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Once installed we’ll check everything is installed correctly</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
+pip install git+https://github.com/aaronshifman/fish2eod.git
+<span class="nb">source</span> ~/.bashrc
 conda activate fish2eod
-pytest
 </pre></div>
 </div>
-<p>This has installed (or using your own if it exists) gmsh and conda (with the environment fish2eod)</p>
+<p>Now if you’d like to use this software you can use the conda environment <code class="docutils literal notranslate"><span class="pre">fish2eod</span></code></p>
+<p>Again once or twice you may be prompted to enter <code class="docutils literal notranslate"><span class="pre">Y</span></code> to continue</p>
+<p>(Note there are currently plans to add this to pypi but that’s for a later date)</p>
 </div>
 </div>
 <div class="section" id="windows">
@@ -268,7 +262,8 @@ only been tested on Windows 10.</p>
 you initialize your distribution (see instructions
 <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/initialize-distro">here</a>).</p>
 <img alt="_images/install_wsl_setup.png" src="_images/install_wsl_setup.png" />
-<p>Once installed fish2eod can be installed by following the <a class="reference internal" href="#linux-install"><span class="std std-ref">Linux instructuions</span></a>.</p>
+<p>Once installed fish2eod can be installed by following the <a class="reference internal" href="#linux-install"><span class="std std-ref">Linux instructuions</span></a>. PLEASE NOTE: you
+cannot download the requirements from the browser <em>you must use the command line CURL instructions</em></p>
 <p>At this point fish2eod is installed, however if you want to use a proper editor (ide) to develop models on this is a
 challenge. To get this to work, you need an editor familiar with WSL and you need an editor capable of setting
 environment variables.</p>

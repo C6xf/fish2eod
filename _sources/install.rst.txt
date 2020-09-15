@@ -11,9 +11,16 @@ previous versions of Ubuntu have an out of date version on apt. If you can insta
 work
 
 You're going to want to download the :download:`conda specification <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml>`
-and the install scripts :download:`conda <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh>`
-and :download:`install <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_linux.sh>`
+and the install scripts for :download:`conda <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh>`
+and :download:`dependancies <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_linux.sh>`
 
+If you're using a browser you can "right-click"-"save as" to download the file or if using the command line
+
+.. code-block:: bash
+
+   curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml -L --output conda_environment.yml
+   curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh -L --output install_conda.sh
+   curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_linux.sh -L --output install_linux.sh
 
 Setup
 *****
@@ -47,71 +54,61 @@ Installation
 ************
 
 To install fish2eod simply run (replace ``3.6`` with ``3.7`` if you'd prefer python3.7. ``LOCATION-OF-SOURCE`` is the
-path to the library. In my case its under ``/mnt/f/Documents/tempFishFEM``.
+path to the files you downloaded earlier. In my case its under ``/mnt/f/Documents/example``.
 
 .. code-block:: bash
 
    cd LOCATION-OF-SOURCE
-   sudo dos2unix install_*
    export TRAVIS_PYTHON_VERSION=3.6
    bash -i install_linux.sh
+   pip install git+https://github.com/aaronshifman/fish2eod.git
+   source ~/.bashrc
+   conda activate fish2eod
 
-.. image:: _static/install_setup.png
-.. image:: _static/install_run1.png
-.. image:: _static/install_run2.png
-.. image:: _static/install_run3.png
+Now if you'd like to use this software you can use the conda environment ``fish2eod``
 
 Again once or twice you may be prompted to enter ``Y`` to continue
 
-Testing
-*******
+(Note there are currently plans to add this to pypi but that's for a later date)
 
-Once installed we'll check everything is installed correctly
-
-.. code-block:: bash
-
-   source ~/.bashrc
-   conda activate fish2eod
-   pytest
-
-.. image:: _static/test1.png
-.. image:: _static/test2.png
-
-This has installed (or using your own if it exists) gmsh and conda (with the environment fish2eod)
 
 MaxOS
 -----
 
 fish2eod has only been tested on OSX but  most versions should work.
 
+You're going to want to download the :download:`conda specification <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml>`
+and the install scripts for :download:`conda <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh>`
+and :download:`dependancies <https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_macos.sh>`
+
+If you're using a browser you can "right-click"-"save as" to download the file or if using the command line
+
+.. code-block:: bash
+
+   curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/conda_environment.yml -L --output conda_environment.yml
+   curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_conda.sh -L --output install_conda.sh
+   curl https://raw.githubusercontent.com/aaronshifman/fish2eod/master/install_macos.sh -L --output install_macos.sh
+
 Installation
 ************
 
 To install fish2eod simply run (replace ``3.6`` with ``3.7`` if you'd prefer python3.7. ``LOCATION-OF-SOURCE`` is the
-path to the library. In my case its under ``/mnt/f/Documents/tempFishFEM``.
+path to the files you downloaded earlier. In my case its under ``/mnt/f/Documents/example``.
 
 .. code-block:: bash
 
    cd LOCATION-OF-SOURCE
-   perl -pi -e 's/\r\n|\n|\r/\n/g'   install_conda.sh
-   perl -pi -e 's/\r\n|\n|\r/\n/g'   install_macos.sh
    export TRAVIS_PYTHON_VERSION=3.6
    bash -i install_macos.sh
-
-Once or twice you may be prompted to enter ``Y`` to continue
-
-Testing
-*******
-
-Once installed we'll check everything is installed correctly
-
-.. code-block:: bash
-
+   pip install git+https://github.com/aaronshifman/fish2eod.git
    source ~/.bashrc
    conda activate fish2eod
-   pytest
 
-This has installed (or using your own if it exists) gmsh and conda (with the environment fish2eod)
+Now if you'd like to use this software you can use the conda environment ``fish2eod``
+
+Again once or twice you may be prompted to enter ``Y`` to continue
+
+(Note there are currently plans to add this to pypi but that's for a later date)
 
 Windows
 -------
@@ -130,7 +127,8 @@ you initialize your distribution (see instructions
 
 .. image:: _static/install_wsl_setup.png
 
-Once installed fish2eod can be installed by following the :ref:`Linux instructuions <linux-install>`.
+Once installed fish2eod can be installed by following the :ref:`Linux instructuions <linux-install>`. PLEASE NOTE: you
+cannot download the requirements from the browser *you must use the command line CURL instructions*
 
 At this point fish2eod is installed, however if you want to use a proper editor (ide) to develop models on this is a
 challenge. To get this to work, you need an editor familiar with WSL and you need an editor capable of setting
