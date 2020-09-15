@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Geometry &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Domains" href="domains.html" />
+    <link rel="prev" title="Models" href="models.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="basic_tutorials.html">Basic Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="theory.html">Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Geometry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geometry-basics">Geometry Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integrating-geometries-into-models">Integrating Geometries into Models</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parametric.html">Paramaterizing Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solving.html">Solving</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting/plotting_tutorials.html">Plotting Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/advanced_tutorials.html">Advanced Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/fish2eod.html">fish2eod package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+          <li><a href="basic_tutorials.html">Basic Tutorials</a> &raquo;</li>
+        
+      <li>Geometry</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/basic/geometry.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geometry">
+<h1>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It’s very important to have read the previous section on what a model is and how they’re defined.
+Please see the <a class="reference internal" href="models.html"><span class="doc">model tutorial</span></a> for this explanation.</p>
+</div>
+<p>In fish2eod <em>geometry</em> is the physical content of a model - it’s the tank, the fish, electrodes; any physical region.
+These regions form boundaries and domains which are used to specify the physics on the model (for an intro on this see
+our <a class="reference internal" href="theory.html#fem-intro"><span class="std std-ref">finite element introduction</span></a>).</p>
+<div class="section" id="geometry-basics">
+<h2>Geometry Basics<a class="headerlink" href="#geometry-basics" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 primitive types of geometry in fish2eod: circles, rectangles and polygons which in principle can be used
+to create an arbitrarily complex environment.</p>
+<p>The natural unit for all created geometries is <em>cm</em> i.e. a radius=1 implies a 1cm radius. For full details on the
+geometry api please see the <a class="reference internal" href="../../api/fish2eod.geometry.html#module-fish2eod.geometry.primitives" title="fish2eod.geometry.primitives"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Primitives</span> <span class="pre">Module</span></code></a></p>
+<div class="section" id="circles">
+<h3>Circles<a class="headerlink" href="#circles" title="Permalink to this headline">¶</a></h3>
+<p>Circles are defined from a center point and a radius. Here we will create a circle with a 1cm radius centered at the
+point (0,5).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example with how to create a circle.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">Circle</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 1cm radius</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>  <span class="c1"># location of center (x,y) = (0cm, 5cm)</span>
+<span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># this is for display purposes and not necessary for the general use</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Circles&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/circle.py">Source code</a>, <a class="reference external" href="../../tutorials/basic/code/circle.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/circle.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/circle.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/circle.png" src="../../_images/circle.png" />
+</div>
+<p>For full circle documentation please see the <a class="reference internal" href="../../api/fish2eod.geometry.html#fish2eod.geometry.primitives.Circle" title="fish2eod.geometry.primitives.Circle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circle</span></code></a> class</p>
+</div>
+<div class="section" id="rectangles">
+<h3>Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h3>
+<p>Rectangles are defined relative to the bottom left corner with a given width (horizontal) and height (vertical) for
+convenience if the height is omitted then the height is assumed to equal the width (i.e. a square).</p>
+<p>Here we’ll create a 5x3 rectangle with its bottom left corner situated at the point (-2,3). And a 2x2 square starting
+from the same point.</p>
+<p>For convenience if defining the rectangle from its center is more convenient, for example a background centered at (0,0)
+this can also be done with the <a class="reference internal" href="../../api/fish2eod.geometry.html#fish2eod.geometry.primitives.Rectangle.from_center" title="fish2eod.geometry.primitives.Rectangle.from_center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_center</span></code></a> method as shown below.</p>
+<p>For full circle documentation please see the <a class="reference internal" href="../../api/fish2eod.geometry.html#fish2eod.geometry.primitives.Rectangle" title="fish2eod.geometry.primitives.Rectangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rectangle</span></code></a> class</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example with how to create a rectangle.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Create a stock-behaviour rectangle.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 5cm wide</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 3cm high</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># location of bottom-left (x,y) = (-2cm, 3cm)</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Rectangles and Squares&quot;</span><span class="p">)</span>
+<span class="n">rectangle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># this is for display purposes and not necessary for the general use</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">For simplicity if you want a square i.e. w=h then you need only provide the length.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">square</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">square</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>  <span class="c1"># color is used to specify the line color of the shape</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Additionally it&#39;s sometimes natural to define a square from its center</span>
+
+<span class="sd">We have the optional &#39;constructor&#39; from_center to do this.</span>
+<span class="sd">Here we create an identical rectangle to the first one - except instead of `p` representing the bottom left corner we</span>
+<span class="sd">have p representing the center of the rectangle.</span>
+
+<span class="sd">Similarly to a &quot;normal&quot; rectangle the height can be omitted to create a square w=h.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Rectangle Defined at the Center&quot;</span><span class="p">)</span>
+<span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">center_rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="o">.</span><span class="n">from_center</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">center_rectangle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/rectangle.py">Source code</a>)</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/rectangle_00.png" src="../../_images/rectangle_00.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/basic/code/rectangle_00.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/rectangle_00.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/rectangle_00.pdf">pdf</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/rectangle_01.png" src="../../_images/rectangle_01.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/basic/code/rectangle_01.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/rectangle_01.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/rectangle_01.pdf">pdf</a>)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="polygons">
+<h3>Polygons<a class="headerlink" href="#polygons" title="Permalink to this headline">¶</a></h3>
+<p>When combining circles and rectangles is insufficient to replicate your geometry you can use a polygon to replicate
+complex geometry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In general it is inadvisable to use polygons unless absolutely necessary as they are more computationally expensive
+than their square/circle counterparts (by several orders of magnitude: think seconds instead of milliseconds.) For
+example an ‘L’ shape would be better created by two perpendicular rectangles than a polygon, whereas a curve must be
+created by a polygon</p>
+</div>
+<p>For illustration we will create a star using pre-defined coordinates</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example with how to create a polygon.</span>
+
+<span class="sd">Note to users - please avoid polygons where possible as they are quite expensive.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">Polygon</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mf">0.95105652</span><span class="p">,</span>
+    <span class="mf">0.22451399</span><span class="p">,</span>
+    <span class="mf">0.0</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.22451399</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.95105652</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.36327126</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.58778525</span><span class="p">,</span>
+    <span class="mf">0.0</span><span class="p">,</span>
+    <span class="mf">0.58778525</span><span class="p">,</span>
+    <span class="mf">0.36327126</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mf">0.30901699</span><span class="p">,</span>
+    <span class="mf">0.30901699</span><span class="p">,</span>
+    <span class="mf">1.0</span><span class="p">,</span>
+    <span class="mf">0.30901699</span><span class="p">,</span>
+    <span class="mf">0.30901699</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.11803399</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.80901699</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.38196601</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.80901699</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">0.118034</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">polygon</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">polygon</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># this is for display purposes and not necessary for the general use</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/polygon.py">Source code</a>, <a class="reference external" href="../../tutorials/basic/code/polygon.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/polygon.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/polygon.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/polygon.png" src="../../_images/polygon.png" />
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Polygons must <strong>not</strong> be closed i.e. the last point implicitly connects to the first point.</p>
+</div>
+<p>For full polygon documentation please see the <a class="reference internal" href="../../api/fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Polygon</span></code></a> class</p>
+</div>
+</div>
+<div class="section" id="integrating-geometries-into-models">
+<h2>Integrating Geometries into Models<a class="headerlink" href="#integrating-geometries-into-models" title="Permalink to this headline">¶</a></h2>
+<p>Making geometries starts with creating a subclass of the parent model (<a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel" title="fish2eod.models.BaseFishModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseFishModel</span></code></a>).</p>
+<div class="section" id="basefishmodel">
+<h3>BaseFishModel<a class="headerlink" href="#basefishmodel" title="Permalink to this headline">¶</a></h3>
+<p>Adding geometry is quite simple and there’s only one thing to know: Adding a domain or objects to a model is handled
+by the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.BaseFishModel.add_geometry" title="fish2eod.models.BaseFishModel.add_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_geometry</span></code></a> method.</p>
+<p>Here we’ll present a fish model with a 2cm radius metal rod at (5cm, 5cm) - we will  call this domain the “rod_domain”</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please ignore the <code class="docutils literal notranslate"><span class="pre">fish_x</span></code> portion of the code this will be explained in the
+<a class="reference internal" href="parametric.html"><span class="doc">parameters tutorial</span></a>.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example model showing how to work with model geometry in the BaseFishModel.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">BaseFishModel</span><span class="p">,</span> <span class="n">Circle</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleWithGeometry</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Example model with geometry&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">rod</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;rod_domain&quot;</span><span class="p">,</span> <span class="n">rod</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">1e6</span><span class="p">)</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Create and compile the model</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ExampleWithGeometry</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># ignore this for now.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Plot the outline of the model.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Geometry&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/make_geometry_base_fish.py">Source code</a>, <a class="reference external" href="../../tutorials/basic/code/make_geometry_base_fish.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/make_geometry_base_fish.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/make_geometry_base_fish.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/make_geometry_base_fish.png" src="../../_images/make_geometry_base_fish.png" />
+</div>
+<p>You may notice a few lines of code that you haven’t seen before. <code class="docutils literal notranslate"><span class="pre">model.compile()</span></code> compiles the model i.e. integrating
+everything you’ve specified in your description. and <code class="docutils literal notranslate"><span class="pre">model.draw_geometry()</span></code> does exactly what it sounds like - it draws
+the outline of each object with a unique color for each domain.</p>
+<p>Additionally the argument <code class="docutils literal notranslate"><span class="pre">sigma=1e6</span></code> means that this domain has a conductance of 1e6 S/cm - any positive number (valid
+conductance) can be used here.</p>
+<p>For a full documentation on these methods please see the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model.compile" title="fish2eod.models.Model.compile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compile</span></code></a> and the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model.plot_geometry" title="fish2eod.models.Model.plot_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_geometry</span></code></a> methods.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="domains.html" class="btn btn-neutral float-right" title="Domains" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="models.html" class="btn btn-neutral float-left" title="Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

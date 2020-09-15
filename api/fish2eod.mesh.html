@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fish2eod.mesh package &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fish2eod.xdmf package" href="fish2eod.xdmf.html" />
+    <link rel="prev" title="fish2eod.helpers package" href="fish2eod.helpers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fish2eod.html">fish2eod package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fish2eod.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.analysis.html">fish2eod.analysis package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.geometry.html">fish2eod.geometry package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.helpers.html">fish2eod.helpers package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fish2eod.mesh package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.mesh.boundary">fish2eod.mesh.boundary module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.mesh.domain">fish2eod.mesh.domain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.mesh.mesh">fish2eod.mesh.mesh module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.mesh.model_geometry">fish2eod.mesh.model_geometry module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.xdmf.html">fish2eod.xdmf package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.models">fish2eod.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.properties">fish2eod.properties module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.sweep">fish2eod.sweep module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fish2eod.html">fish2eod package</a> &raquo;</li>
+        
+      <li>fish2eod.mesh package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/fish2eod.mesh.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fish2eod.mesh">
+<span id="fish2eod-mesh-package"></span><h1>fish2eod.mesh package<a class="headerlink" href="#module-fish2eod.mesh" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-fish2eod.mesh.boundary">
+<span id="fish2eod-mesh-boundary-module"></span><h2>fish2eod.mesh.boundary module<a class="headerlink" href="#module-fish2eod.mesh.boundary" title="Permalink to this headline">¶</a></h2>
+<p>Functions for creating and labeling finite element boundaries.</p>
+<dl class="py class">
+<dt id="fish2eod.mesh.boundary.External">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">External</code><a class="headerlink" href="#fish2eod.mesh.boundary.External" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dolfin.cpp.mesh.SubDomain</span></code></p>
+<p>Label external boundaries.</p>
+<dl class="py method">
+<dt id="fish2eod.mesh.boundary.External.inside">
+<em class="property">static </em><code class="sig-name descname">inside</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">on_boundary</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.External.inside" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the point inside the domain.</p>
+<p>In this case the inside method is only considering if the point is a on a boundary between 2 domains.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_</strong> – Ignored</p></li>
+<li><p><strong>on_boundary</strong> – List from dolfin index 0 is used to determine boundary state</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.boundary.boundary_iterator">
+<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">boundary_iterator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domains</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.boundary_iterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get every facet (edge) with at least 2 things touching it i.e. not an external edge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>domains</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunctionSizet</span></code>) – The labeled domains</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Facet</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, …]]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Iterable of tuples of an edge and its touching domains</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.boundary.mark_boundaries">
+<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">mark_boundaries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">model_geometry</span></em>, <em class="sig-param"><span class="n">boundary_markers</span></em>, <em class="sig-param"><span class="n">external_boundary</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top level function to mark boundaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domains</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunctionSizet</span></code>) – Model domains</p></li>
+<li><p><strong>model_geometry</strong> (<a class="reference internal" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="fish2eod.mesh.model_geometry.ModelGeometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelGeometry</span></code></a>) – Model geometry</p></li>
+<li><p><strong>boundary_markers</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]]) – List of BoundaryMarkers</p></li>
+<li><p><strong>external_boundary</strong> – ID of the external boundary</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunctionSizet</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunctionSizet</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boundary and Outline MeshFunctions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.boundary.mark_boundary">
+<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">mark_boundary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_geometry</span></em>, <em class="sig-param"><span class="n">neighbouring_domains</span></em>, <em class="sig-param"><span class="n">boundary_markers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_boundary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mark a boundary given its neighbours and boundary markers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_geometry</strong> (<a class="reference internal" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="fish2eod.mesh.model_geometry.ModelGeometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelGeometry</span></code></a>) – ModelGeometry containing the geometry</p></li>
+<li><p><strong>neighbouring_domains</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Domains touching the edge</p></li>
+<li><p><strong>boundary_markers</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]]) – List</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.boundary.mark_edge_by_rules">
+<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">mark_edge_by_rules</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbouring_domains</span></em>, <em class="sig-param"><span class="n">boundary_markers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_edge_by_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rules specified in BoundaryCondition to mark complex edges.</p>
+<p>Gets the edge label from the rule if it should be marked, otherwise returns -1</p>
+<p>Markers are applied sequentially: so if a boundary is defined and is then crossed by another. The second boundary
+takes precedence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>neighbouring_domains</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Domains touching the edges</p></li>
+<li><p><strong>boundary_markers</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]]) – BoundaryMarkers to use</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Label of the edge</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.mesh.domain">
+<span id="fish2eod-mesh-domain-module"></span><h2>fish2eod.mesh.domain module<a class="headerlink" href="#module-fish2eod.mesh.domain" title="Permalink to this headline">¶</a></h2>
+<p>Functions for working with finite element domains.</p>
+<dl class="py function">
+<dt id="fish2eod.mesh.domain.iterate_domains">
+<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">iterate_domains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.iterate_domains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over objects in a model geometry and inform if the object is primitive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_geometry</strong> (<a class="reference internal" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="fish2eod.mesh.model_geometry.ModelGeometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelGeometry</span></code></a>) – ModelGeometry to iterate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.PreDomain" title="fish2eod.geometry.primitives.PreDomain"><code class="xref py py-class docutils literal notranslate"><span class="pre">PreDomain</span></code></a>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Domain label, if the objects are primitive, and list of primitives or a polygon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.domain.mark_domains">
+<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">mark_domains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mesh</span></em>, <em class="sig-param"><span class="n">model_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_domains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a meshfunction marked with the domain ids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code>) – Created dolfin mesh</p></li>
+<li><p><strong>model_geometry</strong> (<a class="reference internal" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="fish2eod.mesh.model_geometry.ModelGeometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelGeometry</span></code></a>) – ModelGeometry containing the added geometry</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunctionInt</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Domain meshfunction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.domain.mark_polygon">
+<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">mark_polygon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_label</span></em>, <em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extremely inefficient marker for polygons.</p>
+<p>Try to create complex shapes out of rectangles instead of resorting to this</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domain_label</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Label (int) of the domain</p></li>
+<li><p><strong>domains</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunction</span></code>) – Domain meshfunction to update</p></li>
+<li><p><strong>obj</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Polygon to mark (only one at a time)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.domain.mark_primitives">
+<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">mark_primitives</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_label</span></em>, <em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">objs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_primitives" title="Permalink to this definition">¶</a></dt>
+<dd><p>Effecient marker for primitives.</p>
+<p>Each primitive has an inside(x, …) which returns some boolean string expression</p>
+<p>I.e. there will be a list of [“a==b”, “c==d”, …]</p>
+<p>Reduce opperation convers that to (a==b) || (c==d) ||</p>
+<p>The [:-3] strips off the ” ||”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domain_label</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Label (int) of the domain</p></li>
+<li><p><strong>domains</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunction</span></code>) – Domain meshfunction to update</p></li>
+<li><p><strong>objs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Circle" title="fish2eod.geometry.primitives.Circle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Circle</span></code></a>, <a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Rectangle" title="fish2eod.geometry.primitives.Rectangle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rectangle</span></code></a>]]) – Objects to mark</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.mesh.mesh">
+<span id="fish2eod-mesh-mesh-module"></span><h2>fish2eod.mesh.mesh module<a class="headerlink" href="#module-fish2eod.mesh.mesh" title="Permalink to this headline">¶</a></h2>
+<p>Functions for creating and finite element meshes from primitives.</p>
+<dl class="py function">
+<dt id="fish2eod.mesh.mesh.add_circle">
+<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">add_circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">mesh_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.add_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add circle objects to the mesh_geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Circle to add</p></li>
+<li><p><strong>mesh_geometry</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code>) – pygmsh Geometry to add the circle to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mesh surface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.mesh.add_poly">
+<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">add_poly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">mesh_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.add_poly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add polygonal objects to the mesh_geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Polygon (rectangle or generic) to add</p></li>
+<li><p><strong>mesh_geometry</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code>) – pygmsh Geometry to add the polygon to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mesh surface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.mesh.create_dolfin_mesh">
+<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">create_dolfin_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">cells</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_dolfin_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the pygmsh mesh to a dolfin representation.</p>
+<p><a class="reference external" href="https://bitbucket.org/fenics-project/dolfin/issues/845/initialize-mesh-from-vertices">https://bitbucket.org/fenics-project/dolfin/issues/845/initialize-mesh-from-vertices</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – Mesh vertex coordinates</p></li>
+<li><p><strong>cells</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – Mesh topology</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dolfin mesh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.mesh.create_mesh">
+<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">create_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_geometry</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the mesh from the model geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_geometry</strong> (<a class="reference internal" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="fish2eod.mesh.model_geometry.ModelGeometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelGeometry</span></code></a>) – The model geometry to mesh</p></li>
+<li><p><strong>verbose</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Should gmsh output be printed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The computed mesh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.mesh.create_mesh_function">
+<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">create_mesh_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">mesh</span></em>, <em class="sig-param"><span class="n">dimension</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_mesh_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create boilerplate mesh function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Meshfunction name</p></li>
+<li><p><strong>mesh</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code>) – Model mesh</p></li>
+<li><p><strong>dimension</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – dimension of the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFunctionSizet</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Empty MeshFunction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.mesh.mesh.mesh_add">
+<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">mesh_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">mesh_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.mesh_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an object to the mesh.</p>
+<p>Adds as a circle or polygon depending on the obj type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Circle to add</p></li>
+<li><p><strong>mesh_geometry</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code>) – pygmsh Geometry to add the circle to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mesh surface</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.mesh.model_geometry">
+<span id="fish2eod-mesh-model-geometry-module"></span><h2>fish2eod.mesh.model_geometry module<a class="headerlink" href="#module-fish2eod.mesh.model_geometry" title="Permalink to this headline">¶</a></h2>
+<p>Container for geometry objects which can perform sanity checks and iterate sequentially.</p>
+<dl class="py class">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.mesh.model_geometry.</code><code class="sig-name descname">ModelGeometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">allow_overlaps</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Holding class for all model geometry.</p>
+<p>Validates domains and manages domain names and labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>allow_overlaps</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If overlaps cause an error or a warning</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.DEFAULT_DOMAIN_PREFIX">
+<code class="sig-name descname">DEFAULT_DOMAIN_PREFIX</code><em class="property"> = 'domain_'</em><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.DEFAULT_DOMAIN_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.add_domain">
+<code class="sig-name descname">add_domain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">geometry_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.add_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a domain to the existing model geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>geometry_objects</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Geometry objects to add</p></li>
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the new domain (can be omitted for no name)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Label of newly added domain</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.background_label">
+<code class="sig-name descname">background_label</code><em class="property"> = 0</em><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.background_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.check_intersection">
+<code class="sig-name descname">check_intersection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_name</span></em>, <em class="sig-param"><span class="n">g1</span></em>, <em class="sig-param"><span class="n">g2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.check_intersection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the two geometries overlap and raise an error if so.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domain_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the existing domain or</p></li>
+<li><p><strong>g1</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – First Geometry</p></li>
+<li><p><strong>g2</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Second Geometry</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the model geometry.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the model geometry as a line drawing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.flat_geometry">
+<em class="property">property </em><code class="sig-name descname">flat_geometry</code><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.flat_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the geometry to a list of (name, geometry_object) pairs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>]]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The geometry sequentially</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.intersects_background">
+<code class="sig-name descname">intersects_background</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.intersects_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure the new domain intersects with the background.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>g</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Geometry to check</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.is_background">
+<code class="sig-name descname">is_background</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.is_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if domain name is background.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>domain_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Either the domain_name or None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>IF the domain is background</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.label_to_name">
+<code class="sig-name descname">label_to_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.label_to_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to convert a label to name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Label to convert</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The name if it exists otherwise the original label</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.next_valid_label">
+<em class="property">property </em><code class="sig-name descname">next_valid_label</code><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.next_valid_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the next valid domain label my incrementing current max.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Next valid label</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.ModelGeometry.validate_intersections">
+<code class="sig-name descname">validate_intersections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.validate_intersections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate intersections between objects on the new domain and between the new domain and old domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>geometry_objects</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>]) – Geometry objects on new domain to validate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.mesh.model_geometry.QESGeometry">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.mesh.model_geometry.</code><code class="sig-name descname">QESGeometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">allow_overlaps</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="fish2eod.mesh.model_geometry.ModelGeometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.mesh.model_geometry.ModelGeometry</span></code></a></p>
+<p>Extended model geometry which takes an additional argument ‘sigma’ when adding domain do define conductance.</p>
+<dl class="py method">
+<dt id="fish2eod.mesh.model_geometry.QESGeometry.add_domain">
+<code class="sig-name descname">add_domain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">geometry_objects</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.add_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add domain in a QES model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the domain</p></li>
+<li><p><strong>geometry_objects</strong> (<a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>) – Arbitrary number of geometry objects</p></li>
+<li><p><strong>sigma</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>]) – Conductance of the domain (must be set as a kwarg)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fish2eod.xdmf.html" class="btn btn-neutral float-right" title="fish2eod.xdmf package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fish2eod.helpers.html" class="btn btn-neutral float-left" title="fish2eod.helpers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

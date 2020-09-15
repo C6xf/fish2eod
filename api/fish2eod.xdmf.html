@@ -1,0 +1,1037 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fish2eod.xdmf package &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="fish2eod.mesh package" href="fish2eod.mesh.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fish2eod.html">fish2eod package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fish2eod.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.analysis.html">fish2eod.analysis package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.geometry.html">fish2eod.geometry package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.helpers.html">fish2eod.helpers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish2eod.mesh.html">fish2eod.mesh package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fish2eod.xdmf package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.xdmf.load">fish2eod.xdmf.load module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.xdmf.save">fish2eod.xdmf.save module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-fish2eod.xdmf.xml_tools">fish2eod.xdmf.xml_tools module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.models">fish2eod.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.properties">fish2eod.properties module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fish2eod.html#module-fish2eod.sweep">fish2eod.sweep module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fish2eod.html">fish2eod package</a> &raquo;</li>
+        
+      <li>fish2eod.xdmf package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/fish2eod.xdmf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fish2eod.xdmf">
+<span id="fish2eod-xdmf-package"></span><h1>fish2eod.xdmf package<a class="headerlink" href="#module-fish2eod.xdmf" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-fish2eod.xdmf.load">
+<span id="fish2eod-xdmf-load-module"></span><h2>fish2eod.xdmf.load module<a class="headerlink" href="#module-fish2eod.xdmf.load" title="Permalink to this headline">¶</a></h2>
+<p>Load solutions in a filterable form from xdmf/manifests.</p>
+<dl class="py class">
+<dt id="fish2eod.xdmf.load.DataSolution">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">DataSolution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_map</span></em>, <em class="sig-param"><span class="n">variables</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">s_var</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.DataSolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fish2eod.xdmf.load.Solution" title="fish2eod.xdmf.load.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.xdmf.load.Solution</span></code></a></p>
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.DataSolution.load_data">
+<code class="sig-name descname">load_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.DataSolution.load_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.DataSolution.spawn_from_variable">
+<code class="sig-name descname">spawn_from_variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_selected_variable</span></em>, <em class="sig-param"><span class="n">new_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.DataSolution.spawn_from_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.xdmf.load.H5Solution">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">H5Solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h5_file</span></em>, <em class="sig-param"><span class="n">parameter_levels</span></em>, <em class="sig-param"><span class="n">domain_map</span></em>, <em class="sig-param"><span class="n">variables</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">s_param</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">s_var</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.H5Solution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fish2eod.xdmf.load.Solution" title="fish2eod.xdmf.load.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.xdmf.load.Solution</span></code></a></p>
+<p>Store the solution or filtered subset.</p>
+<p>A solution is a collection of datasets. This can be filtered on parameter or variable. Once subset further
+processing sub setting is needed until a single solution remains</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_file</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to the h5 data set</p></li>
+<li><p><strong>parameter_levels</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – Dictionary of parameter : levels of parameter</p></li>
+<li><p><strong>variables</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Possible variables</p></li>
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.DataSet" title="fish2eod.helpers.type_helpers.DataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSet</span></code></a>]) – List of DataSet objects</p></li>
+<li><p><strong>s_param</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]) – List of selected_parameters if any else None</p></li>
+<li><p><strong>s_var</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Selected variable if selected else None</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.H5Solution.filter_parameters">
+<code class="sig-name descname">filter_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.H5Solution.filter_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the solution where parameter = value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the parameter</p></li>
+<li><p><strong>value</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – String of selected parameter index</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#fish2eod.xdmf.load.H5Solution" title="fish2eod.xdmf.load.H5Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">H5Solution</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Filtered solution</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.H5Solution.load_data">
+<code class="sig-name descname">load_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.H5Solution.load_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data.</p>
+<p>Checks if loadable i.e. no other parameters or variables to select
+Loads either a namedtuple for misc data or a tuple of arrays for fem dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Loaded data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.H5Solution.parameters">
+<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#fish2eod.xdmf.load.H5Solution.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the parameter names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of parameter names - no particular order</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.H5Solution.spawn_from_variable">
+<code class="sig-name descname">spawn_from_variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_selected_variable</span></em>, <em class="sig-param"><span class="n">new_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.H5Solution.spawn_from_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fish2eod.xdmf.load.Solution">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">Solution</code><a class="headerlink" href="#fish2eod.xdmf.load.Solution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.Solution.filter_variables">
+<code class="sig-name descname">filter_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.Solution.filter_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the variable from the solution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>variable</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the variable</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#fish2eod.xdmf.load.Solution" title="fish2eod.xdmf.load.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solution</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Filtered solution</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.Solution.load_data">
+<em class="property">abstract </em><code class="sig-name descname">load_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.Solution.load_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.load.Solution.spawn_from_variable">
+<em class="property">abstract </em><code class="sig-name descname">spawn_from_variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_selected_variable</span></em>, <em class="sig-param"><span class="n">new_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.Solution.spawn_from_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.domain_map_from_data">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">domain_map_from_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.domain_map_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the domain map from the data.</p>
+<p>TODO duplication in constant map across time steps</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to the manifest</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Map of domains name to number</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.extract_all_data">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">extract_all_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.extract_all_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data from each xdmf file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to manifest</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.DataSet" title="fish2eod.helpers.type_helpers.DataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSet</span></code></a>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Iterator of DataSets</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.extract_path_from_grid">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">extract_path_from_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span></em>, <em class="sig-param"><span class="n">parent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.extract_path_from_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract h5 data paths from the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The grid to search (et.Element)</p></li>
+<li><p><strong>parent</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The parent to get paths of (Attribute for example for data)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Sequence of child paths and the name of the dataset or None if not available</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.extract_unique_from_grid">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">extract_unique_from_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span></em>, <em class="sig-param"><span class="n">term</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.extract_unique_from_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract a unique term from the grid.</p>
+<p>A unique term like &lt;Time /&gt; or &lt;Metadata /&gt; only is entered once per grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The grid (et.Element) to search</p></li>
+<li><p><strong>term</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The term to search for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The attributes of the found element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.find_manifest">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">find_manifest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">search_name</span><span class="o">=</span><span class="default_value">'manifest.xml'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.find_manifest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the manifest file in the given path.</p>
+<p>Since the path can be specified as either the path to the manifest or the containing directory this will check
+if the specified path is the manifest or if the folder given contains the manifest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – Path to manifest or search path</p></li>
+<li><p><strong>search_name</strong> – Name of file to search for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Path to the manifest</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.load_fem_data">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">load_fem_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h5_file</span></em>, <em class="sig-param"><span class="n">data_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.load_fem_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load fem data from the h5 file.</p>
+<p>FEM data is a topology, geometry and an array representation of function
+TODO named tuple</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_file</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to the h5 file</p></li>
+<li><p><strong>data_set</strong> (<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.DataSet" title="fish2eod.helpers.type_helpers.DataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSet</span></code></a>) – DataSet to load</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, …]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The tuple of data topology, geometry, data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.load_from_file">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">load_from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.load_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>User-facing api to load the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – Path to manifest.xml or the model folder</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#fish2eod.xdmf.load.H5Solution" title="fish2eod.xdmf.load.H5Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">H5Solution</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Solution object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.load_from_h5">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">load_from_h5</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h5_file</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">data_paths</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.load_from_h5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data from the h5_file with a sequence of paths.</p>
+<p>Nx1 data is converted to an array of length N and unsignedintegers are converted to signed integers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_file</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to the h5 file</p></li>
+<li><p><strong>data_paths</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Arbitrary number of data_paths to load</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Iterator of arrays for each data_path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.load_misc_data">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">load_misc_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h5_file</span></em>, <em class="sig-param"><span class="n">data_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.load_misc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load misc data from the h5 file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_file</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to the h5 file</p></li>
+<li><p><strong>data_set</strong> (<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.DataSet" title="fish2eod.helpers.type_helpers.DataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSet</span></code></a>) – DataSet to load</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The misc_data in its named tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.load_xdmf">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">load_xdmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xdmf_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.load_xdmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an xdmf file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>xdmf_file</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – The path to the xdmf file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<a class="reference internal" href="fish2eod.helpers.html#fish2eod.helpers.type_helpers.DataSet" title="fish2eod.helpers.type_helpers.DataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSet</span></code></a>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Sequence of DataSet objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.misc_attribute_to_data_set">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">misc_attribute_to_data_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.misc_attribute_to_data_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return data_set compatible structure from misc attributes.</p>
+<p>The goal is for each (super) attribute to have a structure
+([(sub_attr1, path1), …], name_of_super_attribute, …) where each super attribute behaves like a normal attribute
+and the path with be a list of subpaths and subnames</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>grid</strong> – Grid to convert (et.Element)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Structured misc data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.parameter_levels_from_data">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">parameter_levels_from_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.parameter_levels_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract all parameter levels (and parameters) from a dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to the manifest</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Parameters and corresponding levels</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.parse_manifest">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">parse_manifest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">manifest</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.parse_manifest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the xdmf/h5 files from the manifest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>manifest</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Manifest path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The xdmf paths and the h5 file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.load.variables_from_data">
+<code class="sig-prename descclassname">fish2eod.xdmf.load.</code><code class="sig-name descname">variables_from_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.load.variables_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract all the variables from a dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to the manifest</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Variable names</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.xdmf.save">
+<span id="fish2eod-xdmf-save-module"></span><h2>fish2eod.xdmf.save module<a class="headerlink" href="#module-fish2eod.xdmf.save" title="Permalink to this headline">¶</a></h2>
+<p>Save solutions to an expandable structure.</p>
+<p>Saves 1D data I.e. function defined on boundaries and 2D data I.e. function defined on domains/cells and misc data
+(see later)</p>
+<p>There is one manifest file which stores the the locations of the different data types which are stored in separate
+XDMF(ish) files for paraview compatibility (not strictly XDMF as they contain additional tags but could be considered a
+superset of XDMF).</p>
+<dl class="simple">
+<dt>&lt;Manifest&gt;</dt><dd><p>&lt;data type=’1d’ path=”PATH_TO_1D_DATA.xdmf”/&gt;
+&lt;data type=’2d’ path=”PATH_TO_2D_DATA.xdmf”/&gt;
+&lt;data type=’misc’ path=”PATH_TO_misc.xdmf”/&gt;
+&lt;h5 path=”PATH_TO_h5_file.h5”/&gt;</p>
+</dd>
+</dl>
+<p>&lt;/Manifest&gt;</p>
+<p>1D dataset contains boundary functions</p>
+<p>The XDMF tag contains a domain containing a grid which specifies a “set of parameters” with each parameter being stored
+in a nested grid tag. Within a simulation the topology (what connects to what) and the geometry (where was is) and the
+is stored in topology and geometry tags with the function defined on the Attribute tag</p>
+<p>&lt;!DOCTYPE Xdmf SYSTEM “Xdmf.dtd” []&gt;
+&lt;Xdmf xmlns:xi=”http://www.w3.org/2001/XInclude” Version=”3.0”&gt;</p>
+<blockquote>
+<div><dl>
+<dt>&lt;Domain&gt;</dt><dd><dl>
+<dt>&lt;Grid Name=”TimeSeries” GridType=”Collection” CollectionType=”Temporal”&gt;</dt><dd><dl>
+<dt>&lt;Grid Name=”mesh” GridType=”Uniform”&gt;</dt><dd><p>&lt;Time Value=”0”/&gt;
+&lt;Metadata TimeName=”ParaViewTime” step=”0” location=”0” amp=”0”/&gt;
+&lt;Topology NumberOfElements=”173” TopologyType=”PolyLine” NodesPerElement=”2”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”173 2” NumberType=”UInt” Format=”HDF”&gt;MODEL.h5:/Mesh/2/mesh/edges&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Topology&gt;
+&lt;Geometry GeometryType=”XY”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”62 2” Format=”HDF”&gt;MODEL.h5:/Mesh/1/mesh/geometry&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Geometry&gt;
+&lt;Attribute Name=”boundary” AttributeType=”Scalar” Center=”Cell”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”173 1” Format=”HDF”&gt;MODEL.h5:/VisualisationVector/3&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Attribute&gt;</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>&lt;/Grid&gt;</p>
+</dd>
+</dl>
+<p>&lt;/domain&gt;</p>
+</div></blockquote>
+<p>&lt;/Xdmf&gt;</p>
+<p>2D dataset contains domain/cell functions</p>
+<p>The XDMF tag contains a domain containing a grid which specifies a “set of parameters” with each parameter being stored
+in a nested grid tag. Within a simulation the topology (what connects to what) and the geometry (where was is) and the
+is stored in topology and geometry tags with the function defined on the Attribute tag</p>
+<p>&lt;!DOCTYPE Xdmf SYSTEM “Xdmf.dtd” []&gt;
+&lt;Xdmf xmlns:xi=”http://www.w3.org/2001/XInclude” Version=”3.0”&gt;</p>
+<blockquote>
+<div><dl>
+<dt>&lt;Domain&gt;</dt><dd><dl>
+<dt>&lt;Grid Name=”mesh” GridType=”Uniform”&gt;</dt><dd><p>&lt;Time Value=”0”/&gt;
+&lt;Metadata TimeName=”ParaViewTime” step=”0” location=”0” amp=”0”/&gt;
+&lt;Topology NumberOfElements=”114” TopologyType=”Triangle” NodesPerElement=”3”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”114 3” NumberType=”UInt” Format=”HDF”&gt;MODEL.h5:/Mesh/0/mesh/topology&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Topology&gt;
+&lt;Geometry GeometryType=”XY”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”62 2” Format=”HDF”&gt;MODEL.h5:/Mesh/1/mesh/geometry&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Geometry&gt;
+&lt;Attribute Name=”V” AttributeType=”Scalar” Center=”Node”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”62 1” Format=”HDF”&gt;MODEL.h5:/VisualisationVector/5&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Attribute&gt;
+&lt;Attribute Name=”sigma” AttributeType=”Scalar” Center=”Node”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”62 1” Format=”HDF”&gt;MODEL.h5:/VisualisationVector/6&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Attribute&gt;
+&lt;Attribute Name=”domain” AttributeType=”Scalar” Center=”Cell”&gt;</p>
+<blockquote>
+<div><p>&lt;DataItem Dimensions=”114 1” Format=”HDF”&gt;MODEL.h5:/VisualisationVector/7&lt;/DataItem&gt;</p>
+</div></blockquote>
+<p>&lt;/Attribute&gt;</p>
+</dd>
+</dl>
+<p>&lt;/Grid&gt;</p>
+</dd>
+</dl>
+<p>&lt;/domain&gt;</p>
+</div></blockquote>
+<p>&lt;/Xdmf&gt;</p>
+<dl class="py class">
+<dt id="fish2eod.xdmf.save.Saver">
+<em class="property">class </em><code class="sig-prename descclassname">fish2eod.xdmf.save.</code><code class="sig-name descname">Saver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_name</span></em>, <em class="sig-param"><span class="n">save_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Saves relevant data from a model into paraview-compatible set of xdmf files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the model</p></li>
+<li><p><strong>save_path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Path to save the model to (model will be saves to save_path/model_name)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.add_data">
+<code class="sig-name descname">add_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.add_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the dataset to the h5 file and the reference it in the XDMF file.</p>
+<p>If the data <code class="xref py py-obj docutils literal notranslate"><span class="pre">f</span></code> is a tuple of misc data its passed to add_misc_data otherwise its passed to add_fencis_data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> – Data to save Meshfunction/function/tuple</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.add_fenics_data">
+<code class="sig-name descname">add_fenics_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.add_fenics_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the dataset to the h5 file and the reference it in the XDMF file.</p>
+<p>If the data <code class="xref py py-obj docutils literal notranslate"><span class="pre">f</span></code> is a tuple of misc data its passed to add_misc_data otherwise its passed to add_fencis_data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> – Data to save Meshfunction/function</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.add_misc_data">
+<code class="sig-name descname">add_misc_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.add_misc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the miscellaneous data to the xdmf and the h5 file.</p>
+<p>Misc data is treated separately because for each data structure there is an outer Attribute which holds a
+collection of data sets from d (namedtuple)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>d</strong> – Miscelaneous data container, must be a namedtuple</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.create_next_grid">
+<code class="sig-name descname">create_next_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_topology_elements_1d</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_topology_elements_2d</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_geometry_elements</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">domain_map</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.create_next_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create grid for a the next step for the 1d and 2d xdmf files.</p>
+<p>Creates the grid and assigns them as a pointer in current_grid_1d and current_grid_2d attributes</p>
+<p># TODO refactor the duplication out of this function. Any loop right now will be awkward</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_geometry_elements</strong> – Number of elements in the geometry (number of nodes)</p></li>
+<li><p><strong>num_topology_elements_1d</strong> – Number of elements in the 1d topology (lines)</p></li>
+<li><p><strong>num_topology_elements_2d</strong> – Number of elements in the 2d topology (triangles)</p></li>
+<li><p><strong>metadata</strong> – Metadata dictionary</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.geometry_path">
+<em class="property">property </em><code class="sig-name descname">geometry_path</code><a class="headerlink" href="#fish2eod.xdmf.save.Saver.geometry_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>H5 path for the geometry arrays (/Geometry/step).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the XDMF files.</p>
+<p>Because XDMF are so small - this overwrites the entire XDMF file with the new data: which is the old data + new</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.save_model">
+<code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.save_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the specified model to an XDMF representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<a class="reference internal" href="fish2eod.html#fish2eod.models.Model" title="fish2eod.models.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>) – The model to save</p></li>
+<li><p><strong>metadata</strong> – Metadata (parameter states) to save along with the data</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.topology_path_1d">
+<em class="property">property </em><code class="sig-name descname">topology_path_1d</code><a class="headerlink" href="#fish2eod.xdmf.save.Saver.topology_path_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>H5 path for the 1d topology arrays (/Topology/1d/step).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.topology_path_2d">
+<em class="property">property </em><code class="sig-name descname">topology_path_2d</code><a class="headerlink" href="#fish2eod.xdmf.save.Saver.topology_path_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>H5 path for the 2d topology arrays (/Topology/2d/step).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.write_geometry">
+<code class="sig-name descname">write_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.write_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the geometry (coordinates) to the h5 file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>geometry</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – Array of x,y coordinates for the geometry</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.write_h5">
+<code class="sig-name descname">write_h5</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.write_h5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write to the h5 file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Internal h5 path to write to</p></li>
+<li><p><strong>d</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – Dataset to write</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fish2eod.xdmf.save.Saver.write_topology">
+<code class="sig-name descname">write_topology</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">topology</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.save.Saver.write_topology" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the topology to the dimension appropriate h5 file path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>topology</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – Array of topology</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fish2eod.xdmf.xml_tools">
+<span id="fish2eod-xdmf-xml-tools-module"></span><h2>fish2eod.xdmf.xml_tools module<a class="headerlink" href="#module-fish2eod.xdmf.xml_tools" title="Permalink to this headline">¶</a></h2>
+<p>Common tools for working with XDMF/XML files.</p>
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.assert_all_defined">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">assert_all_defined</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.assert_all_defined" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap f and check that all kwargs of a function are defined at function call and not None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>) – The function to check. Needs to be kwarg only function</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.create_minimal_xdmf">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">create_minimal_xdmf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.create_minimal_xdmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the minimal XDMF template.</p>
+<p>Most of these properties are necessary for Paraview compatibility. Some may not be required but they’re used in the
+Fenics XDMF files.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.create_timestep_grid">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">create_timestep_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.create_timestep_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for None kwargs at runtime.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.create_timestep_grid_misc">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">create_timestep_grid_misc</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.create_timestep_grid_misc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for None kwargs at runtime.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.get_outer_grid">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">get_outer_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xdmf</span></em>, <em class="sig-param"><span class="n">parent_tag</span><span class="o">=</span><span class="default_value">'Domain'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.get_outer_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the outer grid element from the XDMF structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xdmf</strong> – The xdmf structure to parse (et.Element)</p></li>
+<li><p><strong>parent_tag</strong> – The name of the domain tag (parent)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.make_geometry">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">make_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_elements</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.make_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the XDMF geometry element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_elements</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of elements in the geometry (# nodes)</p></li>
+<li><p><strong>location</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Location of the geometry in the h5 file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The geometry element (et.Element)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.make_manifest_file">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">make_manifest_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_name</span></em>, <em class="sig-param"><span class="n">save_path</span></em>, <em class="sig-param"><span class="n">data_folder</span><span class="o">=</span><span class="default_value">'DATA'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.make_manifest_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the manifest file.</p>
+<p>The manifest file holds the paths to the 1d, 2d, misc data as well as the path to the h5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the model</p></li>
+<li><p><strong>save_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path of parent folder of the model</p></li>
+<li><p><strong>data_folder</strong> – Optional argument specifying name of the sub-folder containing the data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.make_topology">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">make_topology</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_elements</span></em>, <em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.make_topology" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the XDMF topology element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_elements</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of elements in the topology (# triangles/lines)</p></li>
+<li><p><strong>dim</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Dimension of the solution</p></li>
+<li><p><strong>location</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Location of the topology in the h5 file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The topology element (et.Element)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.xdmf.xml_tools.write_xml">
+<code class="sig-prename descclassname">fish2eod.xdmf.xml_tools.</code><code class="sig-name descname">write_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_path</span></em>, <em class="sig-param"><span class="n">xml_obj</span></em>, <em class="sig-param"><span class="n">xml_declaration</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">doctype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.xdmf.xml_tools.write_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an ElementTree object to an xml/xdmf file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Path to save the file to</p></li>
+<li><p><strong>xml_obj</strong> – The ElementTree to save</p></li>
+<li><p><strong>xml_declaration</strong> – Include XML declaration</p></li>
+<li><p><strong>doctype</strong> – Optional doctype for XDMF files (None for no doctype)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="fish2eod.mesh.html" class="btn btn-neutral float-left" title="fish2eod.mesh package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

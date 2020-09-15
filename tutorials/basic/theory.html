@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Theory &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Models" href="models.html" />
+    <link rel="prev" title="Basic Tutorials" href="basic_tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="basic_tutorials.html">Basic Tutorials</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Theory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fish2eod">fish2eod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finite-elements">Finite Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parametric.html">Paramaterizing Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solving.html">Solving</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting/plotting_tutorials.html">Plotting Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/advanced_tutorials.html">Advanced Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/fish2eod.html">fish2eod package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+          <li><a href="basic_tutorials.html">Basic Tutorials</a> &raquo;</li>
+        
+      <li>Theory</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/basic/theory.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="theory">
+<h1>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h1>
+<p>fish2eod is an integrated environment for computing the electric field surrounding electric fish via the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Finite_element_method">Finite Element Method</a></p>
+<div class="section" id="fish2eod">
+<h2>fish2eod<a class="headerlink" href="#fish2eod" title="Permalink to this headline">¶</a></h2>
+<p>fish2eod is our answer to traditional electric fish models computed in <a class="reference external" href="https://comsol.com">COMSOL</a>. Similarly to
+<em>COMSOL</em> we can set parameters and solve stationary “flat” fish models. However where fish2eod differs from COMSOL is
+its flexibility. Without any additional effort fish geometry can be arbitrarily defined allowing for modeling the
+electrosensory system in freely moving fish. Importantly fish2eod is fully free and open source
+meaning that it can be run and deployed on as many processors as you wish without licensing constraints and additional
+“packages” requiring fees.</p>
+</div>
+<div class="section" id="finite-elements">
+<h2>Finite Elements<a class="headerlink" href="#finite-elements" title="Permalink to this headline">¶</a></h2>
+<p>fish2eod makes use of the <em>Finite Element Method</em> (FEM) to compute the electric field from an electric fish.</p>
+<p>There are two important concepts defining parts of the model. A domain is a 2D region of the model. This could be any 2D
+area such as the water in the tank, a circle representing a Daphnia prey, or some combination of 2D surfaces; they do
+not necessarily need to be contiguous. Secondly we have boundaries, these are the 1D structures which form the edge of
+two domains or the edge of a domain and nothing (edge of the tank for instance). Defining properties on domains and
+boundaries allows us to model the fish’s electric field. An example of a domains, boundaries and meshes are shown in the
+following figures. There are 3 domains in this model. The “background”, the “central square” and the “circle-square”
+combo (shown in purple, green, and yellow respectively). In the second figure the boundaries are shown for each of the
+domains along with the computed mesh.</p>
+<p>In short finite element modeling works by discretizing the domain (“cutting”) into pieces forming what is called the
+<em>mesh</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t worry about the code used to make these figures. It will be covered in the rest of the
+<a class="reference internal" href="basic_tutorials.html"><span class="doc">Basic Tutorials</span></a></p>
+</div>
+<p>(<a class="reference external" href="../../tutorials/basic/code/make_domain_mesh.py">Source code</a>)</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/make_domain_mesh_00.png" src="../../_images/make_domain_mesh_00.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/basic/code/make_domain_mesh_00.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/make_domain_mesh_00.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/make_domain_mesh_00.pdf">pdf</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/make_domain_mesh_01.png" src="../../_images/make_domain_mesh_01.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/basic/code/make_domain_mesh_01.png">png</a>, <a class="reference external" href="../../tutorials/basic/code/make_domain_mesh_01.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/basic/code/make_domain_mesh_01.pdf">pdf</a>)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>The equations are then solved for each point (node) on the mesh and the solution is interpolated at each point in space
+over the entire mesh.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models.html" class="btn btn-neutral float-right" title="Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basic_tutorials.html" class="btn btn-neutral float-left" title="Basic Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

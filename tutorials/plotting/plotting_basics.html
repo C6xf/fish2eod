@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basics &mdash; fish2eod 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2D Plots" href="2dplot.html" />
+    <link rel="prev" title="Plotting Tutorials" href="plotting_tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic_tutorials.html">Basic Tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plotting_tutorials.html">Plotting Tutorials</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plot-solution">Plot Solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plot-outline">Plot Outline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#masking">Masking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sweeps">Sweeps</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="2dplot.html">2D Plots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/advanced_tutorials.html">Advanced Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/fish2eod.html">fish2eod package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+          <li><a href="plotting_tutorials.html">Plotting Tutorials</a> &raquo;</li>
+        
+      <li>Basics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/plotting/plotting_basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial assumes that you’ve already read the <span class="xref std std-doc">Basic tutorial</span>. We will use a common model of
+a fish with an object near the head. The details are not important as all <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model" title="fish2eod.models.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Model</span></code></a> descendants will behave similarly.</p>
+<p>The <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model.solution" title="fish2eod.models.Model.solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solution</span></code></a> object is actually a plotting data structure. All plotting functions will require this along with
+some configuration settings. We’ll cover the two basic plots in this section: solutions and outlines.</p>
+<p>Plots are broken into 2D and 1D plots. 2D plots describe a function over the space: for example the EOD, the model
+conductance as a function of position, or the domains. 1D plots describe a function on the boundaries - the simplest on
+is the outline which is outline = 1 if an edge describes the geometry outline and outline = 0 otherwise.</p>
+<p>The <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model.solution" title="fish2eod.models.Model.solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solution</span></code></a> object has several fields corresponding to different properties they are</p>
+<ul class="simple" id="valid-properties">
+<li><dl class="simple">
+<dt>2D properties</dt><dd><ul>
+<li><p>solution</p></li>
+<li><p>active (only present if image computed)</p></li>
+<li><p>domain</p></li>
+<li><p>sigma</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>1D properties</dt><dd><ul>
+<li><p>boundary</p></li>
+<li><p>outline</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Misc properties</dt><dd><ul>
+<li><p>SkinStructure</p></li>
+<li><p>ElectricImage</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="plot-solution">
+<h2>Plot Solution<a class="headerlink" href="#plot-solution" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">solution</span></code> field contains the “most resent” simulation result. I.e. the voltage from the EOD (note however that if
+the field perturbation is computed to compute the electric image them <code class="docutils literal notranslate"><span class="pre">solution</span></code> is the field perturbation and an
+additional variable <code class="docutils literal notranslate"><span class="pre">active</span></code> is created which contains the “raw EOD”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">plotting</span><span class="p">,</span> <span class="n">BaseFishModel</span><span class="p">,</span> <span class="n">Circle</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Boilerplate to solve the model</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">PreyClass</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">prey</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;prey&quot;</span><span class="p">,</span> <span class="n">prey</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">PreyClass</span><span class="p">()</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fish_x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="s2">&quot;fish_y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Extract the solution object</span>
+
+<span class="sd">Plot the &quot;FEM solution&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">model_solution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">solution</span>  <span class="c1"># pull solution</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span><span class="n">model_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">)</span>  <span class="c1"># plot the result named solution</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/plotting/code/basic_solution_plot.py">Source code</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_solution_plot.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_solution_plot.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_solution_plot.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/basic_solution_plot.png" src="../../_images/basic_solution_plot.png" />
+</div>
+<p>Here where we specify the “solution” variable we could have used any valid 2D function.</p>
+</div>
+<div class="section" id="plot-outline">
+<h2>Plot Outline<a class="headerlink" href="#plot-outline" title="Permalink to this headline">¶</a></h2>
+<p>Technically the outline can be computed from a 1D plot - however we’ve provided a helper function to do so. All thats
+needed is to call the <a class="reference internal" href="../../api/fish2eod.analysis.html#fish2eod.analysis.plotting.plot_outline" title="fish2eod.analysis.plotting.plot_outline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_outline</span></code></a> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">plotting</span><span class="p">,</span> <span class="n">BaseFishModel</span><span class="p">,</span> <span class="n">Circle</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Boilerplate to solve the model</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">PreyClass</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">prey</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;prey&quot;</span><span class="p">,</span> <span class="n">prey</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">PreyClass</span><span class="p">()</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fish_x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="s2">&quot;fish_y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Extract the solution object</span>
+
+<span class="sd">Plot the &quot;FEM solution&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">model_solution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">solution</span>  <span class="c1"># pull solution</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span><span class="n">model_solution</span><span class="p">)</span>  <span class="c1"># plot the result named solution</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/plotting/code/basic_outline_plot.py">Source code</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_outline_plot.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_outline_plot.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_outline_plot.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/basic_outline_plot.png" src="../../_images/basic_outline_plot.png" />
+</div>
+</div>
+<div class="section" id="masking">
+<h2>Masking<a class="headerlink" href="#masking" title="Permalink to this headline">¶</a></h2>
+<p>In many cases some information is included in the plot that you don’t want. For example inside the fish is usually
+“not interesting” so this can be masked out.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">plotting</span><span class="p">,</span> <span class="n">BaseFishModel</span><span class="p">,</span> <span class="n">Circle</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Boilerplate to solve the model</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">PreyClass</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">prey</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;prey&quot;</span><span class="p">,</span> <span class="n">prey</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">PreyClass</span><span class="p">()</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fish_x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="s2">&quot;fish_y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Extract the solution object</span>
+
+<span class="sd">Plot the &quot;FEM solution&quot;</span>
+<span class="sd">Mask only the water (outside fish)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">model_solution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">solution</span>  <span class="c1"># pull solution</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">generate_mask</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="n">include_domains</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;water&quot;</span><span class="p">,</span> <span class="s2">&quot;prey&quot;</span><span class="p">))</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span>
+    <span class="n">model_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span>
+<span class="p">)</span>  <span class="c1"># plot the result named solution</span>
+
+<span class="c1"># For convenience you can also exclude a domain by setting include=False</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">generate_mask</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="n">include_domains</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;water&quot;</span><span class="p">,),</span> <span class="n">include</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span>
+    <span class="n">model_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span>
+<span class="p">)</span>  <span class="c1"># plot the result named solution</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/plotting/code/basic_mask.py">Source code</a>)</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/basic_mask_00.png" src="../../_images/basic_mask_00.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/plotting/code/basic_mask_00.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_mask_00.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_mask_00.pdf">pdf</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/basic_mask_01.png" src="../../_images/basic_mask_01.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/plotting/code/basic_mask_01.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_mask_01.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_mask_01.pdf">pdf</a>)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Additionally it may be more convenient to set a certain domain to be ommitted rather than have a long list of included
+domains. For this reason we provide an <code class="docutils literal notranslate"><span class="pre">include</span></code> flag to set whether the mask is inclusive or exclusive.</p>
+</div>
+<div class="section" id="sweeps">
+<h2>Sweeps<a class="headerlink" href="#sweeps" title="Permalink to this headline">¶</a></h2>
+<p>Plotting during sweeps is almost the same as for regular plotting. You just need to specify the sweep parameter values</p>
+<p>Note that because of the way matplotlib works we cannot pass properties as <code class="docutils literal notranslate"><span class="pre">prop_0</span> <span class="pre">=</span> <span class="pre">0</span></code> but we need to specify the
+<code class="docutils literal notranslate"><span class="pre">properties</span></code> argument. This is necessary to provide the flexibility of passing arbitrary matplotlib settings.</p>
+<p>Not that setting the properties argument does not influence any other settings and this can be used in concert with all
+other flags and settings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">plotting</span><span class="p">,</span>
+    <span class="n">BaseFishModel</span><span class="p">,</span>
+    <span class="n">Circle</span><span class="p">,</span>
+    <span class="n">ParameterSet</span><span class="p">,</span>
+    <span class="n">ParameterSweep</span><span class="p">,</span>
+    <span class="n">IterativeSolver</span><span class="p">,</span>
+    <span class="n">load_from_file</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Boilerplate to solve the model</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">PreyClass</span><span class="p">(</span><span class="n">BaseFishModel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">prey</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s2">&quot;prey&quot;</span><span class="p">,</span> <span class="n">prey</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
+
+<span class="n">prey_x</span> <span class="o">=</span> <span class="n">ParameterSet</span><span class="p">(</span><span class="s2">&quot;prey_x&quot;</span><span class="p">,</span> <span class="n">prey_x</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">rebuild_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">prey_y</span> <span class="o">=</span> <span class="n">ParameterSet</span><span class="p">(</span><span class="s2">&quot;prey_y&quot;</span><span class="p">,</span> <span class="n">prey_y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">rebuild_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">parameter_sweep</span> <span class="o">=</span> <span class="n">ParameterSweep</span><span class="p">(</span><span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="p">)</span>
+<span class="n">it</span> <span class="o">=</span> <span class="n">IterativeSolver</span><span class="p">(</span>
+    <span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">PreyClass</span><span class="p">,</span> <span class="n">parameter_sweep</span><span class="p">,</span> <span class="n">fish_x</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="n">fish_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">it</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Extract the solution object</span>
+
+<span class="sd">Plot the &quot;FEM solution&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">loaded_solution</span> <span class="o">=</span> <span class="n">load_from_file</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;/temp&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">prey_x</span> <span class="ow">in</span> <span class="n">loaded_solution</span><span class="o">.</span><span class="n">parameter_levels</span><span class="p">[</span><span class="s2">&quot;prey_x&quot;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">prey_y</span> <span class="ow">in</span> <span class="n">loaded_solution</span><span class="o">.</span><span class="n">parameter_levels</span><span class="p">[</span><span class="s2">&quot;prey_y&quot;</span><span class="p">]:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+        <span class="c1"># pass the solution parameters in an additional dictionary.</span>
+        <span class="c1"># all other arguments can be used as normal</span>
+        <span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span>
+            <span class="n">loaded_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;prey_x&quot;</span><span class="p">:</span> <span class="n">prey_x</span><span class="p">,</span> <span class="s2">&quot;prey_y&quot;</span><span class="p">:</span> <span class="n">prey_y</span><span class="p">}</span>
+        <span class="p">)</span>
+        <span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span>
+            <span class="n">loaded_solution</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;prey_x&quot;</span><span class="p">:</span> <span class="n">prey_x</span><span class="p">,</span> <span class="s2">&quot;prey_y&quot;</span><span class="p">:</span> <span class="n">prey_y</span><span class="p">}</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot.py">Source code</a>)</p>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/basic_sweep_plot_00.png" src="../../_images/basic_sweep_plot_00.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_00.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_00.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_00.pdf">pdf</a>)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<img alt="../../_images/basic_sweep_plot_01.png" src="../../_images/basic_sweep_plot_01.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_01.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_01.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_01.pdf">pdf</a>)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id5">
+<img alt="../../_images/basic_sweep_plot_02.png" src="../../_images/basic_sweep_plot_02.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_02.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_02.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_02.pdf">pdf</a>)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id6">
+<img alt="../../_images/basic_sweep_plot_03.png" src="../../_images/basic_sweep_plot_03.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_03.png">png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_03.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot_03.pdf">pdf</a>)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2dplot.html" class="btn btn-neutral float-right" title="2D Plots" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plotting_tutorials.html" class="btn btn-neutral float-left" title="Plotting Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
