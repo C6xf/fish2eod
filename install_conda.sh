@@ -35,4 +35,6 @@ conda update -q conda
 conda create python=$TRAVIS_PYTHON_VERSION --name fish2eod
 conda activate fish2eod
 conda env update -f conda_environment.yml
-pip install .
+if [[ "$TRAVIS" == "true" ]]; then
+  pip install .
+fi
