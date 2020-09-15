@@ -3,7 +3,7 @@
 
 # Fill this out with the correct org/repo
 ORG=aaronshifman
-REPO=tempFishFEM
+REPO=fish2eod
 # This probably should match an email for one of your users.
 EMAIL=aaronrshifman@gmail.com
 
