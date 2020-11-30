@@ -108,7 +108,7 @@ path to the files you downloaded earlier. In my case its under ``/mnt/f/Document
    cd LOCATION-OF-SOURCE
    export TRAVIS_PYTHON_VERSION=3.6
    bash -i install_macos.sh
-   source ~/.bashrc
+   source ~/.bash_profile
    conda activate fish2eod
    pip install git+https://github.com/aaronshifman/fish2eod.git
 

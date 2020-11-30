@@ -26,7 +26,7 @@ dependencies:
   - hypothesis
   - meshio
   - pip:
-    - pygmsh
+    - pygmsh==6.1.1 # pin to pre v7 TODO update to be compatible and update GMSH
     - opencv-python
     - tables
     - sphinx_autodoc_typehints
