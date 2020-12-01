@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running Parameter Sweeps &mdash; fish2eod 0.1.0b documentation</title>
+  <title>Running Parameter Sweeps &mdash; fish2eod 0.2.0b documentation</title>
   
 
   
@@ -212,8 +212,8 @@
 <span class="n">loaded_solution</span> <span class="o">=</span> <span class="n">load_from_file</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;/Example&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-    <span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span><span class="n">loaded_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sigma&quot;</span><span class="p">:</span> <span class="n">ix</span><span class="p">})</span>
-    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span><span class="n">loaded_solution</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sigma&quot;</span><span class="p">:</span> <span class="n">ix</span><span class="p">})</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span><span class="n">loaded_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">ix</span><span class="p">)</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span><span class="n">loaded_solution</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">ix</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>(<a class="reference external" href="../../examples/basic/code/example_sweep.py">Source code</a>)</p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>fish2eod.analysis package &mdash; fish2eod 0.1.0b documentation</title>
+  <title>fish2eod.analysis package &mdash; fish2eod 0.2.0b documentation</title>
   
 
   
@@ -245,7 +245,7 @@
 
 <dl class="py function">
 <dt id="fish2eod.analysis.plotting.generate_mask">
-<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">generate_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">include_domains</span><span class="o">=</span><span class="default_value">'water', 'body'</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.generate_mask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">generate_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">include_domains</span><span class="o">=</span><span class="default_value">('water', 'body')</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.generate_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a Mask For the Domain name.</p>
 <p>Masked nodes are removed from plot/analysis. When requesting include the masked nodes are flipped</p>
 <dl class="field-list simple">
@@ -349,7 +349,7 @@
 
 <dl class="py function">
 <dt id="fish2eod.analysis.plotting.gradient">
-<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="n">gradient_norm</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">plot</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">'equal'</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.gradient" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gradient_norm</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">plot</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">'equal'</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.gradient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute and plot the gradient of a scalar field.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -374,7 +374,7 @@
 
 <dl class="py function">
 <dt id="fish2eod.analysis.plotting.mesh_plot_1d">
-<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">mesh_plot_1d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.mesh_plot_1d" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">mesh_plot_1d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.mesh_plot_1d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a 1D mesh plot.</p>
 <p>1D plots represent boundary functions</p>
 <dl class="field-list simple">
@@ -395,18 +395,17 @@
 
 <dl class="py function">
 <dt id="fish2eod.analysis.plotting.mesh_plot_2d">
-<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">mesh_plot_2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">'equal'</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.mesh_plot_2d" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">mesh_plot_2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">variable</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">color_style</span><span class="o">=</span><span class="default_value">'equal'</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.mesh_plot_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot surface functions i.e. functions defined on the surface of the mesh or on the nodes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>solution</strong> – The solution structure</p></li>
 <li><p><strong>variable</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the variable</p></li>
-<li><p><strong>cmap</strong> – Valid matplotlib colormap (string or object representation)</p></li>
 <li><p><strong>color_style</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>]) – How to symmetrize the colormap (False/None, ‘full’, ‘equal’)</p></li>
 <li><p><strong>colorbar</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Should the colorbar be plotted</p></li>
 <li><p><strong>mask</strong> – Valid matplotlib mask see generate_mask</p></li>
-<li><p><strong>alpha</strong> – Number between 0-1 representing transparency</p></li>
+<li><p><strong>kwargs</strong> – Data subset parameters and matplotlib settings</p></li>
 </ul>
 </dd>
 </dl>
@@ -442,18 +441,18 @@ array-like [min, max] sets the colorbar to a preset range</p>
 
 <dl class="py function">
 <dt id="fish2eod.analysis.plotting.plot_edges">
-<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">plot_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">norm</span></em>, <em class="sig-param"><span class="n">colors</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.plot_edges" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">plot_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.plot_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot solution edges as lines.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>g</strong> – Coordinates of the edges</p></li>
-<li><p><strong>norm</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Normalize</span></code>) – Color normalization</p></li>
+<li><p><strong>norm</strong> – Color normalization</p></li>
 <li><p><strong>colors</strong> – Which colors to use</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>None</p>
@@ -463,22 +462,57 @@ array-like [min, max] sets the colorbar to a preset range</p>
 
 <dl class="py function">
 <dt id="fish2eod.analysis.plotting.plot_outline">
-<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">plot_outline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'k'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.plot_outline" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">plot_outline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.plot_outline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot solution outline.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>solution</strong> – fish2eod solution to plot</p></li>
-<li><p><strong>mask</strong> – valid mask</p></li>
-<li><p><strong>color</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Color for the edges</p></li>
 <li><p><strong>kwargs</strong> – Optional parameters from the solution</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.split_mpl_kwargs">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">split_mpl_kwargs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tainted</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.split_mpl_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split kwargs into valid mpl kwargs and internal fish2fem kwargs</p>
+<p>Valid keys are determined by inclusion in the Line2D signature which should contain most common ones</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tainted</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – kwarg dictionary containing the mixture of kwargs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Matplotlib kwargs and fish2fem kwargs dictionaries</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fish2eod.analysis.plotting.upscale_parameter_name">
+<code class="sig-prename descclassname">fish2eod.analysis.plotting.</code><code class="sig-name descname">upscale_parameter_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">normal_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.analysis.plotting.upscale_parameter_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer valid matplotlib parameters for line collection.</p>
+<p>Line collection parameters have plural names of common parameters (i.e. color -&gt; colors).
+Try every parameter with an additional ‘s’ and see it it fits a valid parameter name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>normal_params</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Parameters with standard (color, linestyle, …) names</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Parameters with pluralized (colors, linestyles, …) names</p>
 </dd>
 </dl>
 </dd></dl>

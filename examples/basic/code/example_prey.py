@@ -17,6 +17,6 @@ model.compile(**parameters)
 model.solve(**parameters)
 
 plotting.mesh_plot_2d(model.solution, "solution")
-plotting.plot_outline(model.solution)
+plotting.plot_outline(model.solution, color="k")
 plt.xlim([-20, 20])
 plt.ylim([-10, 10])

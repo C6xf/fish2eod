@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; fish2eod 0.1.0b documentation</title>
+  <title>Installation &mdash; fish2eod 0.2.0b documentation</title>
   
 
   
@@ -172,11 +172,10 @@
             
   <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you have already installed fish2eod and its dependencies and would like to update it you can run
-.. code-block:: bash</p>
-<blockquote>
-<div><p>pip install git+https://github.com/aaronshifman/fish2eod.git –upgrade</p>
-</div></blockquote>
+<p>If you have already installed fish2eod and its dependencies and would like to update it you can run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/aaronshifman/fish2eod.git --upgrade
+</pre></div>
+</div>
 <p>Please remember that you must be in the correct conda environment</p>
 </div>
 <div class="section" id="installation">
@@ -223,11 +222,14 @@ bash -i install_linux.sh
 <span class="nb">source</span> ~/.bashrc
 conda activate fish2eod
 pip install git+https://github.com/aaronshifman/fish2eod.git
+pytest --pyargs fish2eod
 </pre></div>
 </div>
 <p>Again once or twice you may be prompted to enter <code class="docutils literal notranslate"><span class="pre">Y</span></code> to continue</p>
 <p>Now if you’d like to use this software you can use the conda environment <code class="docutils literal notranslate"><span class="pre">fish2eod</span></code></p>
 <p>(Note there are currently plans to add this to pypi but that’s for a later date)</p>
+<p>Now there’s likely to be a large number of warnings about various things these are completely fine as long as you don’t
+see a big red bar or error messages the tests went smoothly.</p>
 </div>
 </div>
 <div class="section" id="maxos">
@@ -249,14 +251,17 @@ path to the files you downloaded earlier. In my case its under <code class="docu
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> LOCATION-OF-SOURCE
 <span class="nb">export</span> <span class="nv">TRAVIS_PYTHON_VERSION</span><span class="o">=</span><span class="m">3</span>.6
 bash -i install_macos.sh
-<span class="nb">source</span> ~/.bashrc
+<span class="nb">source</span> ~/.bash_profile
 conda activate fish2eod
 pip install git+https://github.com/aaronshifman/fish2eod.git
+pytest --pyargs fish2eod
 </pre></div>
 </div>
 <p>Again once or twice you may be prompted to enter <code class="docutils literal notranslate"><span class="pre">Y</span></code> to continue</p>
 <p>Now if you’d like to use this software you can use the conda environment <code class="docutils literal notranslate"><span class="pre">fish2eod</span></code></p>
 <p>(Note there are currently plans to add this to pypi but that’s for a later date)</p>
+<p>Now there’s likely to be a large number of warnings about various things these are completely fine as long as you don’t
+see a big red bar or error messages the tests went smoothly.</p>
 </div>
 </div>
 <div class="section" id="windows">

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basics &mdash; fish2eod 0.1.0b documentation</title>
+  <title>Basics &mdash; fish2eod 0.2.0b documentation</title>
   
 
   
@@ -321,7 +321,7 @@ needed is to call the <a class="reference internal" href="../../api/fish2eod.ana
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="n">model_solution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">solution</span>  <span class="c1"># pull solution</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">generate_mask</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="n">include_domains</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;water&quot;</span><span class="p">,</span> <span class="s2">&quot;prey&quot;</span><span class="p">))</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">generate_mask</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solution</span><span class="p">,</span> <span class="n">include_domains</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;water&quot;</span><span class="p">,))</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span>
     <span class="n">model_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span>
 <span class="p">)</span>  <span class="c1"># plot the result named solution</span>
@@ -353,7 +353,8 @@ domains. For this reason we provide an <code class="docutils literal notranslate
 <code class="docutils literal notranslate"><span class="pre">properties</span></code> argument. This is necessary to provide the flexibility of passing arbitrary matplotlib settings.</p>
 <p>Not that setting the properties argument does not influence any other settings and this can be used in concert with all
 other flags and settings.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -397,19 +398,15 @@ other flags and settings.</p>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="n">loaded_solution</span> <span class="o">=</span> <span class="n">load_from_file</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;/temp&quot;</span><span class="p">)</span>
+<span class="n">prey_x_values</span> <span class="o">=</span> <span class="n">loaded_solution</span><span class="o">.</span><span class="n">parameter_levels</span><span class="p">[</span><span class="s2">&quot;prey_x&quot;</span><span class="p">]</span>
+<span class="n">prey_y_values</span> <span class="o">=</span> <span class="n">loaded_solution</span><span class="o">.</span><span class="n">parameter_levels</span><span class="p">[</span><span class="s2">&quot;prey_y&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="n">prey_x_values</span><span class="p">,</span> <span class="n">prey_y_values</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 
-<span class="k">for</span> <span class="n">prey_x</span> <span class="ow">in</span> <span class="n">loaded_solution</span><span class="o">.</span><span class="n">parameter_levels</span><span class="p">[</span><span class="s2">&quot;prey_x&quot;</span><span class="p">]:</span>
-    <span class="k">for</span> <span class="n">prey_y</span> <span class="ow">in</span> <span class="n">loaded_solution</span><span class="o">.</span><span class="n">parameter_levels</span><span class="p">[</span><span class="s2">&quot;prey_y&quot;</span><span class="p">]:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-
-        <span class="c1"># pass the solution parameters in an additional dictionary.</span>
-        <span class="c1"># all other arguments can be used as normal</span>
-        <span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span>
-            <span class="n">loaded_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;prey_x&quot;</span><span class="p">:</span> <span class="n">prey_x</span><span class="p">,</span> <span class="s2">&quot;prey_y&quot;</span><span class="p">:</span> <span class="n">prey_y</span><span class="p">}</span>
-        <span class="p">)</span>
-        <span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span>
-            <span class="n">loaded_solution</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;prey_x&quot;</span><span class="p">:</span> <span class="n">prey_x</span><span class="p">,</span> <span class="s2">&quot;prey_y&quot;</span><span class="p">:</span> <span class="n">prey_y</span><span class="p">}</span>
-        <span class="p">)</span>
+    <span class="c1"># pass the solution parameters in an additional dictionary.</span>
+    <span class="c1"># all other arguments can be used as normal</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">mesh_plot_2d</span><span class="p">(</span><span class="n">loaded_solution</span><span class="p">,</span> <span class="s2">&quot;solution&quot;</span><span class="p">,</span> <span class="n">prey_x</span><span class="o">=</span><span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="o">=</span><span class="n">prey_y</span><span class="p">)</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_outline</span><span class="p">(</span><span class="n">loaded_solution</span><span class="p">,</span> <span class="n">prey_x</span><span class="o">=</span><span class="n">prey_x</span><span class="p">,</span> <span class="n">prey_y</span><span class="o">=</span><span class="n">prey_y</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>(<a class="reference external" href="../../tutorials/plotting/code/basic_sweep_plot.py">Source code</a>)</p>

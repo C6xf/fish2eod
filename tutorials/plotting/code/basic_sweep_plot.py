@@ -1,3 +1,4 @@
+from itertools import product
 from tempfile import TemporaryDirectory
 
 import matplotlib.pyplot as plt
@@ -42,16 +43,12 @@ Plot the "FEM solution"
 """
 
 loaded_solution = load_from_file(d.name + "/temp")
+prey_x_values = loaded_solution.parameter_levels["prey_x"]
+prey_y_values = loaded_solution.parameter_levels["prey_y"]
+for prey_x, prey_y in product(prey_x_values, prey_y_values):
+    plt.figure()
 
-for prey_x in loaded_solution.parameter_levels["prey_x"]:
-    for prey_y in loaded_solution.parameter_levels["prey_y"]:
-        plt.figure()
-
-        # pass the solution parameters in an additional dictionary.
-        # all other arguments can be used as normal
-        plotting.mesh_plot_2d(
-            loaded_solution, "solution", parameters={"prey_x": prey_x, "prey_y": prey_y}
-        )
-        plotting.plot_outline(
-            loaded_solution, parameters={"prey_x": prey_x, "prey_y": prey_y}
-        )
+    # pass the solution parameters in an additional dictionary.
+    # all other arguments can be used as normal
+    plotting.mesh_plot_2d(loaded_solution, "solution", prey_x=prey_x, prey_y=prey_y)
+    plotting.plot_outline(loaded_solution, prey_x=prey_x, prey_y=prey_y)
