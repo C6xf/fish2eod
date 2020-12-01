@@ -10,9 +10,6 @@ jobs:
   - os: linux
     dist: bionic
     python: 3.8
-  - os: linux
-    dist: bionic
-    python: 3.9
   - os: osx
     language: generic
     env: TRAVIS_PYTHON_VERSION=3.6
@@ -22,9 +19,6 @@ jobs:
   - os: osx
     language: generic
     env: TRAVIS_PYTHON_VERSION=3.8
-  - os: osx
-    language: generic
-    env: TRAVIS_PYTHON_VERSION=3.9
 install:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bash -i install_macos.sh; fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bash -i install_linux.sh; fi
