@@ -3,18 +3,58 @@
 2D plots are "domain-like"
 1D plots are "boundary-like"
 """
+from inspect import signature
 from typing import Tuple, Union, Any, Sequence, Optional, Dict
 
 import matplotlib as mpl
+import matplotlib.axes
 import matplotlib.colors
+import matplotlib.lines
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.tri import Triangulation, LinearTriInterpolator
 
+from fish2eod.helpers.type_helpers import COLOR_STYLE_TYPE
 from fish2eod.mesh.model_geometry import ModelGeometry
 from fish2eod.models import Model
-from fish2eod.helpers.type_helpers import COLOR_STYLE_TYPE
 from fish2eod.xdmf.load import H5Solution
+
+
+def split_mpl_kwargs(tainted: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+    """ Split kwargs into valid mpl kwargs and internal fish2fem kwargs
+
+        Valid keys are determined by inclusion in the Line2D signature which should contain most common ones
+
+        :param tainted: kwarg dictionary containing the mixture of kwargs
+        :returns: Matplotlib kwargs and fish2fem kwargs dictionaries
+    """
+    valid_kwargs = (
+        set(signature(mpl.lines.Line2D).parameters.keys())
+        .union(signature(mpl.axes.Axes.imshow).parameters.keys())
+        .union(signature(mpl.collections.Collection).parameters.keys())
+    )  # common line or image parameters
+
+    mpl_kwargs = {k: tainted[k] for k in tainted.keys() if k in valid_kwargs}
+    fish2fem_kwargs = {k: tainted[k] for k in tainted.keys() if k not in valid_kwargs}
+
+    return mpl_kwargs, fish2fem_kwargs
+
+
+def upscale_parameter_name(normal_params: Dict[str, Any]) -> Dict[str, Any]:
+    """ Infer valid matplotlib parameters for line collection.
+
+    Line collection parameters have plural names of common parameters (i.e. color -> colors).
+    Try every parameter with an additional 's' and see it it fits a valid parameter name
+
+    :param normal_params: Parameters with standard (color, linestyle, ...) names
+    :returns: Parameters with pluralized (colors, linestyles, ...) names
+    """
+    valid_kwargs = set(signature(mpl.collections.Collection).parameters.keys()).union(
+        ["colors"]
+    )  # for some reason colors is hidden in kwargs
+    upscaled = {**normal_params, **{k + "s": v for k, v in normal_params.items()}}
+
+    return {k: upscaled[k] for k in upscaled.keys() if k in valid_kwargs}
 
 
 def generate_mask(
@@ -157,7 +197,6 @@ def mesh_plot_2d(
     solution,
     variable: str,
     *,
-    parameters: Optional[Dict[str, int]] = None,
     color_style: COLOR_STYLE_TYPE = "equal",
     colorbar: bool = True,
     mask=None,
@@ -167,25 +206,23 @@ def mesh_plot_2d(
 
     :param solution: The solution structure
     :param variable: Name of the variable
-    :param cmap: Valid matplotlib colormap (string or object representation)
     :param color_style: How to symmetrize the colormap (False/None, 'full', 'equal')
     :param colorbar: Should the colorbar be plotted
     :param mask: Valid matplotlib mask see generate_mask
-    :param alpha: Number between 0-1 representing transparency
+    :param kwargs: Data subset parameters and matplotlib settings
     """
-    if not parameters:
-        parameters = dict()
 
-    if "topology" in kwargs:
+    mpl_kwargs, fish2fem_kwargs = split_mpl_kwargs(kwargs)
+    if "topology" in fish2fem_kwargs:
         topology, geometry, data = (
-            kwargs.pop("topology"),
-            kwargs.pop("geometry"),
-            kwargs.pop("data"),
+            fish2fem_kwargs.pop("topology"),
+            fish2fem_kwargs.pop("geometry"),
+            fish2fem_kwargs.pop("data"),
         )
         triangles = generate_triangles(topology, geometry, mask=mask)
     else:
         triangles, data = generate_triangles_for_2d(
-            solution, variable, mask=mask, **parameters
+            solution, variable, mask=mask, **fish2fem_kwargs
         )
 
     color_norm = normalize_color(triangles, data, color_style)
@@ -193,10 +230,10 @@ def mesh_plot_2d(
     if len(triangles.triangles) == len(
         data
     ):  # defined on the surface #data = facecolor
-        im = plt.tripcolor(triangles, facecolors=data, norm=color_norm, **kwargs)
+        im = plt.tripcolor(triangles, facecolors=data, norm=color_norm, **mpl_kwargs)
     else:
         im = plt.tripcolor(
-            triangles, data, shading="gouraud", norm=color_norm, **kwargs
+            triangles, data, shading="gouraud", norm=color_norm, **mpl_kwargs
         )
 
     cbar = None
@@ -220,11 +257,11 @@ def field_norm(e_x: np.ndarray, e_y: np.ndarray) -> np.ndarray:
 def gradient(
     solution,
     variable,
+    *,
     gradient_norm=True,
     plot=True,
     color_style: COLOR_STYLE_TYPE = "equal",
     mask=None,
-    scale=1,
     **kwargs
 ) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
     """Compute and plot the gradient of a scalar field.
@@ -238,7 +275,10 @@ def gradient(
     :param kwargs:
     :return: Computed field as a scalar or vector field
     """
-    triangles, data = generate_triangles_for_2d(solution, variable, mask=mask, **kwargs)
+    mpl_kwargs, fish2fem_kwargs = split_mpl_kwargs(kwargs)
+    triangles, data = generate_triangles_for_2d(
+        solution, variable, mask=mask, **fish2fem_kwargs
+    )
     topology = triangles.triangles
     geometry = list(zip(triangles.x, triangles.y))
     interpolator = LinearTriInterpolator(triangles, -data)
@@ -258,7 +298,7 @@ def gradient(
             )
         return norm
     else:
-        plt.quiver(triangles.x, triangles.y, e_x, e_y, scale=scale)
+        plt.quiver(triangles.x, triangles.y, e_x, e_y, **mpl_kwargs)
         return e_x, e_y
 
 
@@ -286,14 +326,7 @@ def extract_edges(solution: H5Solution, variable: str, **kwargs):
 
 
 def mesh_plot_1d(
-    solution,
-    variable,
-    *,
-    parameters: Optional[Dict[str, int]] = None,
-    color_style: COLOR_STYLE_TYPE = None,
-    color=None,
-    cmap=None,
-    colorbar=True
+    solution, variable, *, color_style: COLOR_STYLE_TYPE = None, colorbar=True, **kwargs
 ):
     """Create a 1D mesh plot.
 
@@ -306,15 +339,16 @@ def mesh_plot_1d(
     :param color: Color to use (if not data i.e. outline)
     :return: None
     """
-    if not parameters:
-        parameters = dict()
+    mpl_kwargs, fish2fem_kwargs = split_mpl_kwargs(kwargs)
 
-    if color is not None and cmap is not None:
+    if "color" in kwargs and "cmap" in kwargs:
         raise ValueError("You cannot mix a fixed color and a colormap")
 
-    edge_geometry, data = extract_edges(solution, variable, **parameters)
+    edge_geometry, data = extract_edges(solution, variable, **fish2fem_kwargs)
     norm = normalize_color(None, data, color_style)
 
+    color = mpl_kwargs.pop("color", None)
+    cmap = mpl_kwargs.pop("cmap", None)
     cbar = None
     if color is None:
         m = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
@@ -325,24 +359,23 @@ def mesh_plot_1d(
     else:
         colors = color
 
-    plot_edges(edge_geometry, norm, colors)
+    mpl_kwargs["colors"] = colors
+    plot_edges(edge_geometry, **mpl_kwargs)
 
     return plt.gca(), cbar
 
 
-def plot_outline(solution, color: str = "k", **kwargs) -> None:
+def plot_outline(solution, **kwargs) -> None:
     """Plot solution outline.
 
     :param solution: fish2eod solution to plot
-    :param mask: valid mask
-    :param color: Color for the edges
     :param kwargs: Optional parameters from the solution
     :return: None
     """
-    mesh_plot_1d(solution, "outline", color=color, **kwargs)
+    mesh_plot_1d(solution, "outline", colorbar=False, **kwargs)
 
 
-def plot_edges(g, norm: matplotlib.colors.Normalize, colors) -> None:
+def plot_edges(g, **kwargs) -> None:
     """Plot solution edges as lines.
 
     :param g: Coordinates of the edges
@@ -350,7 +383,9 @@ def plot_edges(g, norm: matplotlib.colors.Normalize, colors) -> None:
     :param colors: Which colors to use
     :return: None
     """
-    ln_coll = mpl.collections.LineCollection(g, norm=norm, colors=colors)
+
+    mpl_params = upscale_parameter_name(kwargs)
+    ln_coll = mpl.collections.LineCollection(g, **mpl_params)
     ax = plt.gca()
     ax.add_collection(ln_coll)
     plt.xlim([g[:, 0].min(), g[:, 0].max()])
