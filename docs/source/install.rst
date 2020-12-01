@@ -1,5 +1,6 @@
 .. note::
    If you have already installed fish2eod and its dependencies and would like to update it you can run
+
    .. code-block:: bash
 
       pip install git+https://github.com/aaronshifman/fish2eod.git --upgrade
@@ -72,12 +73,16 @@ path to the files you downloaded earlier. In my case its under ``/mnt/f/Document
    source ~/.bashrc
    conda activate fish2eod
    pip install git+https://github.com/aaronshifman/fish2eod.git
+   pytest --pyargs fish2eod
 
 Again once or twice you may be prompted to enter ``Y`` to continue
 
 Now if you'd like to use this software you can use the conda environment ``fish2eod``
 
 (Note there are currently plans to add this to pypi but that's for a later date)
+
+Now there's likely to be a large number of warnings about various things these are completely fine as long as you don't
+see a big red bar or error messages the tests went smoothly.
 
 
 MaxOS
@@ -111,12 +116,16 @@ path to the files you downloaded earlier. In my case its under ``/mnt/f/Document
    source ~/.bash_profile
    conda activate fish2eod
    pip install git+https://github.com/aaronshifman/fish2eod.git
+   pytest --pyargs fish2eod
 
 Again once or twice you may be prompted to enter ``Y`` to continue
 
 Now if you'd like to use this software you can use the conda environment ``fish2eod``
 
 (Note there are currently plans to add this to pypi but that's for a later date)
+
+Now there's likely to be a large number of warnings about various things these are completely fine as long as you don't
+see a big red bar or error messages the tests went smoothly.
 
 Windows
 -------

@@ -277,11 +277,11 @@ class Model(ABC):
     #     Warning("Refinement called with no algorithm: no refinement taking place")
 
     def update_parameter(
-            self,
-            domain_label: int,
-            parameter_name: str,
-            parameter_value: float,
-            **model_parameters,
+        self,
+        domain_label: int,
+        parameter_name: str,
+        parameter_value: float,
+        **model_parameters,
     ) -> None:
         """Update non-geometric parameters such as conductivity without recomputing mesh.
 
@@ -417,7 +417,7 @@ class QESModel(Model, ABC):
 
 
 def bc_to_rhs_term(
-        bc: BoundaryCondition, v: df.TestFunction, ds: df.Measure
+    bc: BoundaryCondition, v: df.TestFunction, ds: df.Measure
 ) -> df.Form:
     """Convert a boundary condition (Neumann) into a source term on a trial function space."""
     source = fenics_representation(bc)
@@ -459,10 +459,10 @@ class BaseFishModel(QESModel):
     #     self.fish.refine(markers)
 
     def setup_fish(
-            self,
-            fish_x: FISH_COORDINATES,
-            fish_y: FISH_COORDINATES,
-            species: str = "Apteronotus",
+        self,
+        fish_x: FISH_COORDINATES,
+        fish_y: FISH_COORDINATES,
+        species: str = "Apteronotus",
     ):
         """Create the fish given coordinates and species.
 
@@ -599,11 +599,11 @@ class BaseFishModel(QESModel):
         return ()
 
     def create_geometry(
-            self,
-            fish_x: Sequence[float],
-            fish_y: Sequence[float],
-            species: str = "APTERONOTUS",
-            **kwargs,
+        self,
+        fish_x: Sequence[float],
+        fish_y: Sequence[float],
+        species: str = "APTERONOTUS",
+        **kwargs,
     ):
         """Create the model geometry by making a fish, tank and ground and adding any additional user geometry.
 
@@ -627,12 +627,12 @@ class BaseFishModel(QESModel):
 
         # iterate over (possible) multiple fish and add them
         for ix, (outer_body, body, organ, skin_cond) in enumerate(
-                zip(
-                    self.fish_container.outer_body,
-                    self.fish_container.body,
-                    self.fish_container.organ,
-                    self.fish_container.skin_conductance,
-                )
+            zip(
+                self.fish_container.outer_body,
+                self.fish_container.body,
+                self.fish_container.organ,
+                self.fish_container.skin_conductance,
+            )
         ):
             self.model_geometry.add_domain(
                 f"{self.SKIN_NAME}_{ix}", outer_body, sigma=skin_cond
