@@ -41,5 +41,5 @@ solver.run()
 loaded_solution = load_from_file(d.name + "/Example")
 for ix in range(3):
     plt.figure()
-    plotting.mesh_plot_2d(loaded_solution, "solution", parameters={"sigma": ix})
-    plotting.plot_outline(loaded_solution, parameters={"sigma": ix})
+    plotting.mesh_plot_2d(loaded_solution, "solution", sigma=ix)
+    plotting.plot_outline(loaded_solution, sigma=ix)

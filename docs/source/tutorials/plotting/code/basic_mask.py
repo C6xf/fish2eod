@@ -27,7 +27,7 @@ Mask only the water (outside fish)
 """
 
 model_solution = model.solution  # pull solution
-mask = plotting.generate_mask(model.solution, include_domains=("water", "prey"))
+mask = plotting.generate_mask(model.solution, include_domains=("water",))
 plotting.mesh_plot_2d(
     model_solution, "solution", mask=mask
 )  # plot the result named solution
