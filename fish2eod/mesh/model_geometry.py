@@ -120,21 +120,26 @@ class ModelGeometry:
 
         return label
 
-    def draw(self, color=None, legend=False) -> None:
+    def draw(self, color='Dark2', legend=False) -> None:
         """Draw the model geometry as a line drawing.
+
+        :parameter color: Color or colormap name to use
+        :parameter legend: Whether to use the legend or not
 
         :return: None
         """
-        if color is None:
-            cmap = plt.get_cmap("hsv")
-        else:
+
+        try:
+            cmap = plt.get_cmap(color)
+        except ValueError:
             cmap = color
+
         legend_entries = []
         for domain_name, geometry_object in self.flat_geometry:
-            if color:
+            if isinstance(cmap, str):
                 geometry_object.draw(color=cmap)
             else:
-                c = cmap(self.domain_names[domain_name] / len(self.domain_names))
+                c = cmap(self.domain_names[domain_name] / (len(self.domain_names)-1))
                 geometry_object.draw(color=c)
             legend_entries.append(domain_name)
 

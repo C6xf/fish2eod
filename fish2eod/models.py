@@ -293,12 +293,16 @@ class Model(ABC):
         self.model_geometry.parameters[parameter_name][domain_label] = parameter_value
         self.build_equations(**model_parameters)
 
-    def plot_domains(self):
-        """Plot labeled domains with color corresponding to their label."""
+    def plot_domains(self, color='viridis'):
+        """Plot labeled domains with color corresponding to their label.
+
+        :parameter color: Name of the colormap to use
+        """
         if self.domains is None:
             raise ValueError("models Not Compiled")
 
-        df.plot(self.domains)
+        p = df.plot(self.domains)
+        p.set_cmap(color)
 
     def plot_solution(self, **kwargs):
         df.plot(self._fem_solution, **kwargs)
@@ -313,10 +317,10 @@ class Model(ABC):
 
         df.plot(self.mesh, color=color)
 
-    def plot_geometry(self, color: str = None, legend: bool = False):
+    def plot_geometry(self, color: str = 'Dark2', legend: bool = False):
         """Draw geometry.
 
-        :param color: Color of edges, None will cycle colors
+        :param color: Colormap of edges
         :param legend: Whether to label edges in legend
         """
         if self.model_geometry is None:
