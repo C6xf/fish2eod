@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>fish2eod package &mdash; fish2eod 0.2.0b documentation</title>
+  <title>fish2eod package &mdash; fish2eod 0.2.1b documentation</title>
   
 
   
@@ -30,7 +30,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -609,18 +608,23 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.plot_domains">
-<code class="sig-name descname">plot_domains</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_domains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">plot_domains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'viridis'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_domains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot labeled domains with color corresponding to their label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> – Name of the colormap to use</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.plot_geometry">
-<code class="sig-name descname">plot_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_geometry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">plot_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'Dark2'</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>color</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Color of edges, None will cycle colors</p></li>
+<li><p><strong>color</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Colormap of edges</p></li>
 <li><p><strong>legend</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to label edges in legend</p></li>
 </ul>
 </dd>
