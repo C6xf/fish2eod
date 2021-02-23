@@ -9,11 +9,11 @@ QESModel adds quasi-electrostatic physics to the Model class
 BaseFishModel is the template class for electric fish simulations by specifying convenience api calls for adding
 geometry, and voltage/current sources while also defining and handling the fish objects
 """
+import dataclasses
 from abc import ABC, abstractmethod
 from itertools import repeat
-from typing import Optional, Sequence, Tuple, Iterable
+from typing import Optional, Sequence, Tuple, Iterable, List
 
-import dataclasses
 import dolfin as df
 import numpy as np
 from dolfin.cpp.mesh import MeshFunctionSizet
@@ -216,11 +216,25 @@ class Model(ABC):
             self.function_space_v, fenics_representation(bc), self.boundaries, bc.label
         )
 
-    def compile(self, recompute_mesh=True, **model_parameters) -> None:
+    def structural_compilation(self):
+        """Perform the actual compilation (tagging, labeling). """
+        self.domains = mark_domains(self.mesh, self.model_geometry)
+
+        self.boundaries, self.outline = mark_boundaries(
+            self.domains,
+            self.model_geometry,
+            self.get_boundary_markers(),
+            external_boundary=self._EXTERNAL_BOUNDARY,
+        )
+
+    def compile(self, n_refine: int = 0, refine_domains: List[str] = None, recompute_mesh=True,
+                **model_parameters) -> None:
         """Create model mesh, label domains/boundaries and build model equations.
 
         Needs to be called before solving the models
 
+        :param n_refine: Number of times to refine the mesh
+        :param refine_domains: Name of domains to refine
         :param model_parameters: Model parameter dictionary.
         :param recompute_mesh: kwargs catch all for model parameters
         """
@@ -236,14 +250,9 @@ class Model(ABC):
                 self.model_geometry, verbose=self.verboseness >= self._VERBOSE_GMSH
             )
 
-            self.domains = mark_domains(self.mesh, self.model_geometry)
-
-            self.boundaries, self.outline = mark_boundaries(
-                self.domains,
-                self.model_geometry,
-                self.get_boundary_markers(),
-                external_boundary=self._EXTERNAL_BOUNDARY,
-            )
+            self.structural_compilation()
+            for _ in range(n_refine):  # TODO: good test for this
+                self.refine(refine_domains)  # do n refinements
 
         self.build_equations(**model_parameters)
 
@@ -269,19 +278,28 @@ class Model(ABC):
         Warning("Not Implemented no custom boundaries")
         return tuple()
 
-    # def refine(self, _):  # todo implement
-    #     """Refine mesh should be overwritten in developed model class as default behaviour is to do nothing.
-    #
-    #     :param _: Ignored
-    #     """
-    #     Warning("Refinement called with no algorithm: no refinement taking place")
+    def refine(self, refine_domains):  # todo implement
+        """Refine mesh should be overwritten in developed model class as default behaviour is to do nothing.
+
+        :param n_refine: Number of times to refine the mesh
+        :param refine_domains: Name of domains to refine
+        """
+        cell_markers = df.MeshFunction('bool', self.mesh, 2, self.mesh.domains())
+        cell_markers.set_all(False)
+
+        domain_id = [self.model_geometry.domain_names[n] for n in refine_domains]
+        cell_markers.set_values(np.isin(self.domains.array(), domain_id))
+
+        self.mesh = df.refine(self.mesh, marker=cell_markers)
+
+        self.structural_compilation()
 
     def update_parameter(
-        self,
-        domain_label: int,
-        parameter_name: str,
-        parameter_value: float,
-        **model_parameters,
+            self,
+            domain_label: int,
+            parameter_name: str,
+            parameter_value: float,
+            **model_parameters,
     ) -> None:
         """Update non-geometric parameters such as conductivity without recomputing mesh.
 
@@ -421,7 +439,7 @@ class QESModel(Model, ABC):
 
 
 def bc_to_rhs_term(
-    bc: BoundaryCondition, v: df.TestFunction, ds: df.Measure
+        bc: BoundaryCondition, v: df.TestFunction, ds: df.Measure
 ) -> df.Form:
     """Convert a boundary condition (Neumann) into a source term on a trial function space."""
     source = fenics_representation(bc)
@@ -463,10 +481,10 @@ class BaseFishModel(QESModel):
     #     self.fish.refine(markers)
 
     def setup_fish(
-        self,
-        fish_x: FISH_COORDINATES,
-        fish_y: FISH_COORDINATES,
-        species: str = "Apteronotus",
+            self,
+            fish_x: FISH_COORDINATES,
+            fish_y: FISH_COORDINATES,
+            species: str = "Apteronotus",
     ):
         """Create the fish given coordinates and species.
 
@@ -603,11 +621,11 @@ class BaseFishModel(QESModel):
         return ()
 
     def create_geometry(
-        self,
-        fish_x: Sequence[float],
-        fish_y: Sequence[float],
-        species: str = "APTERONOTUS",
-        **kwargs,
+            self,
+            fish_x: Sequence[float],
+            fish_y: Sequence[float],
+            species: str = "APTERONOTUS",
+            **kwargs,
     ):
         """Create the model geometry by making a fish, tank and ground and adding any additional user geometry.
 
@@ -631,12 +649,12 @@ class BaseFishModel(QESModel):
 
         # iterate over (possible) multiple fish and add them
         for ix, (outer_body, body, organ, skin_cond) in enumerate(
-            zip(
-                self.fish_container.outer_body,
-                self.fish_container.body,
-                self.fish_container.organ,
-                self.fish_container.skin_conductance,
-            )
+                zip(
+                    self.fish_container.outer_body,
+                    self.fish_container.body,
+                    self.fish_container.organ,
+                    self.fish_container.skin_conductance,
+                )
         ):
             self.model_geometry.add_domain(
                 f"{self.SKIN_NAME}_{ix}", outer_body, sigma=skin_cond
