@@ -11,7 +11,7 @@ dependencies:
   - pytest
   - pytest-runner
   - pytest-cov
-  - pandas<1
+  - pandas
   - tqdm
   - PyYAML
   - Sphinx>=2.0
@@ -22,7 +22,6 @@ dependencies:
   - dataclasses
   - numpy
   - scipy
-  - matplotlib
   - hypothesis
   - meshio
   - pip:
@@ -31,3 +30,4 @@ dependencies:
     - tables
     - sphinx_autodoc_typehints
     - h5py --no-binary=h5py # conda or pip?
+    - matplotlib>3.2 # bugfix for conda solving on py3.6
