@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Mesh Refinement &mdash; fish2eod 0.2.1b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiple Fish" href="multiple_fish.html" />
+    <link rel="prev" title="Parameter Sweeps" href="parameter_sweeps.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fish2eod
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic_tutorials.html">Basic Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting/plotting_tutorials.html">Plotting Tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="advanced_tutorials.html">Advanced Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="parameter_sweeps.html">Parameter Sweeps</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mesh Refinement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiple_fish.html">Multiple Fish</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/fish2eod.html">fish2eod package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fish2eod</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+          <li><a href="advanced_tutorials.html">Advanced Tutorials</a> &raquo;</li>
+        
+      <li>Mesh Refinement</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/tutorials/advanced/mesh_refinement.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mesh-refinement">
+<h1>Mesh Refinement<a class="headerlink" href="#mesh-refinement" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes the meshes generated will be too large (not enough spatial resolution) leading to low quality solutions.
+To solve this: fish2eod provides domain level mesh refinement highlighted here.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example of a mesh refinement procedure.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fish2eod</span> <span class="kn">import</span> <span class="n">QESModel</span><span class="p">,</span> <span class="n">Circle</span><span class="p">,</span> <span class="n">Rectangle</span>
+
+
+<span class="k">class</span> <span class="nc">SimpleModel</span><span class="p">(</span><span class="n">QESModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define a simple model with a circular background and a few geometric objects.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">create_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bg</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="n">r1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="o">.</span><span class="n">from_center</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="o">.</span><span class="n">from_center</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s1">&#39;bg&#39;</span><span class="p">,</span> <span class="n">bg</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s1">&#39;fg&#39;</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s1">&#39;fg2&#39;</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_geometry</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="s1">&#39;fg3&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Highlight how mesh refinement works by remeshing the background and fg3 domains.</span>
+<span class="sd">Each iteration a different number of refinements is performed increasing mesh resolution.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">n_refine</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SimpleModel</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">refine_domains</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bg&#39;</span><span class="p">,</span> <span class="s1">&#39;fg3&#39;</span><span class="p">],</span> <span class="n">n_refine</span><span class="o">=</span><span class="n">n_refine</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="o">+</span><span class="n">n_refine</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_refine</span><span class="si">}</span><span class="s2"> Mesh Refinements&quot;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">plot_mesh</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">plot_geometry</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../tutorials/advanced/code/mesh_refinement.py">Source code</a>, <a class="reference external" href="../../tutorials/advanced/code/mesh_refinement.png">png</a>, <a class="reference external" href="../../tutorials/advanced/code/mesh_refinement.hires.png">hires.png</a>, <a class="reference external" href="../../tutorials/advanced/code/mesh_refinement.pdf">pdf</a>)</p>
+<div class="figure align-default">
+<img alt="../../_images/mesh_refinement.png" src="../../_images/mesh_refinement.png" />
+</div>
+<p>The parameters <code class="docutils literal notranslate"><span class="pre">refine_domains</span></code> and <code class="docutils literal notranslate"><span class="pre">n_refine</span></code> specify the which domains to refine and how many times the refinement
+should be done. Each refinement operation breaks the mesh elements into smaller pieces so a high <code class="docutils literal notranslate"><span class="pre">n_refine</span></code> provides
+a higher resolution mesh.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">refine_domains</span></code> and <code class="docutils literal notranslate"><span class="pre">n_refine</span></code> parameters can be directly specified to <a class="reference internal" href="../../api/fish2eod.html#fish2eod.models.Model.compile" title="fish2eod.models.Model.compile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Model.compile</span></code></a> method or passed as
+additional parameters to the <a class="reference internal" href="../../api/fish2eod.html#fish2eod.sweep.IterativeSolver" title="fish2eod.sweep.IterativeSolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IterativeSolver</span></code></a> during parameter sweeps.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="multiple_fish.html" class="btn btn-neutral float-right" title="Multiple Fish" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="parameter_sweeps.html" class="btn btn-neutral float-left" title="Parameter Sweeps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, Aaron R. Shifman, John E. Lewis.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

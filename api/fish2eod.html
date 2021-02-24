@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>fish2eod package &mdash; fish2eod 0.2.1b documentation</title>
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -51,7 +54,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+            <a href="../index.html" class="icon icon-home"> fish2eod
           
 
           
@@ -141,6 +144,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -152,7 +157,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/api/fish2eod.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -222,34 +227,34 @@ a full implementation</p>
 geometry, and voltage/current sources while also defining and handling the fish objects</p>
 <dl class="py class">
 <dt id="fish2eod.models.BaseFishModel">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">BaseFishModel</code><a class="headerlink" href="#fish2eod.models.BaseFishModel" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.models.</span></code><code class="sig-name descname"><span class="pre">BaseFishModel</span></code><a class="headerlink" href="#fish2eod.models.BaseFishModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fish2eod.models.QESModel" title="fish2eod.models.QESModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.models.QESModel</span></code></a></p>
 <p>Main class that should be used for all fish simulations.</p>
 <p>Defines fish, tank, and ground electrode) along with properties need to solve them. This should be subclassed to
 implement custom geometries or sources.</p>
 <dl class="py attribute">
 <dt id="fish2eod.models.BaseFishModel.BODY_CONDUCTIVITY">
-<code class="sig-name descname">BODY_CONDUCTIVITY</code><em class="property"> = 0.00356</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.BODY_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">BODY_CONDUCTIVITY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0.00356</span></em><a class="headerlink" href="#fish2eod.models.BaseFishModel.BODY_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="fish2eod.models.BaseFishModel.GROUND_CONDUCTIVITY">
-<code class="sig-name descname">GROUND_CONDUCTIVITY</code><em class="property"> = 727.0</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.GROUND_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GROUND_CONDUCTIVITY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">727.0</span></em><a class="headerlink" href="#fish2eod.models.BaseFishModel.GROUND_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="fish2eod.models.BaseFishModel.ORGAN_CONDUCTIVITY">
-<code class="sig-name descname">ORGAN_CONDUCTIVITY</code><em class="property"> = 0.0092717</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.ORGAN_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ORGAN_CONDUCTIVITY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0.0092717</span></em><a class="headerlink" href="#fish2eod.models.BaseFishModel.ORGAN_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="fish2eod.models.BaseFishModel.WATER_CONDUCTIVITY">
-<code class="sig-name descname">WATER_CONDUCTIVITY</code><em class="property"> = 0.00023</em><a class="headerlink" href="#fish2eod.models.BaseFishModel.WATER_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">WATER_CONDUCTIVITY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0.00023</span></em><a class="headerlink" href="#fish2eod.models.BaseFishModel.WATER_CONDUCTIVITY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.add_boundary_assignement_rules">
-<code class="sig-name descname">add_boundary_assignement_rules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_boundary_assignement_rules" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_boundary_assignement_rules</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_boundary_assignement_rules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add rules for assigning boundaries</p>
 <p>If defining new boundaries with custom labels this method should be overwritten</p>
 <dl class="field-list simple">
@@ -264,7 +269,7 @@ implement custom geometries or sources.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.add_current_sources">
-<code class="sig-name descname">add_current_sources</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_current_sources" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_current_sources</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_current_sources" title="Permalink to this definition">¶</a></dt>
 <dd><p>User extendable function to add a current source (constant current).</p>
 <p>Overwrite this method and implement something of the form</p>
 <dl class="simple">
@@ -285,7 +290,7 @@ implement custom geometries or sources.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.add_geometry">
-<code class="sig-name descname">add_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_geometry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_geometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>User extendable function to add to the geometry.</p>
 <p>Overwrite this method and implement something of the form</p>
 <p>self.model_geometry.add_domain(“Domain name”, obj1, obj2, …)</p>
@@ -299,7 +304,7 @@ implement custom geometries or sources.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.add_voltage_sources">
-<code class="sig-name descname">add_voltage_sources</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_voltage_sources" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_voltage_sources</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.add_voltage_sources" title="Permalink to this definition">¶</a></dt>
 <dd><p>User extendable function to add a voltage source (constant voltage).</p>
 <p>Overwrite this method and implement something of the form</p>
 <dl class="simple">
@@ -320,7 +325,7 @@ implement custom geometries or sources.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.create_geometry">
-<code class="sig-name descname">create_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish_x</span></em>, <em class="sig-param"><span class="n">fish_y</span></em>, <em class="sig-param"><span class="n">species</span><span class="o">=</span><span class="default_value">'APTERONOTUS'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.create_geometry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">create_geometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fish_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fish_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'APTERONOTUS'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.create_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the model geometry by making a fish, tank and ground and adding any additional user geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -336,7 +341,7 @@ implement custom geometries or sources.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.generate_save_data">
-<code class="sig-name descname">generate_save_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.generate_save_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">generate_save_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.generate_save_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add model solution and fish geometry to save data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -350,7 +355,7 @@ implement custom geometries or sources.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.get_boundary_markers">
-<code class="sig-name descname">get_boundary_markers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_boundary_markers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_boundary_markers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_boundary_markers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the boundary markers for a model.</p>
 <p>A marker is a list of two function with the same signature b1,b2,x,y where b1 is the domain id of the first
 domain, and b2 is the domain id of the second domain. x, and y are the coordinates of the midpoint of the
@@ -369,7 +374,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.get_dirichlet_conditions">
-<code class="sig-name descname">get_dirichlet_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_dirichlet_conditions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_dirichlet_conditions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_dirichlet_conditions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the dirichlet conditions on the ground electrode and get user conditions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -383,7 +388,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.get_eod_functions">
-<code class="sig-name descname">get_eod_functions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eod_phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_eod_functions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_eod_functions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eod_phase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_eod_functions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the EOD phase into a set of EOD functions to evaluate</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -400,7 +405,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.get_neumann_conditions">
-<code class="sig-name descname">get_neumann_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eod_phase</span><span class="o">=</span><span class="default_value">0.24</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_neumann_conditions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_neumann_conditions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eod_phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.24</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.get_neumann_conditions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the Neumann conditions for the model.</p>
 <p>By default this is the EOD from the organ but can be extended with BCs from add_current_sourced</p>
 <dl class="field-list simple">
@@ -415,7 +420,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.inner_skin_rule">
-<code class="sig-name descname">inner_skin_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b1</span></em>, <em class="sig-param"><span class="n">b2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.inner_skin_rule" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">inner_skin_rule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.inner_skin_rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mark the boundary for inner skin.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -435,7 +440,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.organ_rule">
-<code class="sig-name descname">organ_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b1</span></em>, <em class="sig-param"><span class="n">b2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.organ_rule" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">organ_rule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.organ_rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mark the boundary for organ.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -455,7 +460,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.setup_fish">
-<code class="sig-name descname">setup_fish</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish_x</span></em>, <em class="sig-param"><span class="n">fish_y</span></em>, <em class="sig-param"><span class="n">species</span><span class="o">=</span><span class="default_value">'Apteronotus'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.setup_fish" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setup_fish</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fish_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fish_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Apteronotus'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.setup_fish" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the fish given coordinates and species.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -470,7 +475,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.solve" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.solve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve the fish model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -481,21 +486,21 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.BaseFishModel.update_for_image">
-<code class="sig-name descname">update_for_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">null_properties</span></em>, <em class="sig-param"><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.update_for_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">update_for_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">null_properties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.BaseFishModel.update_for_image" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="fish2eod.models.Model">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">Model</code><a class="headerlink" href="#fish2eod.models.Model" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.models.</span></code><code class="sig-name descname"><span class="pre">Model</span></code><a class="headerlink" href="#fish2eod.models.Model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
 <p>Model interface for meshing, properties and plotting.</p>
 <p>Models are physics and geometry agnostic and knows nothing about these things - this is an internal class and
 would only be subclassed to develop new physics modules.</p>
 <dl class="py method">
 <dt id="fish2eod.models.Model.bc_to_dirichlet_bc">
-<code class="sig-name descname">bc_to_dirichlet_bc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.bc_to_dirichlet_bc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">bc_to_dirichlet_bc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.bc_to_dirichlet_bc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert fish2eod boundary conditions to their fenics counterpart.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -509,7 +514,7 @@ would only be subclassed to develop new physics modules.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.build_equations">
-<em class="property">abstract </em><code class="sig-name descname">build_equations</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.build_equations" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">build_equations</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.build_equations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the equations to solve.</p>
 <p>Must be overwritten in subclasses to define physics
 :param model_parameters: kwargs catch all for model parameters</p>
@@ -517,12 +522,14 @@ would only be subclassed to develop new physics modules.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.compile">
-<code class="sig-name descname">compile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recompute_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.compile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">compile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_refine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refine_domains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recompute_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.compile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create model mesh, label domains/boundaries and build model equations.</p>
 <p>Needs to be called before solving the models</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>n_refine</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of times to refine the mesh</p></li>
+<li><p><strong>refine_domains</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Name of domains to refine</p></li>
 <li><p><strong>model_parameters</strong> – Model parameter dictionary.</p></li>
 <li><p><strong>recompute_mesh</strong> – kwargs catch all for model parameters</p></li>
 </ul>
@@ -535,19 +542,19 @@ would only be subclassed to develop new physics modules.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.create_geometry">
-<em class="property">abstract </em><code class="sig-name descname">create_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.create_geometry" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">create_geometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.create_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the model geometry</p>
 <p>Must be overwritten in subclasses to define geometry</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.domain_map">
-<em class="property">property </em><code class="sig-name descname">domain_map</code><a class="headerlink" href="#fish2eod.models.Model.domain_map" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">domain_map</span></code><a class="headerlink" href="#fish2eod.models.Model.domain_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.eval" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
@@ -557,7 +564,7 @@ would only be subclassed to develop new physics modules.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.generate_save_data">
-<em class="property">abstract </em><code class="sig-name descname">generate_save_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.generate_save_data" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">generate_save_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.generate_save_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate save data for the base model.</p>
 <p>Subsequent physics specialization should super() and concat their data to save so all relevant is saved</p>
 <dl class="field-list simple">
@@ -572,7 +579,7 @@ would only be subclassed to develop new physics modules.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.get_boundary_markers">
-<code class="sig-name descname">get_boundary_markers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.get_boundary_markers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_boundary_markers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.get_boundary_markers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the boundary markers for a model.</p>
 <p>A marker is a list of two function with the same signature b1,b2,x,y where b1 is the domain id of the first
 domain, and b2 is the domain id of the second domain. x, and y are the coordinates of the midpoint of the
@@ -591,7 +598,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.get_property">
-<code class="sig-name descname">get_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">property_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.get_property" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_property</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.get_property" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the property object of a named property.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -608,7 +615,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.plot_domains">
-<code class="sig-name descname">plot_domains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'viridis'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_domains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">plot_domains</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'viridis'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_domains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot labeled domains with color corresponding to their label.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -619,7 +626,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.plot_geometry">
-<code class="sig-name descname">plot_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'Dark2'</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_geometry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">plot_geometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Dark2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -633,7 +640,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.plot_mesh">
-<code class="sig-name descname">plot_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'grey'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_mesh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">plot_mesh</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'grey'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw mesh.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -644,30 +651,50 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.plot_solution">
-<code class="sig-name descname">plot_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_solution" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">plot_solution</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.plot_solution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="fish2eod.models.Model.refine">
+<code class="sig-name descname"><span class="pre">refine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">refine_domains</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.refine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refine mesh should be overwritten in developed model class as default behaviour is to do nothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_refine</strong> – Number of times to refine the mesh</p></li>
+<li><p><strong>refine_domains</strong> – Name of domains to refine</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="fish2eod.models.Model.solution">
-<em class="property">property </em><code class="sig-name descname">solution</code><a class="headerlink" href="#fish2eod.models.Model.solution" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">solution</span></code><a class="headerlink" href="#fish2eod.models.Model.solution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.solve">
-<em class="property">abstract </em><code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.solve" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.solve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve the system.</p>
 <p>Must be overwritten in subclasses to define how to solve
 :param model_parameters: kwargs catch all for model parameters</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="fish2eod.models.Model.structural_compilation">
+<code class="sig-name descname"><span class="pre">structural_compilation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.structural_compilation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the actual compilation (tagging, labeling).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="fish2eod.models.Model.structure_to_dataset">
-<code class="sig-name descname">structure_to_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.structure_to_dataset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">structure_to_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.structure_to_dataset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.topology_1d">
-<em class="property">property </em><code class="sig-name descname">topology_1d</code><a class="headerlink" href="#fish2eod.models.Model.topology_1d" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">topology_1d</span></code><a class="headerlink" href="#fish2eod.models.Model.topology_1d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get mesh edge topology (lines)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -681,7 +708,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.topology_2d">
-<em class="property">property </em><code class="sig-name descname">topology_2d</code><a class="headerlink" href="#fish2eod.models.Model.topology_2d" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">topology_2d</span></code><a class="headerlink" href="#fish2eod.models.Model.topology_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get mesh cell topology (triangles)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -695,7 +722,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.topology_coordinates">
-<em class="property">property </em><code class="sig-name descname">topology_coordinates</code><a class="headerlink" href="#fish2eod.models.Model.topology_coordinates" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">topology_coordinates</span></code><a class="headerlink" href="#fish2eod.models.Model.topology_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get mesh node coordinates</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -709,7 +736,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.update_parameter">
-<code class="sig-name descname">update_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_label</span></em>, <em class="sig-param"><span class="n">parameter_name</span></em>, <em class="sig-param"><span class="n">parameter_value</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.update_parameter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">update_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.Model.update_parameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update non-geometric parameters such as conductivity without recomputing mesh.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -728,7 +755,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.Model.verboseness">
-<em class="property">property </em><code class="sig-name descname">verboseness</code><a class="headerlink" href="#fish2eod.models.Model.verboseness" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">verboseness</span></code><a class="headerlink" href="#fish2eod.models.Model.verboseness" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the verboseness level of the model.</p>
 </dd></dl>
 
@@ -736,7 +763,7 @@ boundary.</p>
 
 <dl class="py class">
 <dt id="fish2eod.models.QESModel">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">QESModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">allow_overlaps</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.models.</span></code><code class="sig-name descname"><span class="pre">QESModel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_overlaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fish2eod.models.Model" title="fish2eod.models.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.models.Model</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
 <p>FEM framework for solving quasi electrostatic models.</p>
 <p>Extends model QES physics work and the ability to add Neumann and Dirichelet conditions</p>
@@ -747,7 +774,7 @@ boundary.</p>
 </dl>
 <dl class="py method">
 <dt id="fish2eod.models.QESModel.build_equations">
-<code class="sig-name descname">build_equations</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.build_equations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">build_equations</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.build_equations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create equations in weak form to solve with included sources (neumann conditions).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -758,7 +785,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.QESModel.generate_save_data">
-<code class="sig-name descname">generate_save_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.generate_save_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">generate_save_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.generate_save_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get save data for the model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -772,7 +799,7 @@ boundary.</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.QESModel.get_dirichlet_conditions">
-<code class="sig-name descname">get_dirichlet_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.get_dirichlet_conditions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_dirichlet_conditions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.get_dirichlet_conditions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Dirichlet conditions (voltage sources).</p>
 <p>By default the external boundaries are grounded. This should be overridden in your model subclass to implement
 if wanted</p>
@@ -788,7 +815,7 @@ if wanted</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.QESModel.get_neumann_conditions">
-<code class="sig-name descname">get_neumann_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.get_neumann_conditions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_neumann_conditions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.get_neumann_conditions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Neumann conditions (current sources).</p>
 <p>By default there are none. This should be overridden in your model subclass to implement if wanted</p>
 <dl class="field-list simple">
@@ -803,7 +830,7 @@ if wanted</p>
 
 <dl class="py method">
 <dt id="fish2eod.models.QESModel.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">model_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.solve" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">model_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.QESModel.solve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -816,7 +843,7 @@ if wanted</p>
 
 <dl class="py function">
 <dt id="fish2eod.models.bc_to_rhs_term">
-<code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">bc_to_rhs_term</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bc</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">ds</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.bc_to_rhs_term" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.models.</span></code><code class="sig-name descname"><span class="pre">bc_to_rhs_term</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.bc_to_rhs_term" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a boundary condition (Neumann) into a source term on a trial function space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -827,7 +854,7 @@ if wanted</p>
 
 <dl class="py function">
 <dt id="fish2eod.models.fenics_representation">
-<code class="sig-prename descclassname">fish2eod.models.</code><code class="sig-name descname">fenics_representation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mixed_representation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.fenics_representation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.models.</span></code><code class="sig-name descname"><span class="pre">fenics_representation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mixed_representation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.models.fenics_representation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a uniform representation of a boundary condition in a df.Expression.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -851,7 +878,7 @@ if wanted</p>
 Property defines a scalar on a set of domains by domain_id (e.g. conductivity)</p>
 <dl class="py class">
 <dt id="fish2eod.properties.Property">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.properties.</code><code class="sig-name descname">Property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">index_map</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.properties.</span></code><code class="sig-name descname"><span class="pre">Property</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_map</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dolfin.function.expression.UserExpression</span></code></p>
 <p>Class to handle assigning a property across domains.</p>
 <dl class="field-list simple">
@@ -864,7 +891,7 @@ Property defines a scalar on a set of domains by domain_id (e.g. conductivity)</
 </dl>
 <dl class="py method">
 <dt id="fish2eod.properties.Property.eval_cell">
-<code class="sig-name descname">eval_cell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">cell</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property.eval_cell" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_cell</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property.eval_cell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the property at a coordinate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -879,7 +906,7 @@ Property defines a scalar on a set of domains by domain_id (e.g. conductivity)</
 
 <dl class="py method">
 <dt id="fish2eod.properties.Property.value_shape">
-<em class="property">static </em><code class="sig-name descname">value_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property.value_shape" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">value_shape</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.Property.value_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inform dolfin this expression is a scalar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -892,7 +919,7 @@ Property defines a scalar on a set of domains by domain_id (e.g. conductivity)</
 
 <dl class="py class">
 <dt id="fish2eod.properties.SplineExpression">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.properties.</code><code class="sig-name descname">SplineExpression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">boundary</span></em>, <em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.properties.</span></code><code class="sig-name descname"><span class="pre">SplineExpression</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dolfin.function.expression.UserExpression</span></code></p>
 <p>Assign a spline across a boundary.</p>
 <dl class="field-list simple">
@@ -905,7 +932,7 @@ Property defines a scalar on a set of domains by domain_id (e.g. conductivity)</
 </dl>
 <dl class="py method">
 <dt id="fish2eod.properties.SplineExpression.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate expression at a coordinate.</p>
 <p>This function doesn’t return but mutates the array argument as per dolfin requirements</p>
 <dl class="field-list simple">
@@ -923,7 +950,7 @@ Property defines a scalar on a set of domains by domain_id (e.g. conductivity)</
 
 <dl class="py method">
 <dt id="fish2eod.properties.SplineExpression.value_shape">
-<em class="property">static </em><code class="sig-name descname">value_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression.value_shape" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">value_shape</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.properties.SplineExpression.value_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inform dolfin this expression is a scalar.</p>
 </dd></dl>
 
@@ -940,7 +967,7 @@ FishPosition is a ParameterSet for sweeping the position of the fish</p>
 IterativeSolver iterates over parameter sweep and generates, solves and saves the model</p>
 <dl class="py class">
 <dt id="fish2eod.sweep.EODPhase">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">EODPhase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phases</span></em>, <em class="sig-param"><span class="n">set_name</span><span class="o">=</span><span class="default_value">'EODPhase'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.sweep.</span></code><code class="sig-name descname"><span class="pre">EODPhase</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EODPhase'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.sweep.ParameterSet</span></code></a></p>
 <p>Convenience class for sweeping EOD Phase.</p>
 <dl class="field-list simple">
@@ -953,7 +980,7 @@ IterativeSolver iterates over parameter sweep and generates, solves and saves th
 </dl>
 <dl class="py method">
 <dt id="fish2eod.sweep.EODPhase.add_parameter_set">
-<code class="sig-name descname">add_parameter_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_parameter_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase.add_parameter_set" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_parameter_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_parameter_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase.add_parameter_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite add_parameter_set to disable it.</p>
 <p>At the “time-scale” of EOD phase it doesn’t make sense to sweep any other parameters so disable functionality</p>
 <dl class="field-list simple">
@@ -965,7 +992,7 @@ IterativeSolver iterates over parameter sweep and generates, solves and saves th
 
 <dl class="py method">
 <dt id="fish2eod.sweep.EODPhase.validate">
-<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase.validate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.EODPhase.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validate shape of parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -984,7 +1011,7 @@ IterativeSolver iterates over parameter sweep and generates, solves and saves th
 
 <dl class="py class">
 <dt id="fish2eod.sweep.FishPosition">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">FishPosition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fish_x</span></em>, <em class="sig-param"><span class="n">fish_y</span></em>, <em class="sig-param"><span class="n">set_name</span><span class="o">=</span><span class="default_value">'FishPosition'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.FishPosition" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.sweep.</span></code><code class="sig-name descname"><span class="pre">FishPosition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fish_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fish_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FishPosition'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.FishPosition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fish2eod.sweep.ParameterSet" title="fish2eod.sweep.ParameterSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.sweep.ParameterSet</span></code></a></p>
 <p>Convenience class for sweeping fish positions.</p>
 <dl class="field-list simple">
@@ -998,7 +1025,7 @@ IterativeSolver iterates over parameter sweep and generates, solves and saves th
 </dl>
 <dl class="py method">
 <dt id="fish2eod.sweep.FishPosition.validate">
-<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.FishPosition.validate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.FishPosition.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validate shape of parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1017,7 +1044,7 @@ IterativeSolver iterates over parameter sweep and generates, solves and saves th
 
 <dl class="py class">
 <dt id="fish2eod.sweep.IterativeSolver">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">IterativeSolver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">save_path</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">parameter_sweep</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">fixed_parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.sweep.</span></code><code class="sig-name descname"><span class="pre">IterativeSolver</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_sweep</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fixed_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Wrapper to take a model and run it for multiple versions parameter.</p>
 <p>Given a parameter sweep (set unique parameters to run through) the IterativeSolver will reset and re-run the model
@@ -1033,7 +1060,7 @@ for each parameter set only remeshing when geometric features are changed for op
 </dl>
 <dl class="py method">
 <dt id="fish2eod.sweep.IterativeSolver.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver.run" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterate over parameter sweep and solve model with the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -1044,7 +1071,7 @@ for each parameter set only remeshing when geometric features are changed for op
 
 <dl class="py method">
 <dt id="fish2eod.sweep.IterativeSolver.run_step">
-<code class="sig-name descname">run_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">do_mesh</span></em>, <em class="sig-param"><span class="n">parameter_level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver.run_step" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">run_step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.IterativeSolver.run_step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve model for a particular parameter step(set).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1064,7 +1091,7 @@ for each parameter set only remeshing when geometric features are changed for op
 
 <dl class="py class">
 <dt id="fish2eod.sweep.ParameterSet">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">ParameterSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rebuild_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.sweep.</span></code><code class="sig-name descname"><span class="pre">ParameterSet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebuild_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Set of parameters to be swept together. For example an x/y coordinate pair need to be kept together.</p>
 <p>Validates parameters and will fail if invalid shapes. A given parameter may be of any type as long as internal
@@ -1103,7 +1130,7 @@ EODPhase must be a number s.t. 0 &lt;= p &lt;= 1 [p1, p2, …] for example</p>
 </dl>
 <dl class="py method">
 <dt id="fish2eod.sweep.ParameterSet.add_parameter_set">
-<code class="sig-name descname">add_parameter_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_parameter_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.add_parameter_set" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_parameter_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_parameter_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.add_parameter_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Join two existing parameter sets. Only the parent’s name is kept.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1120,7 +1147,7 @@ EODPhase must be a number s.t. 0 &lt;= p &lt;= 1 [p1, p2, …] for example</p>
 
 <dl class="py method">
 <dt id="fish2eod.sweep.ParameterSet.parameters">
-<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#fish2eod.sweep.ParameterSet.parameters" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parameters</span></code><a class="headerlink" href="#fish2eod.sweep.ParameterSet.parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the names of the parameters inside the ParameterSet.</p>
 <p>return: Tuple of the names (order is irrelevant)</p>
 <dl class="field-list simple">
@@ -1132,7 +1159,7 @@ EODPhase must be a number s.t. 0 &lt;= p &lt;= 1 [p1, p2, …] for example</p>
 
 <dl class="py method">
 <dt id="fish2eod.sweep.ParameterSet.to_sweep">
-<code class="sig-name descname">to_sweep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.to_sweep" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">to_sweep</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.to_sweep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert parameter set to a sweep if only parameter set.</p>
 <p>Convenience method to convert this parameter set into a sweep to avoid an extra boilerplate line</p>
 <dl class="field-list simple">
@@ -1147,7 +1174,7 @@ EODPhase must be a number s.t. 0 &lt;= p &lt;= 1 [p1, p2, …] for example</p>
 
 <dl class="py method">
 <dt id="fish2eod.sweep.ParameterSet.validate">
-<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.validate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSet.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validate shape of parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1169,7 +1196,7 @@ EODPhase must be a number s.t. 0 &lt;= p &lt;= 1 [p1, p2, …] for example</p>
 
 <dl class="py class">
 <dt id="fish2eod.sweep.ParameterSweep">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">ParameterSweep</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">parameter_sets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSweep" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.sweep.</span></code><code class="sig-name descname"><span class="pre">ParameterSweep</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">parameter_sets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSweep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Generate all combinations of parameter sets.</p>
 <dl class="field-list simple">
@@ -1179,7 +1206,7 @@ EODPhase must be a number s.t. 0 &lt;= p &lt;= 1 [p1, p2, …] for example</p>
 </dl>
 <dl class="py method">
 <dt id="fish2eod.sweep.ParameterSweep.remesh_index">
-<em class="property">property </em><code class="sig-name descname">remesh_index</code><a class="headerlink" href="#fish2eod.sweep.ParameterSweep.remesh_index" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">remesh_index</span></code><a class="headerlink" href="#fish2eod.sweep.ParameterSweep.remesh_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the “canary” index for remeshing.</p>
 <p>Considering the ordered ParameterSets’ remesh flags i.e. [True, True, True, False]. When the sets are run
 through sequentially the right-most remesh_flag containing parameter set will change indicating that the mesh
@@ -1196,7 +1223,7 @@ needs to be recomputed</p>
 
 <dl class="py method">
 <dt id="fish2eod.sweep.ParameterSweep.should_remesh">
-<code class="sig-name descname">should_remesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">canary_value</span></em>, <em class="sig-param"><span class="n">new_value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSweep.should_remesh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">should_remesh</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canary_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.ParameterSweep.should_remesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine if the next simulation should be remeshed</p>
 <p>Check the canary value against the new value. If it’s changed then remesh the simulation</p>
 <dl class="field-list simple">
@@ -1219,7 +1246,7 @@ needs to be recomputed</p>
 
 <dl class="py function">
 <dt id="fish2eod.sweep.sort_parameter_sets">
-<code class="sig-prename descclassname">fish2eod.sweep.</code><code class="sig-name descname">sort_parameter_sets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_sets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.sort_parameter_sets" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.sweep.</span></code><code class="sig-name descname"><span class="pre">sort_parameter_sets</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_sets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.sweep.sort_parameter_sets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the parameter sets in their efficient order.</p>
 <p>Ideally all of the non-remesh parameters would be run sequentially only re-meshing when needed the order should
 be</p>
@@ -1242,37 +1269,29 @@ be</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="fish2eod.analysis.html" class="btn btn-neutral float-right" title="fish2eod.analysis package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../examples/basic/parameter_sweep.html" class="btn btn-neutral float-left" title="Running Parameter Sweeps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="fish2eod.analysis.html" class="btn btn-neutral float-right" title="fish2eod.analysis package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../examples/basic/parameter_sweep.html" class="btn btn-neutral float-left" title="Running Parameter Sweeps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+        &#169; Copyright 2019, Aaron R. Shifman, John E. Lewis.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

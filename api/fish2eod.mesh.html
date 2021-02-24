@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>fish2eod.mesh package &mdash; fish2eod 0.2.1b documentation</title>
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -51,7 +54,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> fish2eod
+            <a href="../index.html" class="icon icon-home"> fish2eod
           
 
           
@@ -148,6 +151,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -161,7 +166,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/api/fish2eod.mesh.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -185,12 +190,12 @@
 <p>Functions for creating and labeling finite element boundaries.</p>
 <dl class="py class">
 <dt id="fish2eod.mesh.boundary.External">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">External</code><a class="headerlink" href="#fish2eod.mesh.boundary.External" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.boundary.</span></code><code class="sig-name descname"><span class="pre">External</span></code><a class="headerlink" href="#fish2eod.mesh.boundary.External" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dolfin.cpp.mesh.SubDomain</span></code></p>
 <p>Label external boundaries.</p>
 <dl class="py method">
 <dt id="fish2eod.mesh.boundary.External.inside">
-<em class="property">static </em><code class="sig-name descname">inside</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">on_boundary</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.External.inside" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">inside</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">on_boundary</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.External.inside" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is the point inside the domain.</p>
 <p>In this case the inside method is only considering if the point is a on a boundary between 2 domains.</p>
 <dl class="field-list simple">
@@ -207,7 +212,7 @@
 
 <dl class="py function">
 <dt id="fish2eod.mesh.boundary.boundary_iterator">
-<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">boundary_iterator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domains</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.boundary_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.boundary.</span></code><code class="sig-name descname"><span class="pre">boundary_iterator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domains</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.boundary_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get every facet (edge) with at least 2 things touching it i.e. not an external edge.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -224,7 +229,7 @@
 
 <dl class="py function">
 <dt id="fish2eod.mesh.boundary.mark_boundaries">
-<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">mark_boundaries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">model_geometry</span></em>, <em class="sig-param"><span class="n">boundary_markers</span></em>, <em class="sig-param"><span class="n">external_boundary</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_boundaries" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.boundary.</span></code><code class="sig-name descname"><span class="pre">mark_boundaries</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary_markers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_boundary</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Top level function to mark boundaries.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -246,7 +251,7 @@
 
 <dl class="py function">
 <dt id="fish2eod.mesh.boundary.mark_boundary">
-<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">mark_boundary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_geometry</span></em>, <em class="sig-param"><span class="n">neighbouring_domains</span></em>, <em class="sig-param"><span class="n">boundary_markers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_boundary" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.boundary.</span></code><code class="sig-name descname"><span class="pre">mark_boundary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbouring_domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary_markers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_boundary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mark a boundary given its neighbours and boundary markers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -267,7 +272,7 @@
 
 <dl class="py function">
 <dt id="fish2eod.mesh.boundary.mark_edge_by_rules">
-<code class="sig-prename descclassname">fish2eod.mesh.boundary.</code><code class="sig-name descname">mark_edge_by_rules</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbouring_domains</span></em>, <em class="sig-param"><span class="n">boundary_markers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_edge_by_rules" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.boundary.</span></code><code class="sig-name descname"><span class="pre">mark_edge_by_rules</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">neighbouring_domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary_markers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.boundary.mark_edge_by_rules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use rules specified in BoundaryCondition to mark complex edges.</p>
 <p>Gets the edge label from the rule if it should be marked, otherwise returns -1</p>
 <p>Markers are applied sequentially: so if a boundary is defined and is then crossed by another. The second boundary
@@ -294,7 +299,7 @@ takes precedence</p>
 <p>Functions for working with finite element domains.</p>
 <dl class="py function">
 <dt id="fish2eod.mesh.domain.iterate_domains">
-<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">iterate_domains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.iterate_domains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.domain.</span></code><code class="sig-name descname"><span class="pre">iterate_domains</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_geometry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.iterate_domains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterate over objects in a model geometry and inform if the object is primitive.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -311,7 +316,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.domain.mark_domains">
-<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">mark_domains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mesh</span></em>, <em class="sig-param"><span class="n">model_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_domains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.domain.</span></code><code class="sig-name descname"><span class="pre">mark_domains</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_geometry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_domains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a meshfunction marked with the domain ids.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -331,7 +336,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.domain.mark_polygon">
-<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">mark_polygon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_label</span></em>, <em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_polygon" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.domain.</span></code><code class="sig-name descname"><span class="pre">mark_polygon</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_polygon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extremely inefficient marker for polygons.</p>
 <p>Try to create complex shapes out of rectangles instead of resorting to this</p>
 <dl class="field-list simple">
@@ -353,7 +358,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.domain.mark_primitives">
-<code class="sig-prename descclassname">fish2eod.mesh.domain.</code><code class="sig-name descname">mark_primitives</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_label</span></em>, <em class="sig-param"><span class="n">domains</span></em>, <em class="sig-param"><span class="n">objs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_primitives" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.domain.</span></code><code class="sig-name descname"><span class="pre">mark_primitives</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.domain.mark_primitives" title="Permalink to this definition">¶</a></dt>
 <dd><p>Effecient marker for primitives.</p>
 <p>Each primitive has an inside(x, …) which returns some boolean string expression</p>
 <p>I.e. there will be a list of [“a==b”, “c==d”, …]</p>
@@ -382,7 +387,7 @@ takes precedence</p>
 <p>Functions for creating and finite element meshes from primitives.</p>
 <dl class="py function">
 <dt id="fish2eod.mesh.mesh.add_circle">
-<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">add_circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">mesh_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.add_circle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.mesh.</span></code><code class="sig-name descname"><span class="pre">add_circle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_geometry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.add_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add circle objects to the mesh_geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -399,7 +404,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.mesh.add_poly">
-<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">add_poly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">mesh_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.add_poly" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.mesh.</span></code><code class="sig-name descname"><span class="pre">add_poly</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_geometry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.add_poly" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add polygonal objects to the mesh_geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -416,7 +421,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.mesh.create_dolfin_mesh">
-<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">create_dolfin_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">cells</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_dolfin_mesh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.mesh.</span></code><code class="sig-name descname"><span class="pre">create_dolfin_mesh</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cells</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_dolfin_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the pygmsh mesh to a dolfin representation.</p>
 <p><a class="reference external" href="https://bitbucket.org/fenics-project/dolfin/issues/845/initialize-mesh-from-vertices">https://bitbucket.org/fenics-project/dolfin/issues/845/initialize-mesh-from-vertices</a></p>
 <dl class="field-list simple">
@@ -437,7 +442,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.mesh.create_mesh">
-<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">create_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model_geometry</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_mesh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.mesh.</span></code><code class="sig-name descname"><span class="pre">create_mesh</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the mesh from the model geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -457,7 +462,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.mesh.create_mesh_function">
-<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">create_mesh_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">mesh</span></em>, <em class="sig-param"><span class="n">dimension</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_mesh_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.mesh.</span></code><code class="sig-name descname"><span class="pre">create_mesh_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.create_mesh_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create boilerplate mesh function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -478,7 +483,7 @@ takes precedence</p>
 
 <dl class="py function">
 <dt id="fish2eod.mesh.mesh.mesh_add">
-<code class="sig-prename descclassname">fish2eod.mesh.mesh.</code><code class="sig-name descname">mesh_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">mesh_geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.mesh_add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.mesh.</span></code><code class="sig-name descname"><span class="pre">mesh_add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_geometry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.mesh.mesh_add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an object to the mesh.</p>
 <p>Adds as a circle or polygon depending on the obj type</p>
 <dl class="field-list simple">
@@ -500,7 +505,7 @@ takes precedence</p>
 <p>Container for geometry objects which can perform sanity checks and iterate sequentially.</p>
 <dl class="py class">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.mesh.model_geometry.</code><code class="sig-name descname">ModelGeometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">allow_overlaps</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.model_geometry.</span></code><code class="sig-name descname"><span class="pre">ModelGeometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_overlaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Holding class for all model geometry.</p>
 <p>Validates domains and manages domain names and labels</p>
@@ -511,12 +516,12 @@ takes precedence</p>
 </dl>
 <dl class="py attribute">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.DEFAULT_DOMAIN_PREFIX">
-<code class="sig-name descname">DEFAULT_DOMAIN_PREFIX</code><em class="property"> = 'domain_'</em><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.DEFAULT_DOMAIN_PREFIX" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">DEFAULT_DOMAIN_PREFIX</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'domain_'</span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.DEFAULT_DOMAIN_PREFIX" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.add_domain">
-<code class="sig-name descname">add_domain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">geometry_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.add_domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_domain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">geometry_objects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.add_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a domain to the existing model geometry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -536,12 +541,12 @@ takes precedence</p>
 
 <dl class="py attribute">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.background_label">
-<code class="sig-name descname">background_label</code><em class="property"> = 0</em><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.background_label" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">background_label</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.background_label" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.check_intersection">
-<code class="sig-name descname">check_intersection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_name</span></em>, <em class="sig-param"><span class="n">g1</span></em>, <em class="sig-param"><span class="n">g2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.check_intersection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check_intersection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.check_intersection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the two geometries overlap and raise an error if so.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -562,13 +567,13 @@ takes precedence</p>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.clear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the model geometry.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'Dark2'</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">draw</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Dark2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the model geometry as a line drawing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -588,7 +593,7 @@ takes precedence</p>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.flat_geometry">
-<em class="property">property </em><code class="sig-name descname">flat_geometry</code><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.flat_geometry" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">flat_geometry</span></code><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.flat_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the geometry to a list of (name, geometry_object) pairs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -602,7 +607,7 @@ takes precedence</p>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.intersects_background">
-<code class="sig-name descname">intersects_background</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.intersects_background" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">intersects_background</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.intersects_background" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ensure the new domain intersects with the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -619,7 +624,7 @@ takes precedence</p>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.is_background">
-<code class="sig-name descname">is_background</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.is_background" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">is_background</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.is_background" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if domain name is background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -636,7 +641,7 @@ takes precedence</p>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.label_to_name">
-<code class="sig-name descname">label_to_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.label_to_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">label_to_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.label_to_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to convert a label to name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -653,7 +658,7 @@ takes precedence</p>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.next_valid_label">
-<em class="property">property </em><code class="sig-name descname">next_valid_label</code><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.next_valid_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">next_valid_label</span></code><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.next_valid_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the next valid domain label my incrementing current max.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -667,7 +672,7 @@ takes precedence</p>
 
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.ModelGeometry.validate_intersections">
-<code class="sig-name descname">validate_intersections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.validate_intersections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">validate_intersections</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry_objects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.ModelGeometry.validate_intersections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validate intersections between objects on the new domain and between the new domain and old domain.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -686,12 +691,12 @@ takes precedence</p>
 
 <dl class="py class">
 <dt id="fish2eod.mesh.model_geometry.QESGeometry">
-<em class="property">class </em><code class="sig-prename descclassname">fish2eod.mesh.model_geometry.</code><code class="sig-name descname">QESGeometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">allow_overlaps</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fish2eod.mesh.model_geometry.</span></code><code class="sig-name descname"><span class="pre">QESGeometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_overlaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fish2eod.mesh.model_geometry.ModelGeometry" title="fish2eod.mesh.model_geometry.ModelGeometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">fish2eod.mesh.model_geometry.ModelGeometry</span></code></a></p>
 <p>Extended model geometry which takes an additional argument ‘sigma’ when adding domain do define conductance.</p>
 <dl class="py method">
 <dt id="fish2eod.mesh.model_geometry.QESGeometry.add_domain">
-<code class="sig-name descname">add_domain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">geometry_objects</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.add_domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_domain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">geometry_objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.add_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add domain in a QES model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -709,17 +714,17 @@ takes precedence</p>
 
 <dl class="py attribute">
 <dt id="fish2eod.mesh.model_geometry.QESGeometry.domain_names">
-<code class="sig-name descname">domain_names</code><em class="property">: Dict<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.domain_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain_names</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.domain_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="fish2eod.mesh.model_geometry.QESGeometry.geometry_map">
-<code class="sig-name descname">geometry_map</code><em class="property">: Dict<span class="p">[</span>int<span class="p">, </span>Sequence<span class="p">[</span><a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon">fish2eod.geometry.primitives.Polygon</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.geometry_map" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">geometry_map</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="fish2eod.geometry.html#fish2eod.geometry.primitives.Polygon" title="fish2eod.geometry.primitives.Polygon"><span class="pre">fish2eod.geometry.primitives.Polygon</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.geometry_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="fish2eod.mesh.model_geometry.QESGeometry.parameters">
-<code class="sig-name descname">parameters</code><em class="property">: DefaultDict<span class="p">[</span>str<span class="p">, </span>Dict<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.parameters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">parameters</span></code><em class="property"><span class="pre">:</span> <span class="pre">DefaultDict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#fish2eod.mesh.model_geometry.QESGeometry.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -732,37 +737,29 @@ takes precedence</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="fish2eod.xdmf.html" class="btn btn-neutral float-right" title="fish2eod.xdmf package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="fish2eod.helpers.html" class="btn btn-neutral float-left" title="fish2eod.helpers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="fish2eod.xdmf.html" class="btn btn-neutral float-right" title="fish2eod.xdmf package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fish2eod.helpers.html" class="btn btn-neutral float-left" title="fish2eod.helpers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, Aaron R. Shifman, John E. Lewis
+        &#169; Copyright 2019, Aaron R. Shifman, John E. Lewis.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
