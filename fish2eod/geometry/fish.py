@@ -352,9 +352,7 @@ class Fish:  # todo should this subclass geometry?
 
             plt.plot(*self.sides["outer_body"].right.T, "r")
             plt.plot(*self.sides["outer_body"].left.T, "g")
-class fish3D(Fish):
-	def __init__(self):
-		print("Hello world")
+
 
 class Apteronotus(Fish):
     """Apteronotus implementation of Fish.
