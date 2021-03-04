@@ -76,6 +76,7 @@ class SideStruct(NamedTuple):
     right: np.ndarray
 
 
+
 def get_species_object(species_name: str) -> Type["Fish"]:
     """ Get the object representing the species class from the species name.
 
@@ -351,7 +352,9 @@ class Fish:  # todo should this subclass geometry?
 
             plt.plot(*self.sides["outer_body"].right.T, "r")
             plt.plot(*self.sides["outer_body"].left.T, "g")
-
+class fish3D(Fish):
+	def __init__(self):
+		print("Hello world")
 
 class Apteronotus(Fish):
     """Apteronotus implementation of Fish.
